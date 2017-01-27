@@ -51,7 +51,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.5.2'
+  gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl', '~> 4.5'
 end
 
