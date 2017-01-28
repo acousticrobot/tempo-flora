@@ -10,7 +10,7 @@ describe HomeController do
   describe "GET index" do
     it "assigns a message" do
       get :index
-      expect(assigns(:message)).to eq("eggs!")
+      expect(assigns(:message)).to eq("Grow Your Time!")
     end
   end
 end

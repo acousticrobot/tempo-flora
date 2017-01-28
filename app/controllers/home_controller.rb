@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
   def index
-    @message = "eggs!"
+    @message = "Grow Your Time!"
   end
 end
