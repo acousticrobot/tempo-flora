@@ -1,24 +1,10 @@
-# README
+## Tempo Flora
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Watch your time grow.
 
-Things you may want to cover:
+## Deploy notes
 
-* Ruby version
+Run with foreman to serve client assets via webpack
 
-* System dependencies
+tests with rspec
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
