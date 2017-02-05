@@ -1,7 +1,7 @@
 import React from 'react';
 import TicTacToeContainer from '../containers/TicTacToeContainer';
 
-const TicTacToeApp = (props, _railsContext) => (
+const TicTacToeApp = (props, _railsContext) => ( // eslint-disable-line no-unused-vars
   <div>
     <TicTacToeContainer />
   </div>

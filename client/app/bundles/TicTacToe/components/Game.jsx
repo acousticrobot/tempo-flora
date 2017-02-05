@@ -51,7 +51,6 @@ class Game extends React.Component {
   }
 
   jumpTo(step) {
-    console.log(step);
     this.setState({
       stepNumber: step
     });
