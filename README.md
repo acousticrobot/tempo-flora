@@ -8,3 +8,5 @@ Run with foreman to serve client assets via webpack
 
 tests with rspec
 
+linting: `cd client && npm run test:lint`
+
