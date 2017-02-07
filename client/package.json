@@ -10,8 +10,9 @@
     "build:test": "webpack --config webpack.config.js",
     "build:production": "NODE_ENV=production webpack --config webpack.config.js",
     "build:development": "webpack -w --config webpack.config.js",
-    "test": "mocha-webpack --webpack-config webpack.config-test.js \"./test/**/*_test.js\"",
-    "test:lint": "eslint ./app/bundles --ext .js --ext .jsx --cache"
+    "test": "mocha-webpack --webpack-config webpack.config-test.js \"./tests/**/*_test.js\"",
+    "lint": "eslint ./app/bundles --ext .js --ext .jsx --cache",
+    "test:lint": "eslint ./tests --ext .js --ext .jsx --cache"
   },
   "cacheDirectories": [
     "node_modules",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.15.0",
+    "eslint-plugin-mocha": "^4.8.0",
     "eslint-plugin-react": "^6.9.0",
     "mocha": "^3.2.0",
     "mocha-webpack": "^1.0.0-beta.1",

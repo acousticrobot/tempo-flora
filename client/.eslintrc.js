@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "mocha": true,
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
@@ -12,9 +13,11 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "mocha"
     ],
     "rules": {
+        "mocha/no-exclusive-tests": "error",
         "indent": [
             "error",
             2

@@ -6,7 +6,11 @@ Watch your time grow.
 
 Run with foreman to serve client assets via webpack
 
-tests with rspec
+tests with rspec:
 
-linting: `cd client && npm run test:lint`
+`bundle exec rspec spec`
+
+tests with Mocha-chai: `cd client && npm run test`
+
+linting: `cd client && npm run lint`
 
