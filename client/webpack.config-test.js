@@ -1,4 +1,5 @@
 // https://github.com/zinserjan/mocha-webpack/blob/master/docs/installation/webpack-configuration.md
+// http://randycoulman.com/blog/2016/03/22/testing-with-mocha-and-webpack/
 var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
