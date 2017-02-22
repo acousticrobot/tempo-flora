@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'sandbox@sparkpostbox.com'
+  default from: 'noreply@tempoflora.com'
   layout 'mailer'
 end

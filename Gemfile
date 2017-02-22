@@ -16,7 +16,6 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'react_on_rails', "~> 6"
 gem 'sass-rails', '~> 5.0'
-gem 'sparkpost_rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 

@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'sandbox@sparkpostbox.com'
+  default from: 'noreply@tempoflora.com'
 
   def welcome_email(user)
     @user = user
