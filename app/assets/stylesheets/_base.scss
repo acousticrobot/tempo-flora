@@ -1,0 +1,83 @@
+@import "vars";
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1rem;
+  font: inherit;
+  vertical-align: baseline;
+  color: $color-base-2;
+}
+
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  background-color: $color-base-F;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-bottom: 2rem;
+}
+
+ol, ul, li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: $color-green-4;
+  &:hover {
+    color: $color-green-7;
+  }
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+
+.notice {
+  background-color: $color-base-C;
+  font-size: 1.25rem;
+}
+
+.alert {
+  background-color: $color-red-D;
+  font-size: 1.25rem;
+}
+
+// custom for tablet and desktop
+@media (min-width: $media-mobile){
+  section.main-content {
+    margin: 2rem 0;
+  }
+  section.notifications {
+    height: 50px;
+  }
+}
+
+
+

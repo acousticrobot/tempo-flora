@@ -1,0 +1,49 @@
+@import "vars";
+
+.main-navbar,
+.main-navbar--profile
+{
+  background-color: $color-base-E;
+}
+
+.main-navbar--link,
+.main-navbar--link_left
+{
+  background-color: $color-base-9;
+  &:hover {
+    background-color: $color-base-A;
+  }
+}
+
+// custom for mobile
+@media (max-width: $media-mobile){
+
+  .main-navbar--link,
+  .main-navbar--link_left,
+  .main-navbar--profile
+  {
+    border-bottom: 2px solid $color-base-E;
+    padding: .5rem 0 .5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// custom for tablet and desktop
+@media (min-width: $media-mobile){
+
+  .main-navbar--link
+  {
+    float: right;
+    border-left: 2px solid $color-base-E;
+    padding: .25rem 2rem .25rem 2rem;
+  }
+
+  .main-navbar--link_left,
+  .main-navbar--profile
+  {
+    float: left;
+    border-right: 2px solid $color-base-E;
+    padding: .25rem 2rem .25rem 2rem;
+  }
+}

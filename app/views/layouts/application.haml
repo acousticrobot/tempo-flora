@@ -1,0 +1,32 @@
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
+    %title TempoFlora
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600"
+    = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload"
+    = render partial: "layouts/favicon"
+    = csrf_meta_tags
+    = javascript_include_tag "application", 'data-turbolinks-track': "reload"
+
+
+  %body
+    %nav.main-navbar
+      %ul
+        %li.main-navbar--link_left= link_to "Home", root_path
+
+        - if user_signed_in?
+          %li.main-navbar--profile= "Logged in as #{current_user.username}"
+          %li.main-navbar--link= link_to "Logout", destroy_user_session_path, method: :delete
+          %li.main-navbar--link= link_to 'Edit profile', edit_user_registration_path
+        - else
+          %li.main-navbar--link= link_to "Sign up", new_user_registration_path
+          %li.main-navbar--link= link_to "Login", new_user_session_path
+        .clear
+
+    %section.notifications
+      %p.notice= notice
+      %p.alert= alert
+
+
+    %section.main-content= yield

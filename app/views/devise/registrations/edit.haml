@@ -1,0 +1,46 @@
+%article.form
+
+  %h2= "Edit Your Profile"
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+
+    %section.form--section
+
+      .form--field
+        .form--label
+          = f.label :email
+          %span.form--label_required *
+        = f.email_field :email, autofocus: true, class: "form--input_labeled"
+
+      .form--field
+        .form--label= f.label :username
+        = f.text_field :username, placeholder: "your user name", class: "form--input_labeled"
+
+      -if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        .form--hint= "Currently waiting confirmation for: #{resource.unconfirmed_email}"
+
+      .form--field
+        .form--label= f.label "New Password"
+        = f.password_field :password, autocomplete: false, placeholder: "new password", class: "form--input_labeled"
+
+      .form--field
+        = f.password_field :password_confirmation, autocomplete: false, placeholder: "confirm password", class: "form--input_labeled"
+        .form--hint leave blank if you don't want to change it
+        - if @minimum_password_length
+          .form--hint= "#{@minimum_password_length} characters minimum"
+
+    %section.form--section
+
+      .form--field
+        .form--label
+          = f.label "Password"
+          %span.form--label_required *
+        = f.password_field :current_password, autocomplete: false, placeholder: "current password", class: "form--input_labeled"
+
+      .form--actions
+        = f.submit "Update", class: "form--button"
+
+  %aside.form--additional
+    = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+    = link_to "Back", :back

@@ -1,0 +1,23 @@
+%article.form
+
+  %h2 Log In To Your Account
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+    .form--field
+      = f.email_field :email, autofocus: true, placeholder: "email address", class: "form--input"
+
+    .form--field
+      = f.password_field :password, autocomplete: false, placeholder: "password", class: "form--input"
+
+    .actions
+      = f.submit "Log in", class: "form--button"
+
+    %aside.form--additional
+
+      -if devise_mapping.rememberable?
+        .form--field
+          = f.check_box :remember_me
+          = f.label :remember_me
+
+      = render "devise/shared/links"
