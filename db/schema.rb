@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224222250) do
+ActiveRecord::Schema.define(version: 20170224222260) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "deeds", force: :cascade do |t|
+    t.string  "title",       default: "", null: false
+    t.string  "focus_title", default: "", null: false
+    t.string  "daystring",                null: false
+    t.integer "position",    default: 0,  null: false
+    t.integer "points",      default: 0,  null: false
+    t.integer "user_id",                  null: false
+    t.index ["user_id"], name: "index_deeds_on_user_id", using: :btree
+  end
+
+  create_table "foci", force: :cascade do |t|
+    t.string  "title",    default: "", null: false
+    t.integer "user_id",               null: false
+    t.integer "position", default: 0,  null: false
+    t.index ["user_id"], name: "index_foci_on_user_id", using: :btree
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string  "title",      default: "",    null: false
+    t.integer "user_id",                    null: false
+    t.integer "focus_id",                   null: false
+    t.integer "points",     default: 0,     null: false
+    t.boolean "repeatable", default: false, null: false
+    t.boolean "completed",  default: false, null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

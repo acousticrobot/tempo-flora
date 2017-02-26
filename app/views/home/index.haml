@@ -1,0 +1,18 @@
+%h1= @message
+
+%ul
+- for focus in @foci
+
+  %h3= focus.title
+  %ul
+    - for task in focus.tasks
+      %li
+        = task.title
+        %span= "(#{task.points})"
+
+  %ul
+    - for deed in @deeds
+      - if deed.focus_title == focus.title
+        %li
+          = deed.title
+          %span= "(#{deed.points})"
