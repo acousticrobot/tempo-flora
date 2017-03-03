@@ -94,6 +94,24 @@ Task.create(
 
 #====================== Focus: Coding ======================================#
 
+Task.create(
+  title: "read https://medium.com/react-weekly/relay-facebook-on-rails-8b4af2057152#.wbqo6w1yx",
+  user: user,
+  focus: focus_code,
+  points: 1,
+  repeatable: true
+)
+
+
+Task.create(
+  title: "get relay and graphQL working",
+  user: user,
+  focus: focus_code,
+  points: 5,
+  repeatable: true
+)
+
+
 Deed.create(
   title: "add base models",
   focus_title: "Coding",
@@ -102,7 +120,6 @@ Deed.create(
   points: 5,
   daystring: 120226
 )
-
 
 #====================== Focus: Spanish =====================================#
 
