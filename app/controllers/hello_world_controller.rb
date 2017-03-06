@@ -3,10 +3,6 @@ class HelloWorldController < ApplicationController
     @hello_world_props = { name: "Stranger" }
   end
 
-  def test
-    render json: { message: "Onboarding Confirmed", success: true }
-  end
-
   def tictactoe
   end
 

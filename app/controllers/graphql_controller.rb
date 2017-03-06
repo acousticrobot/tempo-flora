@@ -10,6 +10,7 @@ class GraphqlController < ApplicationController
 
   private
 
+  # This allows for better errors displays in graphiql
   def ensure_hash(query_variables)
     if query_variables.blank?
       {}
