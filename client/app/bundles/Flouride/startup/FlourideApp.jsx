@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import FlourideContainer from '../containers/FlourideContainer';
-
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 
@@ -10,8 +9,12 @@ const client = new ApolloClient();
 
 const FlourideApp = (props, _railsContext) => ( // eslint-disable-line no-unused-vars
   <ApolloProvider client={client}>
-    <FlourideContainer />
+    <FlourideContainer userId={props.userId} />
   </ApolloProvider>
 );
+
+FlourideApp.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
 
 export default FlourideApp;

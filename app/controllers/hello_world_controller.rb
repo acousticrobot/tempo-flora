@@ -7,5 +7,6 @@ class HelloWorldController < ApplicationController
   end
 
   def flouride
+    @user_id = current_user.id
   end
 end

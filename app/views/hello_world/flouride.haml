@@ -1,4 +1,4 @@
-%h1 Flouride Sandbox
+%h1= "Flouride Sandbox for user #{@user_id}"
 
-= react_component("FlourideApp", props: {}, prerender: false)
+= react_component("FlourideApp", props: {userId: @user_id}, prerender: false)
 
