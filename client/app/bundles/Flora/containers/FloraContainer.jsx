@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import Focus from '../components/Focus';
 
 
-class FlourideContainer extends Component {
+class FloraContainer extends Component {
 
   render () {
     if (this.props.data.loading) {
@@ -18,21 +18,21 @@ class FlourideContainer extends Component {
     }
 
     return (
-      <div>
-          <h1>
-            Hello { this.props.data.user.username }!
-          </h1>
-          <div>
-            {this.props.data.user.foci.map((focus) =>
-              <Focus key={focus.id} focus={focus} />
-            )}
-          </div>
-      </div>
+      <section className="foci-container">
+          <h4>
+            username: [{ this.props.data.user.username }]
+          </h4>
+
+          {this.props.data.user.foci.map((focus) =>
+            <Focus key={focus.id} focus={focus} />
+          )}
+          <div className="clear"></div>
+      </section>
     );
   }
 }
 
-FlourideContainer.propTypes = {
+FloraContainer.propTypes = {
   data: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.object,
@@ -65,4 +65,4 @@ export default graphql(RootQuery, {
       userId: ownProps.userId
     }
   })
-})(FlourideContainer);
+})(FloraContainer);

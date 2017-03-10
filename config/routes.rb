@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'hello_world', to: 'hello_world#index'
   get 'tictactoe', to: 'hello_world#tictactoe'
-  get 'flouride', to: 'hello_world#flouride'
+  get 'flora', to: 'hello_world#flora'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout'}
   get '/users/:id', to: 'users#show'

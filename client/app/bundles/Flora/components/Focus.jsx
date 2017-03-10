@@ -5,26 +5,26 @@ class Focus extends Component {
 
   render () {
     return (
-      <div>
+      <article className="focus-article">
           <h1>
-            Focus { this.props.focus.title }
+            { this.props.focus.title }
           </h1>
-          <ul>
+          <ul className="focus-items">
             {this.props.focus.tasks.map((task) =>
               <Task key={task.id} task={task} />
             )}
           </ul>
-      </div>
+      </article>
     );
   }
 }
 
 Focus.propTypes = {
   focus: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     position: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    tasks: PropTypes.object,
+    tasks: PropTypes.array,
   }).isRequired,
 };
 

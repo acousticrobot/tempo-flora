@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require _base
+ *= require _focus
  *= require _forms
  *= require _tic_tac_toe
  *= require _nav

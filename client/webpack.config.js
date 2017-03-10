@@ -16,7 +16,7 @@ const config = {
     'whatwg-fetch',
     './app/bundles/HelloWorld/startup/registration',
     './app/bundles/TicTacToe/startup/registration',
-    './app/bundles/Flouride/startup/registration',
+    './app/bundles/Flora/startup/registration',
   ],
 
   output: {

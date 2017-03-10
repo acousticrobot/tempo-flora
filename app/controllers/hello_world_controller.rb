@@ -5,8 +5,4 @@ class HelloWorldController < ApplicationController
 
   def tictactoe
   end
-
-  def flouride
-    @user_id = current_user.id
-  end
 end

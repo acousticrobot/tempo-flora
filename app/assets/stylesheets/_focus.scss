@@ -1,0 +1,52 @@
+@import "variables";
+
+section.foci-container {
+  background-color: $color-chrome-9;
+  h4 {
+    background-color: $color-base-1;
+    color: $color-base-A;
+    padding: 1rem;
+  }
+}
+
+article.focus-article {
+  background-color: $color-base-7;
+  margin: 1rem;
+  width: 23%;
+  margin: 1%;
+  float: left;
+  min-height: 300px;
+  color: $color-base-D;
+  h1 {
+    background-color: $color-base-2;
+    padding: .5rem;
+  }
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+li.task-item {
+  background-color: $color-base-5;
+  margin: .25rem 0;
+  padding: .25rem .5rem;
+}
+
+.task-item-title {
+  float: left;
+}
+
+.task-item-points {
+  color: $color-red-D;
+  float: right;
+  padding: 0 .5rem;
+  background-color: $color-base-5;
+}
+
+// custom for mobile
+@media (max-width: $media-mobile){
+  article.focus-article {
+    margin: 1rem 0 0 0;
+    width: 100%;
+  }
+}
+
