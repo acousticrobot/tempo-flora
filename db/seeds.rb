@@ -2,6 +2,30 @@
 # rails db:drop
 # rails db:setup (this also runs the db:seed command)
 
+
+#====================== Creation Methods ======================================#
+
+def addFociForUser(user, *titles)
+  titles.each_with_index do |title,i|
+    Focus.create(
+      user: user,
+      title: title,
+      position: i
+    )
+  end
+end
+
+def addTaskForFocus(focus,params)
+  Task.create(
+    title: params[:title] || "New Task",
+    focus: focus,
+    user: focus.user,
+    points: params[:points] || 5,
+    repeatable: params[:repeatable] || false,
+    completed: params[:completed] || false
+  )
+end
+
 user = User.new(
   email: "hello@jonathangabel.com",
   username: "AcousticRobot",
@@ -11,124 +35,64 @@ user = User.new(
 user.skip_confirmation!
 user.save!
 
-focus_health =
-  Focus.create(
-    user: user,
-    title: "Health",
-    position: 1
-  )
+addFociForUser(user, "Health", "Build", "Communication", "Coding")
 
-focus_home =
-Focus.create(
-  user: user,
-  title: "Home Improvement",
-  position: 2
+#====================== Focus: Health =========================================#
+
+health_focus = Focus.find(1)
+
+addTaskForFocus(health_focus,
+  { title: "running", repeatable: true }
 )
 
-focus_lang =
-Focus.create(
-  user: user,
-  title: "Spanish",
-  position: 3
+addTaskForFocus(health_focus,
+  { title: "walk 2,000 steps", points: 1, repeatable: true}
 )
 
-focus_code =
-Focus.create(
-  user: user,
-  title: "Coding",
-  position: 4
+addTaskForFocus(health_focus,
+  { title: "yoga", repeatable: true }
 )
 
-#====================== Focus: Health ======================================#
+#====================== Focus: Home Improvement ===============================#
 
-Task.create(
-  title: "running",
-  user: user,
-  focus: focus_health,
-  points: 5,
-  repeatable: true
+build_focus = Focus.find(2)
+
+
+addTaskForFocus(build_focus,
+  { title: "clean up workspace", points: 1 }
 )
 
-Task.create(
-  title: "walk 2,000 steps",
-  user: user,
-  focus: focus_health,
-  points: 1,
-  repeatable: true
+addTaskForFocus(build_focus,
+  { title: "cut dadoes in table legs" }
 )
 
-Task.create(
-  title: "yoga",
-  user: user,
-  focus: focus_health,
-  points: 5,
-  repeatable: true
+addTaskForFocus(build_focus,
+  { title: "call plumber", points: 3, repeatable: true }
 )
 
-#====================== Focus: Home Improvement ============================#
+#====================== Focus: Communication ==================================#
 
-Task.create(
-  title: "clean up workspace",
-  user: user,
-  focus: focus_home,
-  points: 1,
-  repeatable: false
+communication_focus = Focus.find(3)
+
+addTaskForFocus(communication_focus,
+  { title: "duolingo Spanish lesson", repeatable: true }
 )
 
-Task.create(
-  title: "cut dadoes in table legs",
-  user: user,
-  focus: focus_home,
-  points: 5,
-  repeatable: false
+addTaskForFocus(communication_focus,
+  { title: "duolingo Spanish lesson", completed: true, repeatable: true }
 )
 
-Task.create(
-  title: "call plumber",
-  user: user,
-  focus: focus_home,
-  points: 3,
-  repeatable: true
+#====================== Focus: Coding =========================================#
+
+code_focus = Focus.find(4)
+
+addTaskForFocus(code_focus,
+  { title: "read about relay", points: 1, completed: true }
 )
 
-
-#====================== Focus: Coding ======================================#
-
-Task.create(
-  title: "read https://medium.com/react-weekly/relay-facebook-on-rails-8b4af2057152#.wbqo6w1yx",
-  user: user,
-  focus: focus_code,
-  points: 1,
-  repeatable: true
+addTaskForFocus(code_focus,
+  { title: "get Apollo mutations working" }
 )
 
-
-Task.create(
-  title: "get relay and graphQL working",
-  user: user,
-  focus: focus_code,
-  points: 5,
-  repeatable: true
-)
-
-
-Deed.create(
-  title: "add base models",
-  focus_title: "Coding",
-  position: 4,
-  user: user,
-  points: 5,
-  daystring: 120226
-)
-
-#====================== Focus: Spanish =====================================#
-
-Task.create(
-  title: "duolingo lesson",
-  user: user,
-  focus: focus_lang,
-  points: 5,
-  repeatable: true
-)
 
 

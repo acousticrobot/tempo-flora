@@ -1,5 +1,5 @@
 # Define the mutation type
-MutationType = GraphQL::ObjectType.define do
+MutationRoot = GraphQL::ObjectType.define do
   name "Mutation"
   description "the mutation root for this schema"
 

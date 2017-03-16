@@ -7,6 +7,12 @@ import Focus from '../components/Focus';
 
 class FloraContainer extends Component {
 
+  handleCompleteTask(id) {
+    console.log('samiam ' + id); // eslint-disable-line no-console
+    this.props.CompleteTaskMutation({variables: { taskId: id }})
+    .then(console.log('samidid'));// eslint-disable-line no-console
+  }
+
   render () {
     if (this.props.data.loading) {
       return (<div>Loading</div>);
@@ -18,21 +24,27 @@ class FloraContainer extends Component {
     }
 
     return (
-      <section className="foci-container">
+      <section className='foci-container'>
           <h4>
             username: [{ this.props.data.user.username }]
           </h4>
 
           {this.props.data.user.foci.map((focus) =>
-            <Focus key={focus.id} focus={focus} />
+            <Focus
+              key={focus.id}
+              focus={focus}
+              completeTask={(id) => this.handleCompleteTask(id)}
+            />
           )}
-          <div className="clear"></div>
+
+          <div className='clear'></div>
       </section>
     );
   }
 }
 
 FloraContainer.propTypes = {
+  CompleteTaskMutation: PropTypes.func.isRequired,
   data: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.object,
@@ -53,8 +65,22 @@ query RootQuery($userId: ID!) {
         id
         title
         points
+        completed
         repeatable
       }
+    }
+  }
+}`;
+
+const CompleteTaskMutation = gql`
+mutation completeTask($taskId: ID!){
+  completeTask(input:{
+    taskId: $taskId,
+  }) {
+    task {
+      id,
+      title,
+      completed
     }
   }
 }`;
@@ -65,4 +91,4 @@ export default graphql(RootQuery, {
       userId: ownProps.userId
     }
   })
-})(FloraContainer);
+})(graphql(CompleteTaskMutation, {name: 'CompleteTaskMutation'})(FloraContainer));

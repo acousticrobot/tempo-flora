@@ -2,7 +2,7 @@ AddTaskMutation = GraphQL::Relay::Mutation.define do
   # Used to name derived types, eg `"AddTaskInput"`:
   name "AddTask"
 
-  # Accessible from `input` in the resolve function:
+  # Accessible from `args` in the resolve function:
   input_field :focusId, !types.ID
   input_field :title, !types.String
 
@@ -13,7 +13,13 @@ AddTaskMutation = GraphQL::Relay::Mutation.define do
     focus = Focus.find(args[:focusId])
     user = ctx[:current_user]
     if focus.user == user
-      task = Task.new(user: user, focus: focus, title: args[:title])
+      task = Task.new(
+        user: user,
+        focus: focus,
+        title: args[:title],
+        points: 5
+      )
+
       task.save!
 
       response = {

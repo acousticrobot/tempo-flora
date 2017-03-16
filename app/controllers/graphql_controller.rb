@@ -4,7 +4,7 @@ class GraphqlController < ApplicationController
   def create
     query_string = params[:query]
     query_variables = ensure_hash(params[:variables])
-    result = FocusSchema.execute(
+    result = TempoFloraSchema.execute(
       query_string,
       variables: query_variables,
       context: {

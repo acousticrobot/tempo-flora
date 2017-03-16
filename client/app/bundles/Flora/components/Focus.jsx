@@ -11,7 +11,7 @@ class Focus extends Component {
           </h1>
           <ul className="focus-items">
             {this.props.focus.tasks.map((task) =>
-              <Task key={task.id} task={task} />
+              <Task key={ task.id } task={ task } completeTask={() => this.props.completeTask(task.id)} />
             )}
           </ul>
       </article>
@@ -20,6 +20,7 @@ class Focus extends Component {
 }
 
 Focus.propTypes = {
+  completeTask: PropTypes.func.isRequired,
   focus: PropTypes.shape({
     id: PropTypes.string.isRequired,
     position: PropTypes.number.isRequired,

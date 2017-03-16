@@ -25,17 +25,21 @@ article.focus-article {
   overflow: hidden;
 }
 
-li.task-item {
+.task-item {
   background-color: $color-base-5;
   margin: .25rem 0;
   padding: .25rem .5rem;
 }
 
-.task-item-title {
+.task-item--title {
   float: left;
 }
 
-.task-item-points {
+.task-item--title_completed {
+  text-decoration: line-through;
+}
+
+.task-item--points {
   color: $color-red-D;
   float: right;
   padding: 0 .5rem;
