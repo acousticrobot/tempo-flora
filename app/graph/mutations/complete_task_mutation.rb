@@ -5,13 +5,25 @@ CompleteTaskMutation = GraphQL::Relay::Mutation.define do
   input_field :taskId, !types.ID
 
   return_field :task, TaskType
+  return_field :focus, FocusType
+  return_field :user, UserType
 
   resolve ->(object, args, ctx) {
     task = Task.find(args[:taskId])
-    task.update(completed: true)
+
+    if !task.completed?
+      if task.repeatable?
+        new_task = task.dup
+        new_task.save
+      end
+
+      task.update(completed: true)
+    end
 
     response = {
       task: task,
+      focus: task.focus,
+      user: task.user
     }
   }
 end

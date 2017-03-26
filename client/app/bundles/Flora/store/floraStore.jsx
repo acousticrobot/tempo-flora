@@ -4,11 +4,10 @@ import floraReducer from '../reducers/floraReducer';
 const configureStore = (railsProps, apolloClient) => (
   createStore(
     combineReducers({
-      railsProps,
-      name: floraReducer,
+      flora: floraReducer,
       apollo: apolloClient.reducer(),
     }),
-    railsProps, // initial state (doesn't persist?)
+    {}, // initial state
     compose(
         applyMiddleware(apolloClient.middleware()),
         // debug with redux devToolsExtension

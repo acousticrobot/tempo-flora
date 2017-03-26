@@ -4,6 +4,7 @@ class AddCategoriesTopicsAndTasks < ActiveRecord::Migration[5.0]
       t.string :title,         null: false, default: ""
       t.integer :user_id,      null: false
       t.integer :position,     null: false, default: 0
+      t.timestamps null: false
     end
 
     create_table :tasks do |t|
@@ -13,6 +14,7 @@ class AddCategoriesTopicsAndTasks < ActiveRecord::Migration[5.0]
       t.integer :points,       null: false, default: 0
       t.boolean :repeatable,   null: false, default: false
       t.boolean :completed,    null: false, default: false
+      t.timestamps null: false
     end
 
     create_table :deeds do |t|
@@ -22,6 +24,7 @@ class AddCategoriesTopicsAndTasks < ActiveRecord::Migration[5.0]
       t.integer :position,     null: false, default: 0
       t.integer :points,       null: false, default: 0
       t.integer :user_id,      null: false
+      t.timestamps null: false
     end
 
     add_index :foci, :user_id

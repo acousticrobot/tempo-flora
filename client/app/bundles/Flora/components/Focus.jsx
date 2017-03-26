@@ -1,23 +1,37 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import Task from './Task';
+import PointsAccrued from './Focus/PointsAccrued';
 
-class Focus extends Component {
+const completedTasks = (task)=> (task.completed === true);
 
-  render () {
-    return (
-      <article className="focus-article">
-          <h1>
-            { this.props.focus.title }
-          </h1>
-          <ul className="focus-items">
-            {this.props.focus.tasks.map((task) =>
-              <Task key={ task.id } task={ task } completeTask={() => this.props.completeTask(task.id)} />
-            )}
-          </ul>
-      </article>
-    );
+const sumAccruedPoints = (focus)=> (
+  focus.tasks.filter(completedTasks).reduce((prev,next) => prev + next.points,0)
+);
+
+
+const getVisibleTasks = (tasks, filter) => {
+  switch (filter) {
+  case 'SHOW_ALL':
+    return tasks;
+  case 'SHOW_ACTIVE':
+    return tasks.filter(t => !t.completed);
   }
-}
+};
+
+const Focus = ({focus, filter, completeTask}) => (
+  <article className="focus-article">
+      <h1>
+        { focus.title }
+      </h1>
+      <ul className="focus-items">
+        { getVisibleTasks(focus.tasks,filter).map( (task) =>
+          <Task key={ task.id } task={ task } completeTask={() => completeTask(task.id)} />
+        )}
+      </ul>
+
+      <PointsAccrued points={ sumAccruedPoints(focus) } />
+  </article>
+);
 
 Focus.propTypes = {
   completeTask: PropTypes.func.isRequired,
@@ -27,6 +41,7 @@ Focus.propTypes = {
     title: PropTypes.string.isRequired,
     tasks: PropTypes.array,
   }).isRequired,
+  filter: PropTypes.string
 };
 
 export default Focus;

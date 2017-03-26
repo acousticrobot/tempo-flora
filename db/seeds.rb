@@ -59,7 +59,7 @@ build_focus = Focus.find(2)
 
 
 addTaskForFocus(build_focus,
-  { title: "clean up workspace", points: 1 }
+  { title: "clean up workspace", points: 1, repeatable: true }
 )
 
 addTaskForFocus(build_focus,
@@ -67,7 +67,11 @@ addTaskForFocus(build_focus,
 )
 
 addTaskForFocus(build_focus,
-  { title: "call plumber", points: 3, repeatable: true }
+  { title: "call plumber", points: 3, completed: true }
+)
+
+addTaskForFocus(build_focus,
+  { title: "meet with plumber", points: 3 }
 )
 
 #====================== Focus: Communication ==================================#
@@ -87,11 +91,19 @@ addTaskForFocus(communication_focus,
 code_focus = Focus.find(4)
 
 addTaskForFocus(code_focus,
+  { title: "integrate redux", points: 5, completed: false }
+)
+
+addTaskForFocus(code_focus,
+  { title: "get immutable working with mutation", points: 5, completed: false }
+)
+
+addTaskForFocus(code_focus,
   { title: "read about relay", points: 1, completed: true }
 )
 
 addTaskForFocus(code_focus,
-  { title: "get Apollo mutations working" }
+  { title: "get Apollo mutations working", completed: true }
 )
 
 

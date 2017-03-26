@@ -19,7 +19,6 @@ AddTaskMutation = GraphQL::Relay::Mutation.define do
         title: args[:title],
         points: 5
       )
-
       task.save!
 
       response = {

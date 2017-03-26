@@ -1,34 +1,29 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
+import TaskTitle from './Task/Title';
+import TaskPoints from './Task/Points';
 
-const taskTitleCSS = (task)=> {
-  const modifier = task.completed ? 'completed' : 'imcomplete';
-  return 'task-item--title task-item--title_' + modifier;
-};
+const CSSMod = (task)=> (task.completed ? 'completed' : 'imcomplete');
+const CSS = (task)=> ('task-item task-item_' + CSSMod(task));
 
-class Task extends Component {
+const Task = ({ completeTask, task }) => (
+  <li className={ CSS(task) }>
+    <TaskTitle
+      title={task.title }
+      completed={ task.completed }
+      completeTask={ completeTask }
+    />
 
-  render () {
-    const titleCSS = taskTitleCSS(this.props.task);
-
-    return (
-      <li className='task-item'>
-        <div className={ titleCSS } onClick={ () => this.props.completeTask() }>
-          { this.props.task.title }
-        </div>
-        <div className='task-item--points'>
-          { this.props.task.points }
-        </div>
-        <div className='clear'></div>
-      </li>
-    );
-  }
-}
+    { !task.completed && <TaskPoints points={ task.points }/> }
+    <div className='clear'></div>
+  </li>
+);
 
 Task.propTypes = {
   completeTask: PropTypes.func.isRequired,
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     points: PropTypes.number.isRequired,
+    completed: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
 };

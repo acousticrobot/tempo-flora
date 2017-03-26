@@ -1,15 +1,17 @@
 import { combineReducers } from 'redux';
-import { SAM_I_AM } from '../constants/floraConstants';
+import { SET_TASK_VISIBILITY_FILTER } from '../constants/actionTypes';
+import { SHOW_ALL } from '../constants/filterTypes';
 
-const name = (state='sam', action) => {
+const taskVisibility = (state=SHOW_ALL, action) => {
   switch (action.type) {
-  case SAM_I_AM:
-    return action.text;
+  case SET_TASK_VISIBILITY_FILTER:
+    return action.filter;
   default:
     return state;
   }
 };
 
-const floraReducer = combineReducers({ name });
+const floraReducer = combineReducers({ taskVisibility });
 
 export default floraReducer;
+

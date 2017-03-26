@@ -4,9 +4,7 @@ class HomeController < ApplicationController
   def index
     @flora_props = { userId: current_user.id }
 
-    @message = "Grow Your Time!"
-    @user = current_user
-    @foci = @user.foci.includes(:tasks)
-    @deeds = @user.deeds
+    @foci = current_user.foci.includes(:tasks)
+    #@deeds = @user.deeds
   end
 end
