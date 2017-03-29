@@ -11,12 +11,13 @@ section.foci-container {
 
 article.focus-article {
   background-color: $color-base-7;
-  margin: 1rem;
   width: 23%;
+  min-width: 225px;
   margin: 1%;
   float: left;
   color: $color-base-D;
   h1 {
+    font-size: 1.25rem;
     background-color: $color-base-2;
     padding: .5rem .5rem .5rem 2.5rem;
   }
@@ -24,37 +25,20 @@ article.focus-article {
   overflow: hidden;
 }
 
+.focus-article--button {
+  background-color: $color-base-6;
+  padding: .25rem .75rem;
+  font-size: .75rem;
+  margin: .25rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
 .focus-item--points {
   color: $color-red-D;
   padding: .5rem 0;
   text-align: center;
   background-color: $color-base-4;
-}
-
-.task-item, .task-item_completed {
-  background-color: $color-base-5;
-  margin: .25rem 0;
-  padding: .25rem .5rem;
-}
-
-.task-item_completed {
-  background-color: $color-base-7;
-}
-
-.task-item--title {
-  float: left;
-}
-
-.task-item--title_completed {
-  text-decoration: line-through;
-}
-
-.task-item--points {
-  color: $color-red-D;
-  float: right;
-  padding: 0 .5rem;
-  background-color: $color-base-4;
-  border-radius: .25rem;
 }
 
 // custom for mobile

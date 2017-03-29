@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import floraReducer from '../reducers/floraReducer';
+import reducer from '../reducers';
 
 const configureStore = (railsProps, apolloClient) => (
   createStore(
     combineReducers({
-      flora: floraReducer,
+      flora: reducer,
       apollo: apolloClient.reducer(),
     }),
     {}, // initial state

@@ -17,56 +17,8 @@ linting: `cd client && npm run lint`
 
 ### GraphQL
 
-test on dev from `/graphql`
+test on dev from `/graphiql`
 
-query tasks:
+Find query examples in `/Users/jgabel/Sites/tempo-flora/client/app/bundles/Flora/queries/`
 
-```
-{
-  user(id:1) {
-    foci {
-      id
-      tasks {
-        id
-        title
-        completed
-      }
-    }
-  }
-}
-```
-
-add task mutation:
-
-```
-mutation {
-  addTask(input:{
-    focusId: 1,
-    title: "A brand new Task"
-  }) {
-    task {
-      id,
-      title
-    }
-  }
-}
-```
-
-complete a task mutation:
-
-```
-mutation {
-  completeTask(input:{
-    taskId: 2,
-  }) {
-    task {
-      id,
-      title,
-      completed
-    }
-  }
-}
-```
-
-
-
+Find mutation examples in `/Users/jgabel/Sites/tempo-flora/client/app/bundles/Flora/mutations`

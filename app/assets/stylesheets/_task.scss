@@ -1,0 +1,27 @@
+@import "variables";
+
+.task-item, .task-item_completed {
+  background-color: $color-base-5;
+  margin: .25rem 0;
+  padding: .25rem .5rem;
+}
+
+.task-item_completed {
+  background-color: $color-base-7;
+}
+
+.task-item--title {
+  float: left;
+}
+
+.task-item--title_completed {
+  text-decoration: line-through;
+}
+
+.task-item--points {
+  color: $color-red-D;
+  float: right;
+  padding: 0 .5rem;
+  background-color: $color-base-4;
+  border-radius: .25rem;
+}

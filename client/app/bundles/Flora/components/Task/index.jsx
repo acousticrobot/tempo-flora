@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import TaskTitle from './Task/Title';
-import TaskPoints from './Task/Points';
+import TaskTitle from './Title';
+import TaskPoints from './Points';
 
 const CSSMod = (task)=> (task.completed ? 'completed' : 'imcomplete');
 const CSS = (task)=> ('task-item task-item_' + CSSMod(task));
@@ -19,6 +19,7 @@ const Task = ({ completeTask, task }) => (
 );
 
 Task.propTypes = {
+
   completeTask: PropTypes.func.isRequired,
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,

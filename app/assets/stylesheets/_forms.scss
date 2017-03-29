@@ -20,6 +20,13 @@ article.form {
   }
 }
 
+article.form_small {
+  background-color: $color-base-9;
+  border-radius: 1rem;
+  margin: .5rem;
+  padding: .5rem;
+}
+
 section.form--section {
   margin-bottom: 20px;
 }
@@ -50,6 +57,10 @@ section.form--section {
   padding: 0.5rem 0 0.5rem 0.5rem;
 }
 
+.form--label_small {
+  color: $color-chrome-4;
+}
+
 span.form--label_required {
   color: $color-red-8;
 }
@@ -61,24 +72,22 @@ span.form--label_required {
   height: 2rem;
   margin: auto;
   display: block;
+  border-width: 0;
+}
+
+.form--input_small {
+  width: 90%;
+  font-size: .75rem;
+  height: 1.25rem;
+  margin: 5px auto;
+  clear: both;
 }
 
 .form--button {
   width: 250px;
   font-size: 1.125rem;
   height: 2rem;
-  margin: auto;
   display: block;
-}
-
-.form--hint {
-  text-align: right;
-  color: $color-green-5;
-  margin: 0.25rem 0.5rem 0 0;
-  font-style: italic;
-}
-
-.form--button {
   margin: 1.5rem auto;
   border: none;
   background-color: $color-green-5;
@@ -87,6 +96,21 @@ span.form--label_required {
   }
   color: $color-chrome-F;
   border-radius: .5rem;
+}
+
+.form--button_small {
+  width: 150px;
+  font-size: .75rem;
+  height: 1.25rem;
+  margin: .5rem;
+  display: inline-block;
+}
+
+.form--hint {
+  text-align: right;
+  color: $color-green-5;
+  margin: 0.25rem 0.5rem 0 0;
+  font-style: italic;
 }
 
 aside.form--additional {
@@ -105,11 +129,18 @@ aside.form--additional {
   article.form {
     width: 400px;
   }
+  article.form_small {
+    width: auto;
+  }
   .form--label {
     float: left;
   }
   .form--input_labeled {
     margin-left: 115px;
+  }
+  .form--button_small {
+    margin: .5rem auto;
+    display: block;
   }
 }
 

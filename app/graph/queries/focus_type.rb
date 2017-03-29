@@ -7,7 +7,7 @@ FocusType = GraphQL::ObjectType.define do
   field :position, !types.Int
   field :tasks, types[TaskType] do
     resolve -> (obj, args, ctx) {
-      obj.tasks.order_by_title
+      obj.tasks.order_by_creation
     }
   end
 end

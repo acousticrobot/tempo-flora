@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
 import { SET_TASK_VISIBILITY_FILTER } from '../constants/actionTypes';
+
 import { SHOW_ALL } from '../constants/filterTypes';
 
 const taskVisibility = (state=SHOW_ALL, action) => {
@@ -11,7 +11,4 @@ const taskVisibility = (state=SHOW_ALL, action) => {
   }
 };
 
-const floraReducer = combineReducers({ taskVisibility });
-
-export default floraReducer;
-
+export default taskVisibility;
