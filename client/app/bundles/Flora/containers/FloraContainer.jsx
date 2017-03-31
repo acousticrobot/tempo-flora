@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 
 import RootQuery from  '../queries/RootQuery';
 import CompleteTaskMutation from  '../mutations/CompleteTaskMutation';
@@ -12,7 +12,9 @@ class FloraContainer extends Component {
   handleCompleteTask(id) {
     this.props.CompleteTaskMutation({
       variables: { taskId: id }
-    }).then(console.log('samidid'));// eslint-disable-line no-console
+    }).then(()=>{
+      console.log("task completed"); // eslint-disable-line no-console
+    })
   }
 
   render () {
@@ -47,9 +49,7 @@ FloraContainer.propTypes = {
   }).isRequired,
 };
 
-// Wrap the container within Apollo's
-// graphQL query and mutations.
-const QueryContainer =
+const QueryContainer = compose(
   // query results available through this.props.data
   graphql(RootQuery, {
     options: (ownProps) => ({
@@ -57,11 +57,12 @@ const QueryContainer =
         userId: ownProps.userId
       }
     })
-  })(
+  }),
   // mutations available through this.props
   graphql(CompleteTaskMutation, {
     name: 'CompleteTaskMutation'
-  })(FloraContainer));
+  })
+)(FloraContainer);
 
 const QueryContainerWithState = connect(
   (state) => ({ flora: state.flora })

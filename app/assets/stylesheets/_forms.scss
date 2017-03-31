@@ -25,6 +25,11 @@ article.form_small {
   border-radius: 1rem;
   margin: .5rem;
   padding: .5rem;
+  input[type="checkbox"] {
+    float: left;
+    margin: 0.5rem .25rem 0 .75rem;
+    width: 1rem;
+  }
 }
 
 section.form--section {
@@ -57,8 +62,16 @@ section.form--section {
   padding: 0.5rem 0 0.5rem 0.5rem;
 }
 
-.form--label_small {
+.form--label_small,
+.form--checkbox-label
+{
   color: $color-chrome-4;
+}
+
+.form--checkbox-label {
+  float: left;
+  color: $color-chrome-4;
+  padding: 0.5rem 0 0.5rem 0.5rem;
 }
 
 span.form--label_required {
@@ -102,8 +115,7 @@ span.form--label_required {
   width: 150px;
   font-size: .75rem;
   height: 1.25rem;
-  margin: .5rem;
-  display: inline-block;
+  margin: .75rem auto;
 }
 
 .form--hint {
@@ -137,10 +149,6 @@ aside.form--additional {
   }
   .form--input_labeled {
     margin-left: 115px;
-  }
-  .form--button_small {
-    margin: .5rem auto;
-    display: block;
   }
 }
 

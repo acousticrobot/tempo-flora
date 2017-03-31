@@ -16,7 +16,7 @@ AddTaskMutation = GraphQL::Relay::Mutation.define do
   resolve ->(object, args, ctx) {
 
     focus = Focus.find(args[:focusId])
-    title = args[:title] || "a new task"
+    title = !args[:title].empty? && args[:title] || "a new task"
     points = args[:points] || 1
     repeatable = args[:repeatable] || false
 

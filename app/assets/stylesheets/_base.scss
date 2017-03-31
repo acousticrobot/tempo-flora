@@ -100,6 +100,16 @@ code {
   font-size: 1.25rem;
 }
 
+section.dashboard {
+  background-color: $color-chrome-9;
+  h4 {
+    background-color: $color-base-1;
+    color: $color-base-A;
+    padding: 1rem;
+  }
+}
+
+
 // custom for tablet and desktop
 @media (min-width: $media-mobile){
 }

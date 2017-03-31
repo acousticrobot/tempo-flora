@@ -32,6 +32,9 @@ const Focus = ({focus, filter, completeTask}) => (
   <article className="focus-article">
       <h1>
         { focus.title }
+        <nav className="nav-icon">
+          <a className="nav-icon--link nav-icon--link_more" href="#"></a>
+        </nav>
       </h1>
 
       <AddTaskContainer focusId={ focus.id }/>

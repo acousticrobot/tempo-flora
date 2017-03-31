@@ -5,24 +5,31 @@ import AddTaskMutation from  '../mutations/AddTaskMutation';
 
 
 const AddTaskForm = ({ focusId, clearNewTask, addNewTask, AddTaskMutation }) => {
-  let titleInput, pointsInput;
+  let titleInput, pointsInput, repeatableInput;
 
   const CSS = (type='')=> (`form--${type} form--${type}_small`);
 
-  const handleAddTask = (title, points)=> {
+  const handleAddTask = (title, points, repeatable)=> {
     addNewTask(title);
     AddTaskMutation({
-      variables: { focusId: focusId, title: title, points: points }
-    }).then(clearNewTask());// eslint-disable-line no-console
+      variables: { focusId, title, points, repeatable }
+    }).then(({ data }) => {
+        clearNewTask();
+      }).catch((error) => {
+        console.log('there was an error sending the query', error);
+        clearNewTask();
+      });
   };
 
   return (
     <article className="form form_small">
-    <form>
+    <form onSubmit={ e => {
+      e.preventDefault();
+      handleAddTask(titleInput.value, parseInt(pointsInput.value), repeatableInput.checked);
+    }}>
       <label className={ CSS('label') } htmlFor="title-input">
         Task Description:
       </label>
-
       <input id="title-input" type="text" className={ CSS('input') } ref={node => {
         titleInput = node;
       }} />
@@ -30,16 +37,20 @@ const AddTaskForm = ({ focusId, clearNewTask, addNewTask, AddTaskMutation }) => 
       <label className={ CSS('label') } htmlFor="points-input">
         Points:
       </label>
-
-      <input id="points-input" type="number" className={ CSS('input') } ref={node => {
+      <input id="points-input" type="number" pattern="[0-9]*" className={ CSS('input') } ref={node => {
         pointsInput = node;
       }} />
 
-      <button
-        className={ CSS('button') }
-        onClick={ () => {
-          handleAddTask(titleInput.value, parseInt(pointsInput.value));
-        }}>
+      <input id="repeatable-check" type="checkbox" className={ CSS('input') } ref={node => {
+        repeatableInput = node;
+      }} />
+      <label className={ CSS('label') } className={ CSS('checkbox-label') } htmlFor="repeatable-check">
+        Repeatable
+      </label>
+
+      <div className="clear"></div>
+
+      <button type="submit" className={ CSS('button') } >
         Add Task
       </button>
 

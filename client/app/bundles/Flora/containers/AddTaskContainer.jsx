@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 
 import { addNewTask, enterNewTask, clearNewTask } from '../actions/floraActionCreators';
 
-import AddTaskButton from '../components/Focus/AddTaskButton';
+import AddTaskButton from '../components/Task/AddTaskButton';
 import AddTaskForm from './AddTaskForm';
 
-let AddTaskContainer = ({ active, available, posted, openModal, addNewTask, clearNewTask, task, focusId }) => {
+let AddTaskContainer = ({ active, available, posted, openTaskForm, addNewTask, clearNewTask, task, focusId }) => {
   if (available) {
-    return <AddTaskButton openModal={ openModal } />;
+    return <AddTaskButton openTaskForm={ openTaskForm } />;
   } else if (active) {
     return  (
       <AddTaskForm
@@ -26,7 +26,7 @@ AddTaskContainer.propTypes = {
   active: PropTypes.bool.isRequired,
   available: PropTypes.bool.isRequired,
   posted: PropTypes.bool.isRequired,
-  openModal: PropTypes.func.isRequired,
+  openTaskForm: PropTypes.func.isRequired,
   addNewTask: PropTypes.func.isRequired,
   clearNewTask: PropTypes.func.isRequired,
   focusId: PropTypes.string.isRequired,
@@ -51,7 +51,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  openModal: () => {
+  openTaskForm: () => {
     dispatch(enterNewTask(ownProps.focusId));
   },
   addNewTask: (title) => {

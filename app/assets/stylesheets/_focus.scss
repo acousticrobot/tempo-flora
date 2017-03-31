@@ -1,6 +1,10 @@
 @import "variables";
 
 section.foci-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
   background-color: $color-chrome-9;
   h4 {
     background-color: $color-base-1;
@@ -9,43 +13,110 @@ section.foci-container {
   }
 }
 
-article.focus-article {
-  background-color: $color-base-7;
-  width: 23%;
-  min-width: 225px;
-  margin: 1%;
-  float: left;
-  color: $color-base-D;
-  h1 {
-    font-size: 1.25rem;
-    background-color: $color-base-2;
-    padding: .5rem .5rem .5rem 2.5rem;
-  }
+@mixin foci-container--item($txt-color,$bg-color,$title-color) {
+  flex: 1 0 31%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 1rem;
   overflow: hidden;
+  margin: .75rem 1%;
+  color: $txt-color;
+  background-color: $bg-color;
+  h1 {
+    color: $txt-color;
+    font-size: 1.125rem;
+    padding: .65rem .5rem .35rem 2.5rem;
+    background-color: $title-color;
+  }
+  // custom for mobile
+  @media (max-width: $media-mobile){
+    flex: 1 0 95%;
+    margin: .25rem;
+  }
+  @media (min-width: $media-mobile) and (max-width: $media-tablet){
+    flex: 1 0 46%;
+  }
+}
+
+article.focus-article {
+  @include foci-container--item($color-base-D, $color-base-7,$color-base-2);
+}
+
+article.add-focus-button {
+  @include foci-container--item($color-chrome-D,$color-chrome-A,$color-chrome-8);
+  &:hover {
+    background-color: $color-chrome-C;
+    h1 {
+      background-color: $color-chrome-7;
+    }
+    .add-focus-button--icon {
+      background-image: url(plus_hover-chrome.svg);
+    }
+  }
+}
+
+.add-focus-button--icon-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-focus-button--icon {
+  background-image: url(plus-chrome.svg);
+  background-size: 2rem 2rem;
+  display: block;
+  margin: 2px auto;
+  height: 2rem;
+  width: 2rem;
+  &:hover {
+    background-image: url(plus_hover-chrome.svg);
+  }
+}
+
+article.focus-article.form.form_small {
+  padding: 0;
+  margin: 1rem 1%;
 }
 
 .focus-article--button {
   background-color: $color-base-6;
-  padding: .25rem .75rem;
-  font-size: .75rem;
-  margin: .25rem 1rem;
   border-radius: 1rem;
+  font-size: .75rem;
+  margin: .25rem auto;
+  padding: .25rem .25rem .25rem .25rem;
   text-align: center;
+  width: 6rem;
+  &:hover {
+    background-color: $color-base-8;
+    .focus-article--button-icon {
+      background-image: url(plus_hover.svg);
+    }
+  }
+}
+
+.focus-article--button-icon {
+  background-image: url(plus.svg);
+  background-size: 1rem 1rem;
+  display: block;
+  float: right;
+  height: 1rem;
+  width: 1rem;
+  &:hover {
+    background-image: url(plus_hover.svg);
+  }
+}
+
+
+.focus-items {
+  flex-grow: 1;
 }
 
 .focus-item--points {
+  background-color: $color-base-4;
   color: $color-red-D;
   padding: .5rem 0;
   text-align: center;
-  background-color: $color-base-4;
-}
-
-// custom for mobile
-@media (max-width: $media-mobile){
-  article.focus-article {
-    margin: 1rem 0 0 0;
-    width: 100%;
-  }
 }
 

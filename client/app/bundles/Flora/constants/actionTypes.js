@@ -1,5 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 
+export const ENTER_NEW_FOCUS = 'ENTER_NEW_FOCUS';
+export const CLEAR_NEW_FOCUS = 'CLEAR_NEW_FOCUS';
+export const ADD_NEW_FOCUS = 'ADD_NEW_FOCUS';
+
 export const ENTER_NEW_TASK = 'ENTER_NEW_TASK';
 export const CLEAR_NEW_TASK = 'CLEAR_NEW_TASK';
 export const ADD_NEW_TASK = 'ADD_NEW_TASK';
