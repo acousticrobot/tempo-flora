@@ -28,6 +28,7 @@ section.foci-container {
     font-size: 1.125rem;
     padding: .65rem .5rem .35rem 2.5rem;
     background-color: $title-color;
+    text-transform: capitalize;
   }
   // custom for mobile
   @media (max-width: $media-mobile){
@@ -67,7 +68,7 @@ article.add-focus-button {
   background-image: url(plus-chrome.svg);
   background-size: 2rem 2rem;
   display: block;
-  margin: 2px auto;
+  margin: 0 auto 1.5rem;
   height: 2rem;
   width: 2rem;
   &:hover {

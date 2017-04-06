@@ -15,6 +15,7 @@ gem "graphql"
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
+gem 'porch'
 gem 'puma', '~> 3.0'
 gem 'react_on_rails', "~> 6"
 gem 'sass-rails', '~> 5.0'

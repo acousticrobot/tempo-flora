@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import TaskTitle from './Title';
 import TaskPoints from './Points';
+import TaskRepeatable from './Repeatable';
 
 const CSSMod = (task)=> (task.completed ? 'completed' : 'imcomplete');
 const CSS = (task)=> ('task-item task-item_' + CSSMod(task));
@@ -14,6 +15,7 @@ const Task = ({ completeTask, task }) => (
     />
 
     { !task.completed && <TaskPoints points={ task.points }/> }
+    { task.repeatable && <TaskRepeatable/> }
     <div className='clear'></div>
   </li>
 );
@@ -24,7 +26,8 @@ Task.propTypes = {
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     points: PropTypes.number.isRequired,
-    completed: PropTypes.bool.isRequired,
+    repeatable: PropTypes.bool,
+    completed: PropTypes.bool,
     title: PropTypes.string.isRequired,
   }).isRequired,
 };

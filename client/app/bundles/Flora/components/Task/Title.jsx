@@ -12,7 +12,7 @@ const TaskTitle = ({ title, completed, completeTask }) => (
 
 TaskTitle.propTypes = {
   completeTask: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
+  completed: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };
 

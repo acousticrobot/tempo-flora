@@ -12,7 +12,11 @@ class GraphqlController < ApplicationController
         current_user: current_user
       }
     )
-    render json: result
+    if result["errors"].nil?
+      render json: result
+    else
+      render json: result, status: 400
+    end
   end
 
   private

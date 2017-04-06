@@ -13,12 +13,12 @@ const AddTaskForm = ({ focusId, clearNewTask, addNewTask, AddTaskMutation }) => 
     addNewTask(title);
     AddTaskMutation({
       variables: { focusId, title, points, repeatable }
-    }).then(({ data }) => {
-        clearNewTask();
-      }).catch((error) => {
-        console.log('there was an error sending the query', error);
-        clearNewTask();
-      });
+    }).then(() => {
+      clearNewTask();
+    }).catch((error) => {
+      console.log('there was an error sending the query', error); // eslint-disable-line no-console
+      clearNewTask();
+    });
   };
 
   return (
@@ -56,9 +56,7 @@ const AddTaskForm = ({ focusId, clearNewTask, addNewTask, AddTaskMutation }) => 
 
       <button
         className={ CSS('button') }
-        onClick={
-          () => { clearNewTask();
-        }}>
+        onClick={ () => { clearNewTask(); }}>
         Cancel
       </button>
 

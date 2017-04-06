@@ -1,28 +1,26 @@
 import React, { PropTypes } from 'react';
 import Task from '../Task';
+import Deed from '../Deed';
 import PointsAccrued from './PointsAccrued';
 import AddTaskContainer from '../../containers/AddTaskContainer';
 
-const completedTasks = (task)=> (task.completed === true);
-
 const sumAccruedPoints = (focus)=> (
-  focus.tasks.filter(completedTasks).reduce((prev,next) => prev + next.points,0)
+  focus.deeds.reduce((prev,next) => prev + next.points,0)
 );
-
 
 const getActiveTasks = (tasks, filter) => {
   switch (filter) {
   case 'SHOW_ALL':
-    return tasks.filter(t => !t.completed);
+    return tasks;
   case 'SHOW_ACTIVE':
-    return tasks.filter(t => !t.completed);
+    return tasks;
   }
 };
 
-const getCompletedTasks = (tasks, filter) => {
+const getDeeds = (deeds, filter) => {
   switch (filter) {
   case 'SHOW_ALL':
-    return tasks.filter(t => t.completed);
+    return deeds;
   case 'SHOW_ACTIVE':
     return [];
   }
@@ -39,11 +37,11 @@ const Focus = ({focus, filter, completeTask}) => (
 
       <AddTaskContainer focusId={ focus.id }/>
       <ul className="focus-items">
-        { getActiveTasks(focus.tasks,filter).map( (task) =>
+        { getActiveTasks(focus.tasks, filter).map( (task) =>
           <Task key={ task.id } task={ task } completeTask={() => completeTask(task.id)} />
         )}
-        { getCompletedTasks(focus.tasks,filter).map( (task) =>
-          <Task key={ task.id } task={ task } completeTask={() => completeTask(task.id)} />
+        { getDeeds(focus.deeds,filter).map( (deed) =>
+          <Deed key={ deed.id } deed={ deed } />
         )}
       </ul>
 

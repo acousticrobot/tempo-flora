@@ -1,5 +1,4 @@
 AddTaskMutation = GraphQL::Relay::Mutation.define do
-  # Used to name derived types, eg `"AddTaskInput"`:
   name "AddTask"
 
   # Accessible from `args` in the resolve function:
@@ -12,7 +11,6 @@ AddTaskMutation = GraphQL::Relay::Mutation.define do
   return_field :focus, FocusType
   return_field :user, UserType
 
-  # The resolve proc is where you alter the system state.
   resolve ->(object, args, ctx) {
 
     focus = Focus.find(args[:focusId])
@@ -29,14 +27,17 @@ AddTaskMutation = GraphQL::Relay::Mutation.define do
         points: points,
         repeatable: repeatable
       )
-      task.save!
-
-      response = {
-        task: task,
-        focus: focus,
-        user: focus.user
-      }
+      if task.save
+        response = {
+          task: task,
+          focus: focus,
+          user: focus.user
+        }
+      else
+        GraphQL::ExecutionError.new(task.errors.messages)
+      end
+    else
+      GraphQL::ExecutionError.new("Wrong focus for user.")
     end
-    # else return error
   }
 end

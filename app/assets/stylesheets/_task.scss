@@ -18,10 +18,31 @@
   text-decoration: line-through;
 }
 
+.task-item--icon-wrapper {
+  height: 1rem;
+  width: 1rem;
+  border-radius: .25rem;
+  float: right;
+}
+
+.task-item--repeat-icon {
+  background-image: url(repeat.svg);
+  background-size: 1rem 1rem;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  &:hover {
+    background-image: url(repeat_hover.svg);
+  }
+}
+
 .task-item--points {
   color: $color-red-D;
   float: right;
-  padding: 0 .5rem;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
   background-color: $color-base-4;
   border-radius: .25rem;
+  margin-left: .5rem;
 }

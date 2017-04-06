@@ -37,11 +37,11 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   openFocusForm: () => {
     dispatch(enterNewFocus());
   },
-  addNewFocus: (title) => {
+  addNewFocus: () => {
     dispatch(addNewFocus());
   },
   clearNewFocus: () => {

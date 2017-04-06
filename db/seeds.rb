@@ -22,7 +22,17 @@ def addTaskForFocus(focus,params)
     user: focus.user,
     points: params[:points] || 5,
     repeatable: params[:repeatable] || false,
-    completed: params[:completed] || false
+  )
+end
+
+def addDeedForFocus(focus,params)
+  Deed.create(
+    title: params[:title] || "New Deed Done",
+    focus_title: focus.title,
+    position: focus.position,
+    user: focus.user,
+    points: params[:points] || 5,
+    daystring: Time.new.strftime("%y%m%d")
   )
 end
 
@@ -66,11 +76,11 @@ addTaskForFocus(build_focus,
   { title: "cut dadoes in table legs" }
 )
 
-addTaskForFocus(build_focus,
-  { title: "call plumber", points: 3, completed: true }
+addDeedForFocus(build_focus,
+  { title: "call plumber", points: 3 }
 )
 
-addTaskForFocus(build_focus,
+addDeedForFocus(build_focus,
   { title: "meet with plumber", points: 3 }
 )
 
@@ -82,8 +92,8 @@ addTaskForFocus(communication_focus,
   { title: "duolingo Spanish lesson", repeatable: true }
 )
 
-addTaskForFocus(communication_focus,
-  { title: "duolingo Spanish lesson", completed: true, repeatable: true }
+addDeedForFocus(communication_focus,
+  { title: "duolingo Spanish lesson", repeatable: true }
 )
 
 #====================== Focus: Coding =========================================#
@@ -91,20 +101,17 @@ addTaskForFocus(communication_focus,
 code_focus = Focus.find(4)
 
 addTaskForFocus(code_focus,
-  { title: "integrate redux", points: 5, completed: false }
+  { title: "integrate porch", points: 5 }
 )
 
 addTaskForFocus(code_focus,
-  { title: "get immutable working with mutation", points: 5, completed: false }
+  { title: "get deeds working with mutations", points: 5 }
 )
 
-addTaskForFocus(code_focus,
-  { title: "read about relay", points: 1, completed: true }
+addDeedForFocus(code_focus,
+  { title: "read about relay", points: 1 }
 )
 
-addTaskForFocus(code_focus,
-  { title: "get Apollo mutations working", completed: true }
+addDeedForFocus(code_focus,
+  { title: "get Apollo mutations working" }
 )
-
-
-

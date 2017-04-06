@@ -1,29 +1,32 @@
+require_relative "../../services/complete_task"
+
 CompleteTaskMutation = GraphQL::Relay::Mutation.define do
-  # Used to name derived types, eg `"AddTaskInput"`:
+
   name "CompleteTask"
 
   input_field :taskId, !types.ID
 
-  return_field :task, TaskType
   return_field :focus, FocusType
   return_field :user, UserType
 
   resolve ->(object, args, ctx) {
+
     task = Task.find(args[:taskId])
+    focus = task.focus
+    user = ctx[:current_user]
 
-    if !task.completed?
-      if task.repeatable?
-        new_task = task.dup
-        new_task.save
-      end
-
-      task.update(completed: true)
-    end
-
-    response = {
+    result = Services::CompleteTask.new(
       task: task,
-      focus: task.focus,
-      user: task.user
-    }
+      user:  ctx[:current_user]
+    ).execute
+
+    if result.success?
+      response = {
+        focus: focus,
+        user: user
+      }
+    else
+      GraphQL::ExecutionError.new(result.message)
+    end
   }
 end

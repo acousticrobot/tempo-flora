@@ -13,8 +13,8 @@ class FloraContainer extends Component {
     this.props.CompleteTaskMutation({
       variables: { taskId: id }
     }).then(()=>{
-      console.log("task completed"); // eslint-disable-line no-console
-    })
+      console.log('task completed'); // eslint-disable-line no-console
+    });
   }
 
   render () {

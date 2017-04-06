@@ -10,7 +10,6 @@ mutation addTask($focusId: ID!, $title: String, $points: Int, $repeatable: Boole
         _id
         title
         points
-        completed
         repeatable
       }
     }

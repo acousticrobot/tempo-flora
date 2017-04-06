@@ -5,7 +5,7 @@ import update from 'immutability-helper';
 import AddFocusMutation from  '../mutations/AddFocusMutation';
 
 const AddFocusForm = ({ clearNewFocus, addNewFocus, AddFocusMutation }) => {
-  let titleInput, pointsInput, repeatableInput;
+  let titleInput;
 
   const CSS = (type='')=> (`form--${type} form--${type}_small`);
 
@@ -14,24 +14,23 @@ const AddFocusForm = ({ clearNewFocus, addNewFocus, AddFocusMutation }) => {
     AddFocusMutation({
       variables: { title },
       updateQueries: {
-          RootQuery: (prev, {mutationResult}) => {
-            const newFocus = mutationResult.data.addFocus.focus;
-            var u = update;
-            return update(prev, {
-              user: {
-                foci: {
-                  $push: [newFocus],
-                }
+        RootQuery: (prev, {mutationResult}) => {
+          const newFocus = mutationResult.data.addFocus.focus;
+          return update(prev, {
+            user: {
+              foci: {
+                $push: [newFocus],
               }
-            });
-          }
+            }
+          });
         }
-    }).then(({ data }) => {
-        clearNewFocus();
-      }).catch((error) => {
-        console.log('there was an error sending the query', error);
-        clearNewFocus();
-      });
+      }
+    }).then(() => {
+      clearNewFocus();
+    }).catch((error) => {
+      console.log('there was an error sending the query', error); // eslint-disable-line no-console
+      clearNewFocus();
+    });
   };
 
   return (
@@ -55,9 +54,7 @@ const AddFocusForm = ({ clearNewFocus, addNewFocus, AddFocusMutation }) => {
 
         <button
           className={ CSS('button') }
-          onClick={
-            () => { clearNewFocus();
-          }}>
+          onClick={ () => { clearNewFocus(); }}>
           Cancel
         </button>
 

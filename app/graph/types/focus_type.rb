@@ -10,4 +10,9 @@ FocusType = GraphQL::ObjectType.define do
       obj.tasks.order_by_creation
     }
   end
+  field :deeds, types[DeedType] do
+    resolve -> (obj, args, ctx) {
+      Deed.where(position: obj.position).order_by_creation
+    }
+  end
 end

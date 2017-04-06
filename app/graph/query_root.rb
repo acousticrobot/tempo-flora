@@ -18,6 +18,14 @@ QueryRoot = GraphQL::ObjectType.define do
     }
   end
 
+  field :deed do
+    type DeedType
+    argument :id, !types.ID
+    resolve -> (obj, args, ctx) {
+      Deed.find(args[:id])
+    }
+  end
+
   field :user do
     type UserType
     argument :id, !types.ID

@@ -16,8 +16,15 @@ query RootQuery($userId: ID!) {
         _id
         title
         points
-        completed
         repeatable
+      }
+      deeds {
+        id
+        _id
+        title
+        focus_title
+        points
+        daystring
       }
     }
   }
