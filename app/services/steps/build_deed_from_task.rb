@@ -7,7 +7,7 @@ class BuildDeedFromTask
     context[:deed] = Deed.new(
       title:        context.task.title,
       focus_title:  context.task.focus.title,
-      daystring:    Time.new.strftime("%y%m%d"),
+      completed_at: DateTime.now,
       position:     context.task.focus.position,
       points:       context.task.points,
       user:         context.user,

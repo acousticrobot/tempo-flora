@@ -11,6 +11,14 @@ mutation addFocus($title: String){
       tasks {
         _id
       }
+      deeds {
+        id
+        _id
+        title
+        focus_title
+        points
+        completed_at
+      }
     }
   }
 }`;

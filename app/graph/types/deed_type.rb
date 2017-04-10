@@ -5,7 +5,7 @@ DeedType = GraphQL::ObjectType.define do
   global_id_field :_id
   field :title, !types.String
   field :focus_title, !types.String
-  field :daystring, !types.String
   field :points, !types.Int
   field :position, !types.Int
+  field :completed_at, !DateTimeType
 end

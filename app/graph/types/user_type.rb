@@ -7,4 +7,5 @@ UserType = GraphQL::ObjectType.define do
   field :email, !types.String
   field :foci, types[FocusType]
   field :tasks, types[TaskType]
+  field :deeds, types[DeedType]
 end

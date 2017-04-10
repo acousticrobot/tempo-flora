@@ -18,7 +18,7 @@ mutation completeTask($taskId: ID!) {
         title
         focus_title
         points
-        daystring
+        completed_at
       }
     }
   }

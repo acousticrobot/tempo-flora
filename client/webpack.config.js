@@ -14,8 +14,6 @@ const config = {
     'es5-shim/es5-sham',
     'babel-polyfill',
     'whatwg-fetch',
-    './app/bundles/HelloWorld/startup/registration',
-    './app/bundles/TicTacToe/startup/registration',
     './app/bundles/Flora/startup/registration',
   ],
 

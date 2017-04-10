@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405132734) do
+ActiveRecord::Schema.define(version: 20170410125342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "deeds", force: :cascade do |t|
-    t.string   "title",       default: "", null: false
-    t.string   "focus_title", default: "", null: false
-    t.string   "daystring",                null: false
-    t.integer  "position",    default: 0,  null: false
-    t.integer  "points",      default: 0,  null: false
-    t.integer  "user_id",                  null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",        default: "", null: false
+    t.string   "focus_title",  default: "", null: false
+    t.integer  "position",     default: 0,  null: false
+    t.integer  "points",       default: 0,  null: false
+    t.integer  "user_id",                   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.datetime "completed_at",              null: false
     t.index ["user_id"], name: "index_deeds_on_user_id", using: :btree
   end
 

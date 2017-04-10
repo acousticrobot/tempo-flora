@@ -32,7 +32,7 @@ def addDeedForFocus(focus,params)
     position: focus.position,
     user: focus.user,
     points: params[:points] || 5,
-    daystring: Time.new.strftime("%y%m%d")
+    completed_at: DateTime.now
   )
 end
 

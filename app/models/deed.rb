@@ -2,7 +2,7 @@ class Deed < ApplicationRecord
   belongs_to :user
 
   validates_presence_of :user
-  validates :daystring, presence: true
+  validates :completed_at, presence: true
 
-  scope :order_by_creation, -> { order("updated_at DESC") }
+  scope :order_by_completion, -> { order("completed_at DESC") }
 end

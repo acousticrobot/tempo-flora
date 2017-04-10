@@ -24,7 +24,7 @@ query RootQuery($userId: ID!) {
         title
         focus_title
         points
-        daystring
+        completed_at
       }
     }
   }

@@ -56,6 +56,7 @@ Focus.propTypes = {
     position: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     tasks: PropTypes.array,
+    deeds: PropTypes.array
   }).isRequired,
   filter: PropTypes.string
 };
