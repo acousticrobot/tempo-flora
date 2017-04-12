@@ -1,22 +1,23 @@
-require_relative "../../services/complete_task"
+require_relative "../../services/undo_deed"
 
-CompleteTaskMutation = GraphQL::Relay::Mutation.define do
+UndoDeedMutation = GraphQL::Relay::Mutation.define do
 
-  name "CompleteTask"
+  name "UndoDeed"
 
-  input_field :taskId, !types.ID
+  input_field :deedId, !types.ID
 
   return_field :focus, FocusType
   return_field :user, UserType
 
   resolve ->(object, args, ctx) {
 
-    task = Task.find(args[:taskId])
-    focus = task.focus
+    deed = Deed.find(args[:deedId])
     user = ctx[:current_user]
+    focus = user.foci.where(position: deed.position).first
 
-    result = Services::CompleteTask.new(
-      task: task,
+    result = Services::UndoDeed.new(
+      deed: deed,
+      focus: focus,
       user:  user
     ).execute
 

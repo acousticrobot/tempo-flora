@@ -3,14 +3,10 @@ import TaskTitle from './Title';
 import TaskPoints from './Points';
 import TaskRepeatable from './Repeatable';
 
-const CSSMod = (task)=> (task.completed ? 'completed' : 'imcomplete');
-const CSS = (task)=> ('task-item task-item_' + CSSMod(task));
-
-const Task = ({ completeTask, task }) => (
-  <li className={ CSS(task) }>
+const Task = ({ task, completeTask }) => (
+  <li className='task-item'>
     <TaskTitle
       title={task.title }
-      completed={ task.completed }
       completeTask={ completeTask }
     />
 

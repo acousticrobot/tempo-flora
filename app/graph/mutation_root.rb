@@ -6,4 +6,5 @@ MutationRoot = GraphQL::ObjectType.define do
   field :addFocus, field: AddFocusMutation.field
   field :addTask, field: AddTaskMutation.field
   field :completeTask, field: CompleteTaskMutation.field
+  field :undoDeed, field: UndoDeedMutation.field
 end

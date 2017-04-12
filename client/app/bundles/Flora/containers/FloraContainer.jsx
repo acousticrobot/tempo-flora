@@ -4,6 +4,7 @@ import { graphql, compose } from 'react-apollo';
 
 import RootQuery from  '../queries/RootQuery';
 import CompleteTaskMutation from  '../mutations/CompleteTaskMutation';
+import UndoDeedMutation from  '../mutations/UndoDeedMutation';
 
 import Dashboard from '../components/Dashboard';
 
@@ -14,6 +15,14 @@ class FloraContainer extends Component {
       variables: { taskId: id }
     }).then(()=>{
       console.log('task completed'); // eslint-disable-line no-console
+    });
+  }
+
+  handleUndoDeed(id) {
+    this.props.UndoDeedMutation({
+      variables: { deedId: id }
+    }).then(()=>{
+      console.log('deed undone'); // eslint-disable-line no-console
     });
   }
 
@@ -32,6 +41,7 @@ class FloraContainer extends Component {
         foci={ this.props.data.user.foci }
         filter={ this.props.flora.taskVisibility }
         completeTask={ (id) => this.handleCompleteTask(id) }
+        undoDeed={ (id) => this.handleUndoDeed(id) }
       />
     );
   }
@@ -42,6 +52,7 @@ FloraContainer.propTypes = {
     taskVisibility: PropTypes.string
   }),
   CompleteTaskMutation: PropTypes.func.isRequired,
+  UndoDeedMutation: PropTypes.func.isRequired,
   data: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.object,
@@ -61,6 +72,9 @@ const QueryContainer = compose(
   // mutations available through this.props
   graphql(CompleteTaskMutation, {
     name: 'CompleteTaskMutation'
+  }),
+  graphql(UndoDeedMutation, {
+    name: 'UndoDeedMutation'
   })
 )(FloraContainer);
 

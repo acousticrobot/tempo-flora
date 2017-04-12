@@ -26,7 +26,7 @@ const getDeeds = (deeds, filter) => {
   }
 };
 
-const Focus = ({focus, filter, completeTask}) => (
+const Focus = ({focus, filter, completeTask, undoDeed}) => (
   <article className="focus-article">
       <h1>
         { focus.title }
@@ -41,7 +41,7 @@ const Focus = ({focus, filter, completeTask}) => (
           <Task key={ task.id } task={ task } completeTask={() => completeTask(task.id)} />
         )}
         { getDeeds(focus.deeds,filter).map( (deed) =>
-          <Deed key={ deed.id } deed={ deed } />
+          <Deed key={ deed.id } deed={ deed } undoDeed={() => undoDeed(deed.id)} />
         )}
       </ul>
 
@@ -51,6 +51,7 @@ const Focus = ({focus, filter, completeTask}) => (
 
 Focus.propTypes = {
   completeTask: PropTypes.func.isRequired,
+  undoDeed: PropTypes.func.isRequired,
   focus: PropTypes.shape({
     id: PropTypes.string.isRequired,
     position: PropTypes.number.isRequired,

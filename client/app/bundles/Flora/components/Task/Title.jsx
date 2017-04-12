@@ -1,18 +1,14 @@
 import React, { PropTypes } from 'react';
 
-const CSSMod = (status)=> (status ? 'completed' : 'imcomplete');
-const CSS = (status)=> ('task-item--title task-item--title_' + CSSMod(status));
+const TaskTitle = ({ title, completeTask }) => (
 
-const TaskTitle = ({ title, completed, completeTask }) => (
-
-  <div className={ CSS(completed) } onClick={ () => completeTask() } >
+  <div className='task-item--title' onClick={ () => completeTask() } >
     { title }
   </div>
 );
 
 TaskTitle.propTypes = {
   completeTask: PropTypes.func.isRequired,
-  completed: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };
 

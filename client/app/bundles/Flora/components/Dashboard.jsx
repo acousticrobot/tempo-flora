@@ -4,7 +4,7 @@ import Focus from './Focus';
 import NavBar from './NavBar';
 import AddFocusContainer from '../containers/AddFocusContainer';
 
-const Dashboard = ({foci, filter, completeTask}) => (
+const Dashboard = ({foci, filter, completeTask, undoDeed}) => (
   <section className='dashboard'>
 
       <NavBar/>
@@ -15,6 +15,7 @@ const Dashboard = ({foci, filter, completeTask}) => (
             focus={ focus }
             filter={ filter }
             completeTask={ (id) => completeTask(id) }
+            undoDeed={ (id) => undoDeed(id) }
           />
         )}
         <AddFocusContainer numFoci={ foci.length } />
@@ -24,6 +25,7 @@ const Dashboard = ({foci, filter, completeTask}) => (
 
 Dashboard.propTypes = {
   completeTask: PropTypes.func.isRequired,
+  undoDeed: PropTypes.func.isRequired,
   foci: React.PropTypes.array.isRequired,
   filter: PropTypes.string
 };
