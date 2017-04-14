@@ -8,8 +8,8 @@ const sumAccruedPoints = (focus)=> (
   focus.deeds.reduce((prev,next) => prev + next.points,0)
 );
 
-const getActiveTasks = (tasks, filter) => {
-  switch (filter) {
+const getActiveTasks = (tasks, taskFilter) => {
+  switch (taskFilter) {
   case 'SHOW_ALL_TASKS':
     return tasks;
   case 'SHOW_ACTIVE_TASKS':
@@ -17,8 +17,8 @@ const getActiveTasks = (tasks, filter) => {
   }
 };
 
-const getDeeds = (deeds, filter) => {
-  switch (filter) {
+const getDeeds = (deeds, taskFilter) => {
+  switch (taskFilter) {
   case 'SHOW_ALL_TASKS':
     return deeds;
   case 'SHOW_ACTIVE_TASKS':
@@ -26,7 +26,7 @@ const getDeeds = (deeds, filter) => {
   }
 };
 
-const Focus = ({focus, filter, completeTask, undoDeed}) => (
+const Focus = ({focus, taskFilter, completeTask, undoDeed}) => (
   <article className="focus-article">
       <h1>
         { focus.title }
@@ -37,10 +37,10 @@ const Focus = ({focus, filter, completeTask, undoDeed}) => (
 
       <AddTaskContainer focusId={ focus.id }/>
       <ul className="focus-items">
-        { getActiveTasks(focus.tasks, filter).map( (task) =>
+        { getActiveTasks(focus.tasks, taskFilter).map( (task) =>
           <Task key={ task.id } task={ task } completeTask={() => completeTask(task.id)} />
         )}
-        { getDeeds(focus.deeds,filter).map( (deed) =>
+        { getDeeds(focus.deeds,taskFilter).map( (deed) =>
           <Deed key={ deed.id } deed={ deed } undoDeed={() => undoDeed(deed.id)} />
         )}
       </ul>
@@ -59,7 +59,7 @@ Focus.propTypes = {
     tasks: PropTypes.array,
     deeds: PropTypes.array
   }).isRequired,
-  filter: PropTypes.string
+  taskFilter: PropTypes.string
 };
 
 export default Focus;
