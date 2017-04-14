@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const Link = ({ active, children, onClick }) => {
+const NavButton = ({ active, children, onClick }) => {
   if (active) {
     return <li className="filter-navbar--link_active">{children}</li>;
   }
@@ -19,10 +19,10 @@ const Link = ({ active, children, onClick }) => {
   );
 };
 
-Link.propTypes = {
+NavButton.propTypes = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired
 };
 
-export default Link;
+export default NavButton;

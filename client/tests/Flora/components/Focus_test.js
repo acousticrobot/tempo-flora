@@ -27,7 +27,7 @@ var focus = {
     },
   ]
 };
-var filter = 'SHOW_ALL';
+var filter = 'SHOW_ALL_TASKS';
 
 
 describe('Focus', ()=>  {
@@ -46,7 +46,7 @@ describe('Focus', ()=>  {
 
   // Testing non-export methods -- do this through Focus?
   describe('getActiveTasks', ()=> {
-    it('should return all tasks for filter: SHOW_ALL'), ()=> {
+    it('should return all tasks for filter: SHOW_ALL_TASKS'), ()=> {
       expect(getActiveTasks(focus.tasks).length).to.equal(2);
     };
   });

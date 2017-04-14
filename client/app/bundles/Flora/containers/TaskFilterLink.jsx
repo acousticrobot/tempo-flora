@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { setVisibilityFilter } from '../actions/floraActionCreators';
-import Link from '../components/Link';
+import { setTaskVisibilityFilter } from '../actions/floraActionCreators';
+import NavButton from '../components/NavButton';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -10,13 +10,13 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onClick: () => {
-    dispatch(setVisibilityFilter(ownProps.filter));
+    dispatch(setTaskVisibilityFilter(ownProps.filter));
   }
 });
 
-const FilterLink = connect(
+const TaskFilterLink = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Link);
+)(NavButton);
 
-export default FilterLink;
+export default TaskFilterLink;

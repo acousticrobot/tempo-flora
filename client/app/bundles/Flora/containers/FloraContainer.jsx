@@ -39,7 +39,7 @@ class FloraContainer extends Component {
     return (
       <Dashboard
         foci={ this.props.data.user.foci }
-        filter={ this.props.flora.taskVisibility }
+        taskFilter={ this.props.flora.taskVisibility }
         completeTask={ (id) => this.handleCompleteTask(id) }
         undoDeed={ (id) => this.handleUndoDeed(id) }
       />

@@ -10,18 +10,18 @@ const sumAccruedPoints = (focus)=> (
 
 const getActiveTasks = (tasks, filter) => {
   switch (filter) {
-  case 'SHOW_ALL':
+  case 'SHOW_ALL_TASKS':
     return tasks;
-  case 'SHOW_ACTIVE':
+  case 'SHOW_ACTIVE_TASKS':
     return tasks;
   }
 };
 
 const getDeeds = (deeds, filter) => {
   switch (filter) {
-  case 'SHOW_ALL':
+  case 'SHOW_ALL_TASKS':
     return deeds;
-  case 'SHOW_ACTIVE':
+  case 'SHOW_ACTIVE_TASKS':
     return [];
   }
 };

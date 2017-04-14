@@ -1,24 +1,23 @@
 import React from 'react';
-import FilterLink from '../containers/FilterLink';
-import { SHOW_ALL, SHOW_ACTIVE } from '../constants/filterTypes';
+import TaskFilterLink from '../containers/TaskFilterLink';
+import FocusFilterLink from '../containers/FocusFilterLink';
+import { SHOW_ALL_TASKS, SHOW_ACTIVE_TASKS, SHOW_All_FOCI } from '../constants/filterTypes';
 
 const NavBar = () => (
   <nav className='filter-navbar'>
     <ul>
-      <FilterLink filter={SHOW_ALL}>
+      <TaskFilterLink filter={SHOW_ALL_TASKS}>
         Show All Tasks
-      </FilterLink>
-      <FilterLink filter={SHOW_ACTIVE}>
+      </TaskFilterLink>
+      <TaskFilterLink filter={SHOW_ACTIVE_TASKS}>
         Show Active Tasks
-      </FilterLink>
+      </TaskFilterLink>
+      <FocusFilterLink filter={SHOW_All_FOCI}>
+        Show Every Focus
+      </FocusFilterLink>
     </ul>
     <div className='clear'></div>
   </nav>
 );
 
 export default NavBar;
-
-
-
-
-
