@@ -45,6 +45,20 @@ a.nav-icon--link_more {
   }
 }
 
+a.nav-icon--link_less {
+  display: block;
+  float: right;
+  text-indent: -9999px;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-image: url(less.svg);
+  background-size: 1.125rem 1.125rem;
+  margin-right: .75rem;
+  &:hover {
+    background-image: url(less_hover.svg);
+  }
+}
+
 // custom for mobile
 @media (max-width: $media-mobile){
 

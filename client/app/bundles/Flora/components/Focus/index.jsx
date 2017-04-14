@@ -3,6 +3,7 @@ import Task from '../Task';
 import Deed from '../Deed';
 import PointsAccrued from './PointsAccrued';
 import AddTaskContainer from '../../containers/AddTaskContainer';
+import FocusMoreLink from '../../containers/FocusMoreLink';
 
 const sumAccruedPoints = (focus)=> (
   focus.deeds.reduce((prev,next) => prev + next.points,0)
@@ -30,9 +31,9 @@ const Focus = ({focus, taskFilter, completeTask, undoDeed}) => (
   <article className="focus-article">
       <h1>
         { focus.title }
-        <nav className="nav-icon">
-          <a className="nav-icon--link nav-icon--link_more" href="#"></a>
-        </nav>
+        <FocusMoreLink
+          focusId={focus.id}
+        />
       </h1>
 
       <AddTaskContainer focusId={ focus.id }/>
