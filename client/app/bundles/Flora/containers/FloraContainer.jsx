@@ -40,6 +40,7 @@ class FloraContainer extends Component {
       <Dashboard
         foci={ this.props.data.user.foci }
         taskFilter={ this.props.flora.taskVisibility }
+        focusFilter={ this.props.flora.focusVisibility }
         completeTask={ (id) => this.handleCompleteTask(id) }
         undoDeed={ (id) => this.handleUndoDeed(id) }
       />
@@ -49,6 +50,10 @@ class FloraContainer extends Component {
 
 FloraContainer.propTypes = {
   flora: PropTypes.shape({
+    focusVisibility: PropTypes.shape({
+      filter: PropTypes.string.isRequired,
+      taskId: PropTypes.string
+    }),
     taskVisibility: PropTypes.string
   }),
   CompleteTaskMutation: PropTypes.func.isRequired,

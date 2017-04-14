@@ -1,4 +1,7 @@
 import React, { PropTypes } from 'react';
+
+import { SHOW_ALL_TASKS, SHOW_ACTIVE_TASKS } from '../../constants/filterTypes';
+
 import Task from '../Task';
 import Deed from '../Deed';
 import PointsAccrued from './PointsAccrued';
@@ -11,18 +14,18 @@ const sumAccruedPoints = (focus)=> (
 
 const getActiveTasks = (tasks, taskFilter) => {
   switch (taskFilter) {
-  case 'SHOW_ALL_TASKS':
+  case SHOW_ALL_TASKS:
     return tasks;
-  case 'SHOW_ACTIVE_TASKS':
+  case SHOW_ACTIVE_TASKS:
     return tasks;
   }
 };
 
 const getDeeds = (deeds, taskFilter) => {
   switch (taskFilter) {
-  case 'SHOW_ALL_TASKS':
+  case SHOW_ALL_TASKS:
     return deeds;
-  case 'SHOW_ACTIVE_TASKS':
+  case SHOW_ACTIVE_TASKS:
     return [];
   }
 };
