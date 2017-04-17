@@ -12,7 +12,7 @@ const MoreButton = ({ active, onClickActive, onClickInactive }) => {
            }}
         ></a>
       </nav>
-    )
+    );
   }
 
   return (

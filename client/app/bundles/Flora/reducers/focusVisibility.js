@@ -1,11 +1,11 @@
 import { SET_FOCUS_VISIBILITY_FILTER } from '../constants/actionTypes';
 
-import { SHOW_ALL_FOCI, SHOW_SINGLE_FOCUS } from '../constants/filterTypes';
+import { SHOW_ALL_FOCI } from '../constants/filterTypes';
 
 const FocusFilter = {
   focusId: null,
   filter: SHOW_ALL_FOCI
-}
+};
 
 const focusVisibility = (state=FocusFilter, action) => {
   switch (action.type) {
