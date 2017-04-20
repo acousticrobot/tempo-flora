@@ -6,7 +6,7 @@ const AddTaskButton = ({ openTaskForm })=> (
     className="focus-article--button"
     onClick={ () => { openTaskForm(); }}
   > Add Task
-  <div className="focus-article--button-icon"></div>
+  <div className="focus-article--button-icon plus"></div>
   </div>
 );
 

@@ -18,6 +18,10 @@ class FloraContainer extends Component {
     });
   }
 
+  handleDeleteTask(id) {
+    console.log('deleting task: ' + id);
+   }
+
   handleUndoDeed(id) {
     this.props.UndoDeedMutation({
       variables: { deedId: id }
@@ -41,7 +45,9 @@ class FloraContainer extends Component {
         foci={ this.props.data.user.foci }
         taskFilter={ this.props.flora.taskVisibility }
         focusFilter={ this.props.flora.focusVisibility }
+        optionsFilter={ this.props.flora.optionsVisibility }
         completeTask={ (id) => this.handleCompleteTask(id) }
+        deleteTask={ (id) => this.handleDeleteTask(id) }
         undoDeed={ (id) => this.handleUndoDeed(id) }
       />
     );

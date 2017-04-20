@@ -16,7 +16,7 @@ const getVisibleFoci = (foci, focusFilter) => {
 };
 
 
-const Dashboard = ({foci, taskFilter, focusFilter, completeTask, undoDeed}) => (
+const Dashboard = ({foci, taskFilter, optionsFilter, focusFilter, completeTask, deleteTask, undoDeed}) => (
   <section className='dashboard'>
 
       <NavBar/>
@@ -26,7 +26,9 @@ const Dashboard = ({foci, taskFilter, focusFilter, completeTask, undoDeed}) => (
             key={ focus.id }
             focus={ focus }
             taskFilter={ taskFilter }
+            optionsFilter={ optionsFilter }
             completeTask={ (id) => completeTask(id) }
+            deleteTask={ (id) => deleteTask(id) }
             undoDeed={ (id) => undoDeed(id) }
           />
         )}
@@ -38,13 +40,15 @@ const Dashboard = ({foci, taskFilter, focusFilter, completeTask, undoDeed}) => (
 
 Dashboard.propTypes = {
   completeTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
   undoDeed: PropTypes.func.isRequired,
   foci: PropTypes.array.isRequired,
   focusFilter: PropTypes.shape({
     filter: PropTypes.string.isRequired,
     taskId: PropTypes.string
   }).isRequired,
-  taskFilter: PropTypes.string
+  taskFilter: PropTypes.string,
+  optionsFilter: PropTypes.string
 };
 
 export default Dashboard;

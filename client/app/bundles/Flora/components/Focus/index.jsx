@@ -30,7 +30,7 @@ const getDeeds = (deeds, taskFilter) => {
   }
 };
 
-const Focus = ({focus, taskFilter, completeTask, undoDeed}) => (
+const Focus = ({focus, taskFilter, optionsFilter, completeTask, deleteTask, undoDeed}) => (
   <article className="focus-article">
       <h1>
         { focus.title }
@@ -42,7 +42,13 @@ const Focus = ({focus, taskFilter, completeTask, undoDeed}) => (
       <AddTaskContainer focusId={ focus.id }/>
       <ul className="focus-items">
         { getActiveTasks(focus.tasks, taskFilter).map( (task) =>
-          <Task key={ task.id } task={ task } completeTask={() => completeTask(task.id)} />
+          <Task
+            key={ task.id }
+            task={ task }
+            optionsFilter={ optionsFilter }
+            completeTask={ () => completeTask(task.id) }
+            deleteTask={ () => deleteTask(task.id) }
+          />
         )}
         { getDeeds(focus.deeds,taskFilter).map( (deed) =>
           <Deed key={ deed.id } deed={ deed } undoDeed={() => undoDeed(deed.id)} />
@@ -55,6 +61,7 @@ const Focus = ({focus, taskFilter, completeTask, undoDeed}) => (
 
 Focus.propTypes = {
   completeTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
   undoDeed: PropTypes.func.isRequired,
   focus: PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -63,7 +70,8 @@ Focus.propTypes = {
     tasks: PropTypes.array,
     deeds: PropTypes.array
   }).isRequired,
-  taskFilter: PropTypes.string
+  taskFilter: PropTypes.string,
+  optionsFilter: PropTypes.string
 };
 
 export default Focus;
