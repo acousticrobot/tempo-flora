@@ -37,7 +37,7 @@ AddTaskMutation = GraphQL::Relay::Mutation.define do
         GraphQL::ExecutionError.new(task.errors.messages)
       end
     else
-      GraphQL::ExecutionError.new("Wrong focus for user.")
+      GraphQL::ExecutionError.new("Focus does not belong to user.")
     end
   }
 end
