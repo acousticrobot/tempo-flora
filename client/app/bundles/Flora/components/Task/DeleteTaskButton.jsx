@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react';
 
 const DeleteTaskButton = ({ deleteTask })=> (
   <div
-    className="task-item--button" //"task-item--icon-wrapper"
+    className="task-article--item task-article--item_full"
     onClick={ () => { deleteTask(); }}
   > Delete Task
-  <div className="task-item--button-icon minus"></div>
+  <div className="task-article--icon minus"></div>
   </div>
 );
 

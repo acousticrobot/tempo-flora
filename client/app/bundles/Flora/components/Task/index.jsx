@@ -7,11 +7,14 @@ import DeleteTaskButton from './DeleteTaskButton';
 import {SHOW_MORE_OPTIONS} from '../../constants/filterTypes';
 
 const Task = ({ task, completeTask, deleteTask, optionsFilter }) => (
-  <li className='task-item'>
+  <li className='task-article'>
     <TaskTitle
       title={task.title }
       completeTask={ completeTask }
     />
+
+    <TaskPoints points={ task.points }/>
+    { task.repeatable && <TaskRepeatable/> }
 
     { optionsFilter === SHOW_MORE_OPTIONS &&
       <DeleteTaskButton
@@ -19,9 +22,6 @@ const Task = ({ task, completeTask, deleteTask, optionsFilter }) => (
       />
     }
 
-    <TaskPoints points={ task.points }/>
-    { task.repeatable && <TaskRepeatable/> }
-    <div className='clear'></div>
   </li>
 );
 

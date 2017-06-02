@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const TaskTitle = ({ title, completeTask }) => (
 
-  <div className='task-item--title' onClick={ () => completeTask() } >
+  <div className='task-article--title' onClick={ () => completeTask() } >
     { title }
   </div>
 );

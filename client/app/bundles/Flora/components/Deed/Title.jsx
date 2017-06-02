@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const DeedTitle = ({ title, undoDeed }) => (
 
-  <div className='task-item--title' onClick={ () => undoDeed() } >
+  <div className='task-article--title task-article--title_completed' onClick={ () => undoDeed() } >
     { title }
   </div>
 );

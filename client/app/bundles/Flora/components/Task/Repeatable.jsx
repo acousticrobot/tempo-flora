@@ -1,8 +1,8 @@
 import React from 'react';
 
 const TaskRepeatable = ()=> (
-  <div className="task-item--icon-wrapper">
-    <div className="task-item--repeat-icon"></div>
+  <div className="task-article--item">
+    <div className="task-article--icon repeat"></div>
   </div>
 );
 

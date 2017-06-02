@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import DeedTitle from './Title';
 
 const Deed = ({ deed, undoDeed }) => (
-  <li className='task-item task-item_completed'>
+  <li className='task-article task-article_completed'>
     <DeedTitle
       title={deed.title }
       undoDeed={ undoDeed }
