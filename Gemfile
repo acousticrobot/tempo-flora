@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'porch'
 gem 'puma', '~> 3.0'
-gem 'react_on_rails', "~> 6"
+gem 'react_on_rails', "~> 8"
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
