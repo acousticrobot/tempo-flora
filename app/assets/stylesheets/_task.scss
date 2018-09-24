@@ -50,15 +50,15 @@
 }
 
 .task-article--icon.minus {
-  background-image: url(minus.svg);
+  background-image: image-url("minus.svg");
   &:hover {
-    background-image: url(minus_hover.svg);
+    background-image: image-url("minus_hover.svg");
   }
 }
 
 .task-article--icon.repeat {
-  background-image: url(repeat.svg);
+  background-image: image-url("repeat.svg");
   &:hover {
-    background-image: url(repeat_hover.svg);
+    background-image: image-url("repeat_hover.svg");
   }
 }

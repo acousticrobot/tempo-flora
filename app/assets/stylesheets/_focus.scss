@@ -52,7 +52,7 @@ article.add-focus-button {
       background-color: $color-chrome-7;
     }
     .add-focus-button--icon {
-      background-image: url(plus_hover-chrome.svg);
+      background-image: image-url("plus_hover-chrome.svg");
     }
   }
 }
@@ -65,14 +65,14 @@ article.add-focus-button {
 }
 
 .add-focus-button--icon {
-  background-image: url(plus-chrome.svg);
+  background-image: image-url("plus-chrome.svg");
   background-size: 2rem 2rem;
   display: block;
   margin: 0 auto 1.5rem;
   height: 2rem;
   width: 2rem;
   &:hover {
-    background-image: url(plus_hover-chrome.svg);
+    background-image: image-url("plus_hover-chrome.svg");
   }
 }
 
@@ -92,7 +92,7 @@ article.focus-article.form.form_small {
   &:hover {
     background-color: $color-base-8;
     .focus-article--button-icon {
-      background-image: url(plus_hover.svg);
+      background-image: image-url("plus_hover.svg");
     }
   }
 }
@@ -106,16 +106,16 @@ article.focus-article.form.form_small {
 }
 
 .focus-article--button-icon.plus {
-  background-image: url(plus.svg);
+  background-image: image-url("plus.svg");
   &:hover {
-    background-image: url(plus_hover.svg);
+    background-image: image-url("plus_hover.svg");
   }
 }
 
 .focus-article--button-icon.minus {
-  background-image: url(minus.svg);
+  background-image: image-url("minus.svg");
   &:hover {
-    background-image: url(minus_hover.svg);
+    background-image: image-url("minus_hover.svg");
   }
 }
 

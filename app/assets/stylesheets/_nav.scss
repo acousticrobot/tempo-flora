@@ -37,11 +37,11 @@ a.nav-icon--link_more {
   text-indent: -9999px;
   width: 1.125rem;
   height: 1.125rem;
-  background-image: url(more.svg);
+  background-image: image-url("more.svg");
   background-size: 1.125rem 1.125rem;
   margin-right: .75rem;
   &:hover {
-    background-image: url(more_hover.svg);
+    background-image: image-url("more_hover.svg");
   }
 }
 
@@ -51,11 +51,11 @@ a.nav-icon--link_less {
   text-indent: -9999px;
   width: 1.125rem;
   height: 1.125rem;
-  background-image: url(less.svg);
+  background-image: image-url("less.svg");
   background-size: 1.125rem 1.125rem;
   margin-right: .75rem;
   &:hover {
-    background-image: url(less_hover.svg);
+    background-image: image-url("less_hover.svg");
   }
 }
 
