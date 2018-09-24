@@ -2,7 +2,7 @@
 
 article.form {
   border-radius: $wrapper-radius;
-  background-color: $color-base-E;
+  background-color: $color-base-F;
   margin: 1rem auto;
   padding-top: 1rem;
 
@@ -106,7 +106,7 @@ span.form--label_required {
   &:hover {
     background-color: $color-green-9;
   }
-  color: $color-chrome-F;
+  color: $color-base-F;
   border-radius: .5rem;
 }
 

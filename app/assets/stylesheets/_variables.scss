@@ -3,64 +3,43 @@ $radius: .25rem;
 
 // Colors
 
-$color-chrome-0: #000000;
-$color-chrome-3: #333333;
-
-$color-chrome-4: #444444;
-$color-chrome-6: #666666;
-$color-chrome-7: #777777;
-$color-chrome-8: #888888;
-$color-chrome-9: #999999;
-$color-chrome-A: #AAAAAA;
-$color-chrome-B: #BBBBBB;
-$color-chrome-C: #CCCCCC;
+$color-chrome-F: #FFFDF8;
 $color-chrome-D: #DDDDDD;
-$color-chrome-E: #EEEEEE;
-$color-chrome-F: #FFFCE6;
+$color-chrome-C: #CCCCCC;
+$color-chrome-A: #AAAAAA;
+$color-chrome-9: #999999;
+$color-chrome-8: #888888;
+$color-chrome-7: #777777;
+$color-chrome-4: #444444;
 
-
-$color-base-0: #0C0702;
-$color-base-1: #281909;
-$color-base-2: #442606;
-$color-base-3: #442A10;
-
-$color-base-4: #60380F;
-$color-base-5: #7C562E;
-$color-base-6: #986938;
-$color-base-7: #B47D43;
-
-$color-base-8: #D0975C;
-$color-base-9: #E3C37D;
-$color-base-A: #FFD67B;
-$color-base-B: #FFE7B0;
-
-$color-base-C: #FFECC2;
+$color-base-F: #FFFCE6;
 $color-base-D: #FFF2D4;
-$color-base-E: #FFF7E6;
-$color-base-F: #FFFDF8;
-
-
-$color-green-0: #131C06;
-
-$color-green-2: #3B5411;
-
-$color-green-4: #517217;
-
-$color-green-5: #60910C;
-
-$color-green-7: #74AF0E;
-
-$color-green-9: #86C352;
-$color-green-A: #9BCE42;
+$color-base-C: #FFEBC6;
+$color-base-A: #FFDC9F;
+$color-base-9: #EFC082;
+$color-base-8: #D0975C;
+$color-base-7: #B17340;
+$color-base-6: #8E5932;
+$color-base-5: #7F4B21;
+$color-base-4: #60380F;
+$color-base-2: #442606;
+$color-base-1: #281909;
+$color-base-0: #0C0702;
 
 $color-green-C: #BCED68;
+$color-green-A: #9BCE42;
+$color-green-9: #86C352;
+$color-green-7: #74AF0E;
+$color-green-5: #60910C;
+$color-green-4: #517217;
+$color-green-2: #3B5411;
+$color-green-0: #131C06;
 
-$color-red-D: #FFE0E0;
-$color-red-10: #FF5656;
 $color-red-8: #DE2C2C;
+$color-red-A: #FF5656;
+$color-red-D: #FFE0E0;
 
 
 // Media Query Sizes
 $media-mobile:  640px;
 $media-tablet:  1024px;
-

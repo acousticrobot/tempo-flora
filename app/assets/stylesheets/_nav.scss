@@ -27,7 +27,7 @@ a.nav-icon--link {
   //padding: .75rem;
   color: $color-base-A;
   &:hover {
-    color: $color-base-E;
+    color: pink;
   }
 }
 
@@ -66,7 +66,7 @@ a.nav-icon--link_less {
   .main-navbar--link_left,
   .main-navbar--profile
   {
-    border-bottom: 2px solid $color-base-E;
+    border-bottom: 2px solid $color-base-F;
     padding: .5rem 0 .5rem 0;
     width: 100%;
     text-align: center;
