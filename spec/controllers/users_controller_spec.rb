@@ -9,9 +9,16 @@ describe UsersController do
       sign_in user
     end
     describe "GET index" do
-      it "assigns a message" do
+      it "redirects to root" do
         get :index
-        expect(assigns(:users)).to eq([user])
+        expect(response).to redirect_to root_path
+      end
+    end
+
+    describe "GET show" do
+      it "works" do
+        get :show, params: { id: user.id }
+        expect(response.status).to eq(200)
       end
     end
   end

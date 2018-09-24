@@ -10,7 +10,8 @@ describe HomeController do
   describe "GET index" do
     it "assigns a message" do
       get :index
-      expect(assigns(:message)).to eq("Grow Your Time!")
+      expect(assigns(:flora_props)).to eq({:userId=>user.id})
     end
   end
 end
+

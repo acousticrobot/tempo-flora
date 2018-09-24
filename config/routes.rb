@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   resources :graphql, via: [:post, :options]
 
-  get 'flora', to: 'hello_world#flora'
-
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout'}
   get '/users/:id', to: 'users#show'
   get '/users/:id/mailer', to: 'users#mailer'
