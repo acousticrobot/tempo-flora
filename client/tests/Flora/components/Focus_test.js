@@ -1,6 +1,7 @@
 // eslint disable no-undef
 import {expect} from 'chai';
-import Focus from './../../../app/bundles/Flora/components/Focus';
+import Focus from './../../../app/bundles/Flora/components/Focus/index';
+import getActiveTasks from './../../../app/bundles/Flora/components/Focus/index';
 
 var focus = {
   id: '1',
@@ -8,22 +9,30 @@ var focus = {
   title: 'test focus',
   tasks : [
     {
+      title: 'to-do task',
       name: 'task 1',
-      id: '1'
+      id: '1',
+      points: 1
     },
     {
+      title: 'to-do task',
       name: 'task 2',
-      id: '2'
+      id: '2',
+      points: 1
     },
   ],
   deeds: [
     {
+      title: 'to-do task',
       name: 'deed 1',
-      id: '1'
+      id: '1',
+      points: 1
     },
     {
+      title: 'to-do task',
       name: 'deed 2',
-      id: '2'
+      id: '2',
+      points: 1
     },
   ]
 };
@@ -34,7 +43,14 @@ describe('Focus', ()=>  {
   describe('initial state', ()=> {
 
     var subject;
-    var props = {focus: focus, filter: filter};
+    var props = {
+      focus: focus,
+      taskFilter: filter,
+      optionsFilter: '',
+      completeTask: {},
+      deleteTask: {},
+      undoDeed: {}
+    };
     beforeEach(()=>{
       subject = new Focus(props);
     });
