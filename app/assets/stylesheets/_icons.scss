@@ -1,0 +1,20 @@
+@import "variables";
+
+@mixin icon-image($name) {
+  background-image: image-url($name + ".svg");
+  &:hover {
+    background-image: image-url($name + "_hover.svg");
+  }
+}
+
+.icon-minus {
+  @include icon-image("minus");
+}
+
+.icon-repeat {
+  @include icon-image("repeat");
+}
+
+.icon-check-box {
+  @include icon-image("check_box");
+}

@@ -61,6 +61,7 @@ describe('Focus', ()=>  {
   });
 
   // Testing non-export methods -- do this through Focus?
+  // maybe something like: https://github.com/speedskater/babel-plugin-rewire
   describe('getActiveTasks', ()=> {
     it('should return all tasks for filter: SHOW_ALL_TASKS'), ()=> {
       expect(getActiveTasks(focus.tasks).length).to.equal(2);

@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import TaskTitle from './Title';
 import TaskPoints from './Points';
-import TaskRepeatable from './Repeatable';
 import DeleteTaskButton from './DeleteTaskButton';
 
 import {SHOW_MORE_OPTIONS} from '../../constants/filterTypes';
@@ -9,12 +8,12 @@ import {SHOW_MORE_OPTIONS} from '../../constants/filterTypes';
 const Task = ({ task, completeTask, deleteTask, optionsFilter }) => (
   <li className='task-article'>
     <TaskTitle
-      title={task.title }
+      repeatable={ task.repeatable }
+      title={ task.title }
       completeTask={ completeTask }
     />
 
     <TaskPoints points={ task.points }/>
-    { task.repeatable && <TaskRepeatable/> }
 
     { optionsFilter === SHOW_MORE_OPTIONS &&
       <DeleteTaskButton
@@ -33,7 +32,7 @@ Task.propTypes = {
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     points: PropTypes.number.isRequired,
-    repeatable: PropTypes.bool,
+    repeatable: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
 };

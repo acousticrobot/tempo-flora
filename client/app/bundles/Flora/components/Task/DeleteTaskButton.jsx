@@ -5,7 +5,7 @@ const DeleteTaskButton = ({ deleteTask })=> (
     className="task-article--item task-article--item_full"
     onClick={ () => { deleteTask(); }}
   > Delete Task
-  <div className="task-article--icon minus"></div>
+  <div className="task-article--icon icon-minus"></div>
   </div>
 );
 
