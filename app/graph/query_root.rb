@@ -33,4 +33,11 @@ QueryRoot = GraphQL::ObjectType.define do
       User.find(args[:id])
     }
   end
+
+  field :ping do
+    type types.String
+    resolve -> (obj, args, ctx) {
+      "pong!"
+    }
+  end
 end

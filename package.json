@@ -1,16 +1,22 @@
 {
   "name": "tempo-flora",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "private": true,
-  "engines": {
-    "node": "6.9.0",
-    "npm": "4.1.1"
-  },
-  "scripts": {
-    "postinstall": "cd client && npm install",
-    "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
-    "test": "rspec"
-  },
   "dependencies": {
+    "@rails/webpacker": "3.5",
+    "apollo-boost": "^0.1.16",
+    "babel-preset-react": "^6.24.1",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
+    "immutability-helper": "^2.8.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-apollo": "^2.2.4",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
   }
 }
