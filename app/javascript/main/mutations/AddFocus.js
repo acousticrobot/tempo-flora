@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const ADD_FOCUS = gql`
 mutation addFocus($title: String){
@@ -22,6 +22,6 @@ mutation addFocus($title: String){
       }
     }
   }
-}`;
+}`
 
-export default ADD_FOCUS;
+export default ADD_FOCUS

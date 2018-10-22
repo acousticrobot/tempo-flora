@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Query } from "react-apollo"
+import { Query } from 'react-apollo'
 
 import FOCUS_FILTER_QUERY from '../../queries/FocusFilter'
-import { SHOW_ALL_FOCI, SHOW_SINGLE_FOCUS } from '../../constants/filterTypes';
+import { SHOW_ALL_FOCI, SHOW_SINGLE_FOCUS } from '../../constants/filterTypes'
 
 const handleClick = (e, focusId, focusFilter, client) => {
   e.preventDefault()
@@ -11,9 +11,9 @@ const handleClick = (e, focusId, focusFilter, client) => {
     client.writeData({
       data: {
         focusFilter: {
-          __typename: "focusFilter",
+          __typename: 'focusFilter',
           filter: SHOW_SINGLE_FOCUS,
-          focusId: focusId
+          focusId
         }
       }
     })
@@ -21,7 +21,7 @@ const handleClick = (e, focusId, focusFilter, client) => {
     client.writeData({
       data: {
         focusFilter: {
-          __typename: "focusFilter",
+          __typename: 'focusFilter',
           filter: SHOW_ALL_FOCI,
           focusId: null
         }
@@ -30,18 +30,19 @@ const handleClick = (e, focusId, focusFilter, client) => {
   }
 }
 
-const SingleFocusButton = ({focusId}) => (
-  <Query query={ FOCUS_FILTER_QUERY } >
+const SingleFocusButton = ({ focusId }) => (
+  <Query query={ FOCUS_FILTER_QUERY }>
     {({ data: { focusFilter }, client }) => {
-      let iconType = focusFilter.focusId == focusId ? "less" : "more"
+      const iconType = focusFilter.focusId === focusId ? 'less' : 'more'
       return (
-        <nav className="nav-icon">
-          <a className={ `nav-icon--link nav-icon--link_${iconType}` }
-             href="#"
-             onClick={e => {
-               handleClick(e, focusId, focusFilter, client);
-             }}
-          ></a>
+        <nav className='nav-icon'>
+          <div
+            className={ `nav-icon--link nav-icon--link_${iconType}` }
+            onClick={ e => (handleClick(e, focusId, focusFilter, client)) }
+            onKeyPress={ e => (handleClick(e, focusId, focusFilter, client)) }
+            role='button'
+            tabIndex='0'
+          />
         </nav>
       )
     }}
@@ -49,7 +50,7 @@ const SingleFocusButton = ({focusId}) => (
 )
 
 SingleFocusButton.propTypes = {
-  focusId: PropTypes.string.isRequired,
-};
+  focusId: PropTypes.string.isRequired
+}
 
-export default SingleFocusButton;
+export default SingleFocusButton

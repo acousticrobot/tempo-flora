@@ -1,19 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TaskTypeIcon from './TaskTypeIcon'
-import { Mutation } from "react-apollo"
+import { Mutation } from 'react-apollo'
 
+import TaskTypeIcon from './TaskTypeIcon'
 import COMPLETE_TASK from '../../mutations/CompleteTask'
+
+const CSS = (loading, error) => {
+  if (loading) {
+    return 'task-article--title task-article--title_completed'
+  }
+  if (error) {
+    return 'task-article--title task-article--title_error'
+  }
+  return 'task-article--title'
+}
+
+
+const handleClick = (e, id, CompleteTask) => {
+  CompleteTask({ variables: { taskId: id } })
+  e.target.blur()
+}
 
 const TaskTitle = ({ id, title, repeatable }) => (
 
-  <Mutation mutation={ COMPLETE_TASK } >
-    {(CompleteTakkie, { loading, error }) => (
+  <Mutation mutation={ COMPLETE_TASK }>
+    { (CompleteTask, { loading, error }) => (
       <div
-        className='task-article--title'
-        onClick={ e => {
-          CompleteTakkie({variables: { taskId: id }})
-        }}
+        className={ CSS(loading, error) }
+        onClick={ e => handleClick(e, id, CompleteTask) }
+        onKeyPress={ e => handleClick(e, id, CompleteTask) }
+        role='button'
+        tabIndex='0'
       >
         <TaskTypeIcon
           repeatable={ repeatable }

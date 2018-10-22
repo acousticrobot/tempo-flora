@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const ADD_TASK = gql`
 mutation addTask($focusId: ID!, $title: String, $points: Int, $repeatable: Boolean){
@@ -13,6 +13,6 @@ mutation addTask($focusId: ID!, $title: String, $points: Int, $repeatable: Boole
       }
     }
   }
-}`;
+}`
 
-export default ADD_TASK;
+export default ADD_TASK

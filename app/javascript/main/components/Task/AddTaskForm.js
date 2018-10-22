@@ -1,22 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Mutation } from "react-apollo";
+import { Mutation } from 'react-apollo'
 import ADD_TASK from '../../mutations/AddTask'
 
 
 const AddTaskForm = ({ focusId, closeTaskForm }) => {
-  let titleInput, pointsInput, points, repeatableInput;
+  let titleInput
+  let pointsInput
+  let points
+  let repeatableInput
 
-  const CSS = (type='') => (`form--${type} form--${type}_small`);
+  const CSS = function (klasses) {
+    let val = ''
+    klasses.split(/\s/).forEach(
+      klass => { val += ` form--${klass} form--${klass}_small` }
+    )
+    return val
+  }
 
   const handleAddTask = (e, AddTask) => {
     e.preventDefault()
     points = parseInt(pointsInput.value)
     AddTask({
       variables: {
-        focusId   : focusId,
-        title     : titleInput.value,
-        points    : points,
+        focusId,
+        points,
+        title: titleInput.value,
         repeatable: repeatableInput.checked
       }
     })
@@ -24,47 +33,74 @@ const AddTaskForm = ({ focusId, closeTaskForm }) => {
   }
 
   return (
-    <article className="form form_small">
+    <article className='form form_small'>
       <Mutation mutation={ ADD_TASK }>
         {(AddTask, { loading, error }) => (
           <form onSubmit={ e => handleAddTask(e, AddTask) }>
-            <label className={ CSS('label') } htmlFor="title-input">
+
+            { loading && <p>Loading...</p> }
+            { error && <p>Error :( Please try again</p> }
+
+            <label className={ CSS('label') } htmlFor='title-input'>
               Task Description:
             </label>
-            <input id="title-input" type="text" className={ CSS('input') } ref={node => {
-              titleInput = node;
-            }} />
 
-            <label className={ CSS('label') } htmlFor="points-input">
+            <input
+              id='title-input'
+              className={ CSS('input') }
+              type='text'
+              ref={ node => { titleInput = node } }
+            />
+
+            <label className={ CSS('label') } htmlFor='points-input'>
               Points:
             </label>
-            <input id="points-input" type="number" pattern="[0-9]*" className={ CSS('input') } ref={node => {
-              pointsInput = node;
-            }} />
 
-            <input id="repeatable-check" type="checkbox" className={ CSS('input') } ref={node => {
-              repeatableInput = node;
-            }} />
-            <label className={ CSS('label') } className={ CSS('checkbox-label') } htmlFor="repeatable-check">
+            <input
+              id='points-input'
+              className={ CSS('input') }
+              type='number'
+              pattern='[0-9]*'
+              ref={ node => { pointsInput = node } }
+            />
+
+            <input
+              id='repeatable-check'
+              className={ CSS('input') }
+              type='checkbox'
+              ref={ node => { repeatableInput = node } }
+            />
+
+            <label
+              className={ CSS('label checkbox-label') }
+              htmlFor='repeatable-check'
+            >
               Repeatable
             </label>
 
-            <div className="clear"></div>
+            <div className='clear' />
 
-            <button type="submit" className={ CSS('button') } >
+            <button type='submit' className={ CSS('button') }>
               Add Task
             </button>
 
             <button
+              type='submit'
               className={ CSS('button') }
-              onClick={ () => { closeTaskForm() }}>
+              onClick={ closeTaskForm }
+            >
               Cancel
             </button>
           </form>
         )}
       </Mutation>
     </article>
-  );
-};
+  )
+}
 
-export default AddTaskForm;
+AddTaskForm.propTypes = {
+  focusId: PropTypes.string.isRequired,
+  closeTaskForm: PropTypes.func.isRequired
+}
+
+export default AddTaskForm

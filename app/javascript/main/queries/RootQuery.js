@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const ROOT_QUERY = gql`
   query RootQuery($userId: ID!) {
@@ -25,6 +25,6 @@ const ROOT_QUERY = gql`
       }
     }
   }
-`;
+`
 
-export default ROOT_QUERY;
+export default ROOT_QUERY

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Query } from "react-apollo"
+import React from 'react'
 
 import TaskFilterButton from './TaskFilterButton'
 import FocusFilterButton from './FocusFilterButton'
@@ -7,11 +6,11 @@ import FocusFilterButton from './FocusFilterButton'
 const NavBar = () => (
   <nav className='filter-navbar'>
     <ul>
-     <TaskFilterButton/>
-     <FocusFilterButton/>
+      <TaskFilterButton />
+      <FocusFilterButton />
     </ul>
-    <div className='clear'></div>
+    <div className='clear' />
   </nav>
-);
+)
 
-export default NavBar;
+export default NavBar

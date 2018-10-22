@@ -23,7 +23,7 @@ nav.nav-icon {
   float: right;
 }
 
-a.nav-icon--link {
+.nav-icon--link {
   //padding: .75rem;
   color: $color-base-A;
   &:hover {
@@ -31,7 +31,7 @@ a.nav-icon--link {
   }
 }
 
-a.nav-icon--link_more {
+.nav-icon--link_more {
   display: block;
   float: right;
   text-indent: -9999px;
@@ -45,7 +45,7 @@ a.nav-icon--link_more {
   }
 }
 
-a.nav-icon--link_less {
+.nav-icon--link_less {
   display: block;
   float: right;
   text-indent: -9999px;

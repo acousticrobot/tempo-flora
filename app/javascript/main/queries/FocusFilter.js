@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const FOCUS_FILTER_QUERY = gql`
   query getFocusFilter{

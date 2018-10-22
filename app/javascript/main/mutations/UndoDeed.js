@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const UNDO_DEED = gql`
 mutation undoDeed($deedId: ID!) {
@@ -20,6 +20,6 @@ mutation undoDeed($deedId: ID!) {
       }
     }
   }
-}`;
+}`
 
-export default UNDO_DEED;
+export default UNDO_DEED

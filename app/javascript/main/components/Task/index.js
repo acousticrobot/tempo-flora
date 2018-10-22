@@ -4,7 +4,7 @@ import TaskTitle from './Title'
 import TaskPoints from './Points'
 import DeleteTaskButton from './DeleteTaskButton'
 
-import {SHOW_MORE_OPTIONS} from '../../constants/filterTypes'
+import { SHOW_MORE_OPTIONS } from '../../constants/filterTypes'
 
 const Task = ({ task, optionsFilter }) => (
   <li className='task-article'>
@@ -14,7 +14,7 @@ const Task = ({ task, optionsFilter }) => (
       title={ task.title }
     />
 
-    <TaskPoints points={ task.points }/>
+    <TaskPoints points={ task.points } />
 
     { optionsFilter === SHOW_MORE_OPTIONS &&
       <DeleteTaskButton id={ task.id } />
@@ -24,13 +24,13 @@ const Task = ({ task, optionsFilter }) => (
 )
 
 Task.propTypes = {
-  optionsFilter: PropTypes.string,
+  optionsFilter: PropTypes.string.isRequired,
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     points: PropTypes.number.isRequired,
     repeatable: PropTypes.bool.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
+    title: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default Task

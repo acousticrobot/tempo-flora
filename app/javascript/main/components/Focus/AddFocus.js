@@ -1,45 +1,50 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import AddFocusButton from './AddFocusButton';
-import AddFocusForm from './AddFocusForm';
+import AddFocusButton from './AddFocusButton'
+import AddFocusForm from './AddFocusForm'
 
 class AddFocus extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      available: true,
-      active: false,
-      posted: false,
+      active: false
     }
-    this.openFocusForm = this.openFocusForm.bind(this);
-    this.closeFocusForm = this.closeFocusForm.bind(this);
+    this.openFocusForm = this.openFocusForm.bind(this)
+    this.closeFocusForm = this.closeFocusForm.bind(this)
   }
 
   openFocusForm() {
     this.setState({
-      available: false,
       active: true
-    });
+    })
   }
 
   closeFocusForm() {
     this.setState({
-      available: true,
       active: false
-    });
+    })
   }
 
   render() {
-    if (this.state.available) {
-      return <AddFocusButton openFocusForm={ this.openFocusForm } />
-    } else if (this.state.active) {
+    const { userId } = this.props
+    const { active } = this.state
+
+    if (active) {
       return (
         <AddFocusForm
-          userId={ this.props.userId }
-          closeFocusForm={ this.closeFocusForm } />
+          userId={ userId }
+          closeFocusForm={ this.closeFocusForm }
+        />
       )
     }
+    return <AddFocusButton openFocusForm={ this.openFocusForm } />
   }
 }
+
+AddFocus.propTypes = {
+  userId: PropTypes.number.isRequired
+}
+
 
 export default AddFocus

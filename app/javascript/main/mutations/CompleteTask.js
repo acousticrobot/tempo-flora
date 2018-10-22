@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const COMPLETE_TASK = gql`
 mutation completeTask($taskId: ID!) {
@@ -20,6 +20,6 @@ mutation completeTask($taskId: ID!) {
       }
     }
   }
-}`;
+}`
 
-export default COMPLETE_TASK;
+export default COMPLETE_TASK

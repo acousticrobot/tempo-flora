@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import AddTaskButton from './AddTaskButton'
 import AddTaskForm from './AddTaskForm'
@@ -7,9 +8,7 @@ class AddTask extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      available: true,
-      active: false,
-      posted: false,
+      active: false
     }
     this.openTaskForm = this.openTaskForm.bind(this)
     this.closeTaskForm = this.closeTaskForm.bind(this)
@@ -17,25 +16,34 @@ class AddTask extends Component {
 
   openTaskForm() {
     this.setState({
-      available: false,
       active: true
     })
   }
 
   closeTaskForm() {
     this.setState({
-      available: true,
       active: false
     })
   }
 
   render() {
-    if (this.state.available) {
-      return <AddTaskButton openTaskForm={ this.openTaskForm } />
-    } else if (this.state.active) {
-      return <AddTaskForm focusId={ this.props.focusId } closeTaskForm={ this.closeTaskForm } />
+    const { focusId } = this.props
+    const { active } = this.state
+
+    if (active) {
+      return (
+        <AddTaskForm
+          focusId={ focusId }
+          closeTaskForm={ this.closeTaskForm }
+        />
+      )
     }
+    return <AddTaskButton openTaskForm={ this.openTaskForm } />
   }
+}
+
+AddTask.propTypes = {
+  focusId: PropTypes.string.isRequired
 }
 
 export default AddTask

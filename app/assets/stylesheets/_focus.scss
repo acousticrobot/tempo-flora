@@ -44,7 +44,7 @@ article.focus-article {
   @include foci-container--item($color-base-D, $color-base-7,$color-base-2);
 }
 
-article.add-focus-button {
+article.add-focus-article {
   @include foci-container--item($color-chrome-D,$color-chrome-A,$color-chrome-8);
   &:hover {
     background-color: $color-chrome-C;
@@ -55,6 +55,12 @@ article.add-focus-button {
       background-image: image-url("plus_hover-chrome.svg");
     }
   }
+}
+
+.add-focus-button {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .add-focus-button--icon-wrapper {

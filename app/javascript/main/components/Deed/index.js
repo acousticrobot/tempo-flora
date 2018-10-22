@@ -8,15 +8,15 @@ const Deed = ({ deed }) => (
       id={ deed.id }
       title={ deed.title }
     />
-    <div className='clear'></div>
+    <div className='clear' />
   </li>
 )
 
 Deed.propTypes = {
   deed: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
+    title: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default Deed
