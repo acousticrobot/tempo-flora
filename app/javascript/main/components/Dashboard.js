@@ -36,7 +36,7 @@ const Dashboard = ({ foci, userId, optionsFilter }) => (
               />
             )
           ) }
-          <AddFocus userId={ userId } />
+          <AddFocus userId={ userId } focusFilter={ focusFilter } />
         </section>
       </section>
     ) }

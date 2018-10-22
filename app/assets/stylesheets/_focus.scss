@@ -18,9 +18,9 @@ section.foci-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 1rem;
+  border-radius: .75rem;
   overflow: hidden;
-  margin: .75rem 1%;
+  margin: .125rem;
   color: $txt-color;
   background-color: $bg-color;
   h1 {
