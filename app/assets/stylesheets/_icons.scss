@@ -7,14 +7,30 @@
   }
 }
 
+@mixin icon-mask($name, $color) {
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: image-url($name + ".svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: image-url($name + ".svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background: $color;
+  &:hover {
+    -webkit-mask-image: image-url($name + "_hover.svg");
+    mask-image: image-url($name + "_hover.svg");
+  }
+}
+
 .icon-minus {
   @include icon-image("minus");
 }
 
 .icon-repeat {
-  @include icon-image("repeat");
+  @include icon-mask("repeat", $color-base-1);
 }
 
 .icon-check-box {
-  @include icon-image("check_box");
+  @include icon-mask("check_box", $color-base-1);
 }

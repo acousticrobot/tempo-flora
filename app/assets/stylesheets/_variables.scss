@@ -3,47 +3,45 @@ $radius: .25rem;
 
 // Colors
 
-$color-chrome-F: #FFFDF8;
-$color-chrome-D: #DDDDDD;
-$color-chrome-C: #CCCCCC;
-$color-chrome-A: #AAAAAA;
-$color-chrome-9: #999999;
-$color-chrome-8: #888888;
-$color-chrome-7: #777777;
-$color-chrome-4: #444444;
+$color-base-0: hsl(25, 50%, 3%);  // old: #0C0702;
+$color-base-1: hsl(25, 50%, 10%); // old: #281909;
+$color-base-2: hsl(25, 50%, 15%); // old: #442606;
+$color-base-4: hsl(25, 50%, 22%); // old: #60380F;
+$color-base-5: hsl(25, 50%, 31%); // old: #7F4B21;
+$color-base-6: hsl(25, 50%, 38%); // old: #8E5932;
+$color-base-7: hsl(25, 50%, 47%); // old: #B17340;
+$color-base-8: hsl(30, 60%, 60%); // old: #D0975C;
+$color-base-9: hsl(35, 75%, 72%); // old: #EFC082;
+$color-base-A: hsl(35, 100%, 81%); // old: #FFDC9F;
+$color-base-C: hsl(38, 100%, 89%); // old: #FFEBC6;
+$color-base-D: hsl(40, 100%, 92%); // old: #FFF2D4;
+$color-base-F: hsl(48, 100%, 95%); // old: #FFFCE6;
 
-$color-base-F: #FFFCE6;
-$color-base-D: #FFF2D4;
-$color-base-C: #FFEBC6;
-$color-base-A: #FFDC9F;
-$color-base-9: #EFC082;
-$color-base-8: #D0975C;
-$color-base-7: #B17340;
-$color-base-6: #8E5932;
-$color-base-5: #7F4B21;
-$color-base-4: #60380F;
-$color-base-2: #442606;
-$color-base-1: #281909;
-$color-base-0: #0C0702;
+$color-chrome-4: hsl(0, 0%, 27%); // #444444;
+$color-chrome-7: hsl(0, 0%, 47%); // #777777;
+$color-chrome-8: hsl(0, 0%, 53%); // #888888;
+$color-chrome-9: hsl(0, 0%, 60%); // #999999;
+$color-chrome-A: hsl(0, 0%, 67%); // #AAAAAA;
+$color-chrome-C: hsl(0, 0%, 80%); // #CCCCCC;
+$color-chrome-D: hsl(0, 0%, 87%); // #DDDDDD;
+$color-chrome-F: hsl(43, 100%, 99%); // #FFFDF8;
 
-$color-green-C: #BCED68;
-$color-green-A: #9BCE42;
-$color-green-9: #86C352;
-$color-green-7: #74AF0E;
-$color-green-5: #60910C;
-$color-green-4: #517217;
-$color-green-2: #3B5411;
-$color-green-0: #131C06;
+$color-green-0: hsl(85, 65%, 7%); // #131C06;
+$color-green-2: hsl(82, 66%, 20%); // #3B5411;
+$color-green-4: hsl(82, 66%, 27%); // #517217;
+$color-green-5: hsl(82, 85%, 31%); // #60910C;
+$color-green-7: hsl(82, 85%, 37%); // #74AF0E;
+$color-green-9: hsl(92, 48%, 54%); // #86C352;
+$color-green-A: hsl(82, 59%, 53%); // #9BCE42;
+$color-green-C: hsl(82, 79%, 67%); // #BCED68;
 
-$color-red-8: #DE2C2C;
-$color-red-A: #FF5656;
-$color-red-D: #FFE0E0;
-
+$color-red-8: hsl(0, 73%, 52%); // #DE2C2C;
+$color-red-A: hsl(0, 100%, 67%); // #FF5656;
+$color-red-D: hsl(0, 100%, 94%); // #FFE0E0;
 
 // Media Query Sizes
 $media-mobile:  640px;
 $media-tablet:  1024px;
-
 
 // Placeholder Classes
 
@@ -51,4 +49,9 @@ $media-tablet:  1024px;
  background-size: 1rem 1rem;
  height: 1rem;
  width: 1rem;
+ border-radius: 50%;
+ background-color: $color-base-A;
+ &:hover {
+   background-color: $color-base-C;
+ }
 }
