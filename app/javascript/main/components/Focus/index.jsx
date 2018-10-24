@@ -38,10 +38,12 @@ const Deeds = ({ deeds }) => (
 
 const Focus = ({ focus, optionsFilter }) => (
   <article className='focus-article'>
-    <h1>
-      { focus.title }
-      <SingleFocusButton focusId={ focus.id } />
-    </h1>
+    <header>
+      <h1>
+        { focus.title }
+        <SingleFocusButton focusId={ focus.id } />
+      </h1>
+    </header>
 
     <AddTask focusId={ focus.id } />
 

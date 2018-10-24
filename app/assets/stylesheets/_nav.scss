@@ -3,32 +3,24 @@
 .main-navbar,
 .main-navbar--profile
 {
-  background-color: $color-base-4;
-  color: $color-base-C;
+  background-color: var(--c-header--bkg);
+  color: var(--c-text);
 }
 
 .main-navbar--link,
 .main-navbar--link_left
 {
-  background-color: $color-base-7;
+  background-color: var(--c-header--nav);
   a {
-    color: $color-green-0;
+    color: var(--c-text);
   }
   &:hover {
-    background-color: $color-base-A;
+    background-color: var(--c-header--nav-hover);
   }
 }
 
 nav.nav-icon {
   float: right;
-}
-
-.nav-icon--link {
-  //padding: .75rem;
-  color: $color-base-A;
-  &:hover {
-    color: pink;
-  }
 }
 
 .nav-icon--link_more {
@@ -59,6 +51,21 @@ nav.nav-icon {
   }
 }
 
+.filter-navbar {
+  margin: 1rem 0 .5rem 0;
+}
+
+.filter-navbar--link {
+  background-color: var(--c-main--nav-off);
+}
+
+.filter-navbar--link_active {
+  background-color: var(--c-main--nav-on);
+  &:hover {
+    background-color: var(--c-main--nav-on-hover);
+  }
+}
+
 // custom for mobile
 @media (max-width: $media-mobile){
 
@@ -71,6 +78,15 @@ nav.nav-icon {
     width: 100%;
     text-align: center;
   }
+
+  .filter-navbar--link,
+  .filter-navbar--link_active
+  {
+    padding: .5rem 0 .5rem 0;
+    text-align: center;
+    width: 50%;
+    float: left;
+  }
 }
 
 // custom for tablet and desktop
@@ -79,15 +95,23 @@ nav.nav-icon {
   .main-navbar--link
   {
     float: right;
-    border-left: 2px solid $color-base-4;
-    padding: .25rem 2rem .25rem 2rem;
+    margin-left: 2px;
+    padding: .5rem 2rem .5rem 2rem;
   }
 
   .main-navbar--link_left,
   .main-navbar--profile
   {
     float: left;
-    border-right: 2px solid $color-base-4;
+    padding: .5rem 2rem .5rem 2rem;
+  }
+
+  .filter-navbar--link,
+  .filter-navbar--link_active
+  {
+    float: left;
+    margin: .25rem;
     padding: .25rem 2rem .25rem 2rem;
+    border: none;
   }
 }

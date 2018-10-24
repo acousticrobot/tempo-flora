@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const PointsAccrued = ({ points }) => (
-  <div className='focus-item--points'>
+  <footer className='focus-item--points'>
     { points }
-  </div>
+  </footer>
 )
 
 PointsAccrued.propTypes = {

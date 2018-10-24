@@ -1,0 +1,29 @@
+@import "variables";
+
+:root {
+  --c-text                : #{ $color-base-2 };
+  --c-text-inverse        : #{ $color-base-D };
+
+  --c-header--bkg         : #{ $color-chrome-7 };
+  --c-header--nav         : #{ $color-chrome-A };
+  --c-header--nav-hover   : #{ $color-chrome-C };
+
+  --c-main--bkg           : #{ $color-chrome-4 };
+  --c-main--section       : #{ $color-chrome-4 };
+  --c-main--nav-on        : #{ $color-chrome-A };
+  --c-main--nav-on-hover  : #{ $color-chrome-C };
+  --c-main--nav-off       : #{ $color-chrome-7 };
+
+  --c-article--header     : #{ $color-base-2 };
+  --c-article--bkg        : #{ $color-base-7 };
+  --c-article--section    : #{ $color-base-5 };
+  --c-article--detail     : #{ $color-base-4 };
+  --c-article--nav        : #{ $color-base-6 };
+  --c-article--nav-hover  : #{ $color-base-4 };
+  --c-article--icon       : #{ $color-base-8 };
+  --c-article--icon-hover : #{ $color-base-A };
+  --c-article--footer     : #{ $color-base-4 };
+
+  --c-article-alt--header : #{ $color-chrome-7 };
+  --c-article-alt--bkg    : #{ $color-chrome-8 };
+}

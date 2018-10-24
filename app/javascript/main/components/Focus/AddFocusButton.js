@@ -11,9 +11,11 @@ const AddFocusButton = ({ openFocusForm }) => (
       role='button'
       tabIndex='0'
     >
-      <h1>
-        Add New Focus
-      </h1>
+      <header>
+        <h1>
+          Add New Focus
+        </h1>
+      </header>
       <div className='add-focus-button--icon-wrapper'>
         <div className='add-focus-button--icon' />
       </div>

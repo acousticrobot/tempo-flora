@@ -21,8 +21,8 @@ html, body {
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  background-color: $color-chrome-4;
-  color: $color-base-2;
+  background-color: var(--c-main--bkg);
+  color: var(--c-text);
 }
 
 h1, h2, h3, h4, h5 {
@@ -101,7 +101,7 @@ code {
 }
 
 section.dashboard {
-  background-color: $color-chrome-9;
+  background-color: var(--c-main--section);
   h4 {
     background-color: $color-base-1;
     color: $color-base-A;

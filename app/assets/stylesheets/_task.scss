@@ -1,8 +1,8 @@
 @import "variables";
 
 .task-article, .task-article_completed {
-  background-color: $color-base-5;
-  margin: .25rem 0;
+  background-color: var(--c-article--section);
+  margin: .125rem 0;
   padding: .25rem .5rem;
   display: flex;
 }
@@ -24,27 +24,31 @@
   @extend %icon;
   float: left;
   margin-right: .25rem;
+  background-color: var(--c-article--icon);
+  &:hover {
+    background-color: var(--c-article--icon-hover);
+  }
 }
 
 .task-article--item {
-  color: $color-base-F;
+  color: var(--c-text-inverse);
   font-size: .75rem;
   width: 1rem;
   height: 1rem;
   text-align: center;
-  background-color: $color-base-4;
+  background-color: var(--c-article--detail);
   border-radius: .25rem;
   margin: 1px 2px;
   padding: 1px;
 }
 
-.task-article--item_full {
-  background-color: $color-base-6;
+.task-article--item_explanation {
+  background-color: var(--c-article--nav);
   border-radius: 1rem;
   padding: .125rem .25rem .125rem .25rem;
   width: 6rem;
   &:hover {
-    background-color: $color-base-8;
+    background-color: var(--c-article--nav-hover);
   }
 }
 
@@ -52,4 +56,8 @@
   @extend %icon;
   display: block;
   float: right;
+  background-color: var(--c-article--icon);
+  &:hover {
+    background-color: var(--c-article--icon-hover);
+  }
 }

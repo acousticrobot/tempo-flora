@@ -5,15 +5,9 @@ section.foci-container {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
-  background-color: $color-chrome-9;
-  h4 {
-    background-color: $color-base-1;
-    color: $color-base-A;
-    padding: 1rem;
-  }
 }
 
-@mixin foci-container--item($txt-color,$bg-color,$title-color) {
+@mixin foci-container--item($bg-color, $header-color) {
   flex: 1 0 31%;
   display: flex;
   flex-direction: column;
@@ -21,14 +15,16 @@ section.foci-container {
   border-radius: .75rem;
   overflow: hidden;
   margin: .125rem;
-  color: $txt-color;
+  color: var(--c-text-inverse);
   background-color: $bg-color;
-  h1 {
-    color: $txt-color;
-    font-size: 1.125rem;
+  header {
     padding: .65rem .5rem .35rem 2.5rem;
-    background-color: $title-color;
-    text-transform: capitalize;
+    background-color: $header-color;
+    h1 {
+      color: var(--c-text-inverse);
+      font-size: 1.125rem;
+      text-transform: capitalize;
+    }
   }
   // custom for mobile
   @media (max-width: $media-mobile){
@@ -41,16 +37,12 @@ section.foci-container {
 }
 
 article.focus-article {
-  @include foci-container--item($color-base-D, $color-base-7,$color-base-2);
+  @include foci-container--item(var(--c-article--bkg), var(--c-article--header));
 }
 
 article.add-focus-article {
-  @include foci-container--item($color-chrome-D,$color-chrome-A,$color-chrome-8);
+  @include foci-container--item(var(--c-article-alt--bkg), var(--c-article-alt--header));
   &:hover {
-    background-color: $color-chrome-C;
-    h1 {
-      background-color: $color-chrome-7;
-    }
     .add-focus-button--icon {
       background-image: image-url("plus_hover-chrome.svg");
     }
@@ -88,7 +80,7 @@ article.focus-article.form.form_small {
 }
 
 .focus-article--button {
-  background-color: $color-base-6;
+  background-color: var(--c-article--nav);
   border-radius: 1rem;
   font-size: .75rem;
   margin: .25rem auto;
@@ -96,7 +88,7 @@ article.focus-article.form.form_small {
   text-align: center;
   width: 6rem;
   &:hover {
-    background-color: $color-base-8;
+    background-color: var(--c-article--nav-hover);
     .focus-article--button-icon {
       background-image: image-url("plus_hover.svg");
     }
@@ -129,8 +121,8 @@ article.focus-article.form.form_small {
   flex-grow: 1;
 }
 
-.focus-item--points {
-  background-color: $color-base-4;
+footer.focus-item--points {
+  background-color: var(--c-article--footer);
   color: $color-red-D;
   padding: .5rem 0;
   text-align: center;

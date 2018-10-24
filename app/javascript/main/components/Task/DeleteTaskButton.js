@@ -14,7 +14,7 @@ const DeleteTaskButton = ({ id }) => (
   <Mutation mutation={ DELETE_TASK }>
     { deleteTask => (
       <div
-        className='task-article--item task-article--item_full'
+        className='task-article--item task-article--item_explanation'
         onClick={ e => handleClick(e, id, deleteTask) }
         onKeyPress={ e => handleClick(e, id, deleteTask) }
         role='button'
