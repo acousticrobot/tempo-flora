@@ -11,7 +11,9 @@ const AddTaskButton = ({ openTaskForm }) => (
     tabIndex='0'
   >
     Add Task
-    <div className='focus-article--button-icon plus' />
+    <div className='task-article--icon'>
+      <div className='icon-plus' />
+    </div>
   </div>
 )
 

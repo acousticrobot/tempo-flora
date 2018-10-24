@@ -7,10 +7,6 @@
   display: flex;
 }
 
-.task-article_completed {
-  background-color: $color-base-7;
-}
-
 .task-article--title_completed {
   text-decoration: line-through;
 }
@@ -18,16 +14,6 @@
 .task-article--title {
   flex-grow: 2;
   cursor: pointer;
-}
-
-.task-article--title-icon {
-  @extend %icon;
-  float: left;
-  margin-right: .25rem;
-  background-color: var(--c-article--icon);
-  &:hover {
-    background-color: var(--c-article--icon-hover);
-  }
 }
 
 .task-article--item {
@@ -53,11 +39,16 @@
 }
 
 .task-article--icon {
-  @extend %icon;
-  display: block;
   float: right;
+  @extend %icon;
   background-color: var(--c-article--icon);
   &:hover {
     background-color: var(--c-article--icon-hover);
   }
+}
+
+.task-article--title-icon {
+  display: block;
+  float: left;
+  margin-right: .25rem;
 }

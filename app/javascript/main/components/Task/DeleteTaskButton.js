@@ -21,7 +21,9 @@ const DeleteTaskButton = ({ id }) => (
         tabIndex='0'
       >
         Delete Task
-        <div className='task-article--icon icon-minus' />
+        <div className='task-article--icon'>
+          <div className='icon-minus' />
+        </div>
       </div>
     )}
   </Mutation>

@@ -5,7 +5,7 @@ const TaskTypeIcon = ({ repeatable }) => {
   const type = repeatable ? 'repeat' : 'check-box'
 
   return (
-    <div className='task-article--title-icon'>
+    <div className='task-article--icon task-article--title-icon'>
       <div className={ `icon-${type}` } />
     </div>
   )

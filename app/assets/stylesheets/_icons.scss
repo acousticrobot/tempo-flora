@@ -20,7 +20,11 @@
 }
 
 .icon-minus {
-  @include icon-image("minus");
+  @include icon-mask("minus", var(--c-text));
+}
+
+.icon-plus {
+  @include icon-mask("plus", var(--c-text));
 }
 
 .icon-repeat {
