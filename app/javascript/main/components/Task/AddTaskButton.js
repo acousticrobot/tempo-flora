@@ -12,7 +12,7 @@ const AddTaskButton = ({ openTaskForm }) => (
   >
     Add Task
     <div className='task-article--icon'>
-      <div className='icon-plus' />
+      <div className='icon icon-plus' />
     </div>
   </div>
 )

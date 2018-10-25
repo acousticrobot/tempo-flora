@@ -20,17 +20,18 @@ html {
   --c-article--detail     : #{ $color-base-4 };
   --c-article--nav        : #{ $color-base-6 };
   --c-article--nav-hover  : #{ $color-base-4 };
-  --c-article--icon       : #{ $color-base-8 };
+  --c-article--icon-wrap  : #{ $color-base-8 };
   --c-article--icon-hover : #{ $color-base-A };
+  --c-article--icon       : #{ $color-base-2 };
   --c-article--footer     : #{ $color-base-4 };
 
   --c-article-alt--header : #{ $color-chrome-7 };
   --c-article-alt--bkg    : #{ $color-chrome-8 };
 }
 
-html[data-theme='dark'] {
-  --c-text                : #{ #FFF };
-  --c-text-inverse        : #{ #FFF };
+html.dark {
+  --c-text                : #{ #000 };
+  --c-text-inverse        : #{ green };
 
   --c-header--bkg         : #{ #FFF };
   --c-header--nav         : #{ #FFF };

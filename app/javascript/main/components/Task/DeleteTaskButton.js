@@ -22,7 +22,7 @@ const DeleteTaskButton = ({ id }) => (
       >
         Delete Task
         <div className='task-article--icon'>
-          <div className='icon-minus' />
+          <div className='icon icon-minus' />
         </div>
       </div>
     )}

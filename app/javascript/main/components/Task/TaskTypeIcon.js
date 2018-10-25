@@ -6,7 +6,7 @@ const TaskTypeIcon = ({ repeatable }) => {
 
   return (
     <div className='task-article--icon task-article--title-icon'>
-      <div className={ `icon-${type}` } />
+      <div className={ `icon icon-${type}` } />
     </div>
   )
 }

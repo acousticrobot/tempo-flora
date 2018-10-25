@@ -7,12 +7,12 @@
   }
 }
 
-@mixin icon-mask($name, $color) {
+@mixin icon-mask($name, $default-color) {
   width: 100%;
   height: 100%;
   -webkit-mask-image: image-url($name + ".svg");
   mask-image: image-url($name + ".svg");
-  background: $color;
+  background: $default-color;
   &:hover {
     -webkit-mask-image: image-url($name + "_hover.svg");
     mask-image: image-url($name + "_hover.svg");
@@ -36,9 +36,9 @@
 }
 
 .icon-more {
-  @include icon-mask("more", var(--c-article--bkg));
+  @include icon-mask("more", var(--c-text));
 }
 
 .icon-less {
-  @include icon-mask("less", var(--c-article--bkg));
+  @include icon-mask("less", var(--c-text));
 }

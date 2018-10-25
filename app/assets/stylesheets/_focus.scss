@@ -63,14 +63,18 @@ article.add-focus-article {
 }
 
 .add-focus-button--icon {
-  background-image: image-url("plus-chrome.svg");
   background-size: 2rem 2rem;
   display: block;
   margin: 0 auto 1.5rem;
   height: 2rem;
   width: 2rem;
+  border-radius: 50%;
+  background-color: var(--c-main--nav-on);
   &:hover {
-    background-image: image-url("plus_hover-chrome.svg");
+    background-color: var(--c-main--nav-on-hover);
+  }
+  .icon {
+    background-color: var(--c-main--bkg);
   }
 }
 
@@ -119,6 +123,25 @@ article.focus-article.form.form_small {
 
 .focus-items {
   flex-grow: 1;
+}
+
+nav.focus-header--nav-icon {
+  float: right;
+}
+
+.focus-article--icon {
+  display: block;
+  float: right;
+  text-indent: -9999px;
+  width: 22px;
+  height: 22px;
+  margin-right: .75rem;
+  .icon {
+    background-color: var(--c-article--bkg);
+    &:hover {
+      background-color: pink;
+    }
+  }
 }
 
 footer.focus-item--points {

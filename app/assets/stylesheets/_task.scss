@@ -41,9 +41,12 @@
 .task-article--icon {
   @extend %icon;
   float: right;
-  background-color: var(--c-article--icon);
+  background-color: var(--c-article--icon-wrap);
   &:hover {
     background-color: var(--c-article--icon-hover);
+  }
+  .icon {
+    background-color: var(--c-article--icon);
   }
 }
 
