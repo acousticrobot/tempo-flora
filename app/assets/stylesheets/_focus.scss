@@ -15,13 +15,13 @@ section.foci-container {
   border-radius: .75rem;
   overflow: hidden;
   margin: .125rem;
-  color: var(--c-text-inverse);
+  color: var(--c-main--text);
   background-color: $bg-color;
   header {
     padding: .65rem .5rem .35rem 2.5rem;
     background-color: $header-color;
     h1 {
-      color: var(--c-text-inverse);
+      color: var(--c-main--text);
       font-size: 1.125rem;
       text-transform: capitalize;
     }

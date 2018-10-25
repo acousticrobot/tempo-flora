@@ -1,19 +1,22 @@
 @import "variables";
 
-html {
-  --c-text                : #{ $color-base-2 };
-  --c-text-inverse        : #{ $color-base-D };
+html.foo {
 
+  --c-text                : #{ $color-base-2 };
+
+  --c-header--text        : #{ $color-base-2 };
   --c-header--bkg         : #{ $color-chrome-7 };
   --c-header--nav         : #{ $color-chrome-A };
   --c-header--nav-hover   : #{ $color-chrome-C };
 
+  --c-main--text          : #{ $color-base-D };
   --c-main--bkg           : #{ $color-chrome-4 };
   --c-main--section       : #{ $color-chrome-4 };
   --c-main--nav-on        : #{ $color-chrome-A };
   --c-main--nav-on-hover  : #{ $color-chrome-C };
   --c-main--nav-off       : #{ $color-chrome-7 };
 
+  --c-article--text       : #{ $color-base-D };
   --c-article--header     : #{ $color-base-2 };
   --c-article--bkg        : #{ $color-base-7 };
   --c-article--section    : #{ $color-base-5 };
@@ -29,28 +32,31 @@ html {
   --c-article-alt--bkg    : #{ $color-chrome-8 };
 }
 
-html.dark {
-  --c-text                : #{ #000 };
-  --c-text-inverse        : #{ green };
+html {
+  --c-text                : #{ grey };
 
+  --c-header--text        : #{ blue };
   --c-header--bkg         : #{ #FFF };
   --c-header--nav         : #{ #FFF };
   --c-header--nav-hover   : #{ #FFF };
 
+  --c-main--text          : #{ black };
   --c-main--bkg           : #{ #FFF };
   --c-main--section       : #{ #FFF };
   --c-main--nav-on        : #{ #FFF };
   --c-main--nav-on-hover  : #{ #FFF };
   --c-main--nav-off       : #{ #FFF };
 
+  --c-article--text       : #{ #FFF };
   --c-article--header     : #{ #FFF };
   --c-article--bkg        : #{ #FFF };
   --c-article--section    : #{ #FFF };
   --c-article--detail     : #{ #FFF };
   --c-article--nav        : #{ #FFF };
   --c-article--nav-hover  : #{ #FFF };
-  --c-article--icon       : #{ #FFF };
+  --c-article--icon-wrap  : #{ #FFF };
   --c-article--icon-hover : #{ #FFF };
+  --c-article--icon       : #{ #FFF };
   --c-article--footer     : #{ #FFF };
 
   --c-article-alt--header : #{ #FFF };

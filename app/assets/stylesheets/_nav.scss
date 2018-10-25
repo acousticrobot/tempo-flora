@@ -12,7 +12,7 @@
 {
   background-color: var(--c-header--nav);
   a {
-    color: var(--c-text);
+    color: var(--c-header--text);
   }
   &:hover {
     background-color: var(--c-header--nav-hover);
@@ -29,6 +29,7 @@
 
 .filter-navbar--link_active {
   background-color: var(--c-main--nav-on);
+  color: var(--c-header--text);
   &:hover {
     background-color: var(--c-main--nav-on-hover);
   }
