@@ -1,6 +1,6 @@
 @import "variables";
 
-html.foo {
+html {
 
   --c-text                : #{ $color-base-2 };
 
@@ -32,7 +32,7 @@ html.foo {
   --c-article-alt--bkg    : #{ $color-chrome-8 };
 }
 
-html {
+html.dork {
   --c-text                : #{ grey };
 
   --c-header--text        : #{ blue };
