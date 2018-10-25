@@ -20,10 +20,10 @@ const DeleteTaskButton = ({ id }) => (
         role='button'
         tabIndex='0'
       >
-        Delete Task
         <div className='task-article--icon'>
           <div className='icon icon-minus' />
         </div>
+        Delete Task
       </div>
     )}
   </Mutation>

@@ -12,9 +12,9 @@ section.foci-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: .75rem;
+  border-radius: var(--c-article--radius);
   overflow: hidden;
-  margin: .125rem .125rem .5rem .125rem;
+  margin: .2rem;
   color: var(--c-main--text);
   background-color: $bg-color;
   header {
@@ -22,7 +22,7 @@ section.foci-container {
     background-color: $header-color;
     h1 {
       color: var(--c-main--text);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       text-transform: capitalize;
     }
   }
@@ -45,6 +45,11 @@ article.add-focus-article {
   &:hover {
     .add-focus-button--icon {
       background-image: image-url("plus_hover-chrome.svg");
+    }
+  }
+  header {
+    .icon {
+      background-color: var(--c-main--text);
     }
   }
 }
@@ -73,9 +78,6 @@ article.add-focus-article {
   &:hover {
     background-color: var(--c-main--nav-on-hover);
   }
-  .icon {
-    background-color: var(--c-main--bkg);
-  }
 }
 
 article.focus-article.form.form_small {
@@ -87,10 +89,10 @@ article.focus-article.form.form_small {
   background-color: var(--c-article--nav);
   border-radius: 1rem;
   font-size: .75rem;
-  margin: .25rem 2rem;
-  padding: .25rem .25rem .25rem .25rem;
+  margin: .25rem 0 .25rem .5rem;
+  padding: .25rem;
   text-align: center;
-  width: 6rem;
+  width: 5rem;
   &:hover {
     background-color: var(--c-article--nav-hover);
     .focus-article--button-icon {
@@ -130,22 +132,31 @@ nav.focus-header--nav-icon {
 }
 
 .focus-article--icon {
-  display: block;
-  float: right;
-  text-indent: -9999px;
   width: 22px;
   height: 22px;
-  margin-right: .75rem;
+  margin-right: 1.75rem;
   .icon {
-    background-color: var(--c-article--bkg);
-    &:hover {
-      background-color: pink;
-    }
+    background-color: var(--c-main--icon);
   }
 }
 
 footer.focus-item--points {
   background-color: var(--c-article--footer);
   padding: .25rem 0 1rem 3rem;
+}
+
+// custom for mobile
+@media (max-width: $media-mobile){
+  article.focus-article {
+    max-width: 100%;
+  }
+}
+
+
+// custom for tablet and desktop
+@media (min-width: $media-mobile){
+  article.focus-article {
+    max-width: 50%;
+  }
 }
 

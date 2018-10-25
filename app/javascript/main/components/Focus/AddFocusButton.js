@@ -14,6 +14,11 @@ const AddFocusButton = ({ openFocusForm }) => (
       <header>
         <h1>
           Add New Focus
+          <nav className='focus-header--nav-icon'>
+            <div className='focus-article--icon'>
+              <div className='icon icon-plus' />
+            </div>
+          </nav>
         </h1>
       </header>
       <div className='add-focus-button--icon-wrapper'>

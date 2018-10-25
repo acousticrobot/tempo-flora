@@ -97,6 +97,11 @@ code {
 
 section.dashboard {
   background-color: var(--c-main--section);
+  margin: 1rem;
+}
+
+// custom for mobile
+@media (max-width: $media-mobile){
 }
 
 
