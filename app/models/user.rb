@@ -12,4 +12,8 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: { case_sensitive: false },
     length: { maximum: 30 }
+
+    def theme
+      "dark"
+    end
 end

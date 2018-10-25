@@ -34,7 +34,7 @@ html {
   --c-article-alt--bkg    : #{ $color-chrome-8 };
 }
 
-html.minimal {
+html[data-theme='minimal'] {
   --c-text                : grey;
 
   --c-header--text        : blue;
@@ -67,7 +67,7 @@ html.minimal {
   --c-article-alt--bkg    : white;
 }
 
-html.dark {
+html[data-theme='dark'] {
   --c-text                : #{ $color-green-5 };
 
   --c-header--text        : #{ $color-chrome-F };
