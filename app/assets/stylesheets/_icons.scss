@@ -19,12 +19,12 @@
   }
 }
 
-.icon-minus {
-  @include icon-mask("minus", var(--c-text));
-}
-
 .icon-plus {
   @include icon-mask("plus", var(--c-text));
+}
+
+.icon-minus {
+  @include icon-mask("minus", var(--c-text));
 }
 
 .icon-repeat {
@@ -33,4 +33,12 @@
 
 .icon-check-box {
   @include icon-mask("check_box", var(--c-text));
+}
+
+.icon-more {
+  @include icon-mask("more", var(--c-article--bkg));
+}
+
+.icon-less {
+  @include icon-mask("less", var(--c-article--bkg));
 }

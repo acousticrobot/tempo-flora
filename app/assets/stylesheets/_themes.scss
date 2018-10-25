@@ -27,3 +27,31 @@ html {
   --c-article-alt--header : #{ $color-chrome-7 };
   --c-article-alt--bkg    : #{ $color-chrome-8 };
 }
+
+html[data-theme='dark'] {
+  --c-text                : #{ #FFF };
+  --c-text-inverse        : #{ #FFF };
+
+  --c-header--bkg         : #{ #FFF };
+  --c-header--nav         : #{ #FFF };
+  --c-header--nav-hover   : #{ #FFF };
+
+  --c-main--bkg           : #{ #FFF };
+  --c-main--section       : #{ #FFF };
+  --c-main--nav-on        : #{ #FFF };
+  --c-main--nav-on-hover  : #{ #FFF };
+  --c-main--nav-off       : #{ #FFF };
+
+  --c-article--header     : #{ #FFF };
+  --c-article--bkg        : #{ #FFF };
+  --c-article--section    : #{ #FFF };
+  --c-article--detail     : #{ #FFF };
+  --c-article--nav        : #{ #FFF };
+  --c-article--nav-hover  : #{ #FFF };
+  --c-article--icon       : #{ #FFF };
+  --c-article--icon-hover : #{ #FFF };
+  --c-article--footer     : #{ #FFF };
+
+  --c-article-alt--header : #{ #FFF };
+  --c-article-alt--bkg    : #{ #FFF };
+}

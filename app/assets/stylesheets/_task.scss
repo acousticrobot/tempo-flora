@@ -39,8 +39,8 @@
 }
 
 .task-article--icon {
-  float: right;
   @extend %icon;
+  float: right;
   background-color: var(--c-article--icon);
   &:hover {
     background-color: var(--c-article--icon-hover);

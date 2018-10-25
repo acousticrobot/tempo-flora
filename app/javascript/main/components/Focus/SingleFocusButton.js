@@ -33,16 +33,18 @@ const handleClick = (e, focusId, focusFilter, client) => {
 const SingleFocusButton = ({ focusId }) => (
   <Query query={ FOCUS_FILTER_QUERY }>
     {({ data: { focusFilter }, client }) => {
-      const iconType = focusFilter.focusId === focusId ? 'less' : 'more'
+      const type = focusFilter.focusId === focusId ? 'less' : 'more'
       return (
         <nav className='nav-icon'>
           <div
-            className={ `nav-icon--link nav-icon--link_${iconType}` }
+            className={ `nav-icon--link nav-icon--link_${type}` }
             onClick={ e => (handleClick(e, focusId, focusFilter, client)) }
             onKeyPress={ e => (handleClick(e, focusId, focusFilter, client)) }
             role='button'
             tabIndex='0'
-          />
+          >
+          <div className={ `icon-${type}` } />
+          </div>
         </nav>
       )
     }}
