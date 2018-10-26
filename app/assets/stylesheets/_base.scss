@@ -97,16 +97,21 @@ code {
 
 section.dashboard {
   background-color: var(--c-main--section);
-  margin: 1rem;
 }
 
 // custom for mobile
 @media (max-width: $media-mobile){
+  section.dashboard {
+    margin: 0;
+  }
 }
 
 
 // custom for tablet and desktop
 @media (min-width: $media-mobile){
+  section.dashboard {
+    margin: 1rem;
+  }
 }
 
 

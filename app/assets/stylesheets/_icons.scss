@@ -7,15 +7,17 @@
   }
 }
 
-@mixin icon-mask($name, $default-color) {
+@mixin icon-mask($name, $default-color, $hover: false) {
   width: 100%;
   height: 100%;
   -webkit-mask-image: image-url($name + ".svg");
   mask-image: image-url($name + ".svg");
   background: $default-color;
-  &:hover {
-    -webkit-mask-image: image-url($name + "_hover.svg");
-    mask-image: image-url($name + "_hover.svg");
+  @if $hover == true {
+    &:hover {
+      -webkit-mask-image: image-url($name + "_hover.svg");
+      mask-image: image-url($name + "_hover.svg");
+    }
   }
 }
 
@@ -28,17 +30,21 @@
 }
 
 .icon-repeat {
-  @include icon-mask("repeat", var(--c-text));
+  @include icon-mask("repeat", var(--c-text), true);
 }
 
 .icon-check-box {
-  @include icon-mask("check_box", var(--c-text));
+  @include icon-mask("check_box", var(--c-text), true);
 }
 
 .icon-more {
-  @include icon-mask("more", var(--c-text));
+  @include icon-mask("more", var(--c-text), true);
 }
 
 .icon-less {
   @include icon-mask("less", var(--c-text));
+}
+
+.icon-delete {
+  @include icon-mask("delete", var(--c-text));
 }
