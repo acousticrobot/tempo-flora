@@ -1,0 +1,33 @@
+html[data-theme='text-only'] {
+  --radius     : 0;
+  --c-text                : grey;
+
+  --c-header--text        : blue;
+  --c-header--bkg         : white;
+  --c-header--nav         : white;
+  --c-header--nav-hover   : white;
+
+  --c-main--text          : black;
+  --c-main--bkg           : white;
+  --c-main--section       : white;
+  --c-main--nav-on        : white;
+  --c-main--nav-on-hover  : white;
+  --c-main--nav-off       : white;
+  --c-main--icon          : grey;
+
+  --c-article--text       : black;
+  --c-article--header     : white;
+  --c-article--bkg        : white;
+  --c-article--section    : white;
+  --c-article--detail     : white;
+  --c-article--nav        : white;
+  --c-article--nav-hover  : white;
+  --c-article--icon-wrap  : white;
+  --c-article--icon-hover : white;
+  --c-article--icon       : grey;
+  --c-article--footer     : white;
+  --radius     : 0;
+
+  --c-article-alt--header : white;
+  --c-article-alt--bkg    : white;
+}

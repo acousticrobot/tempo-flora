@@ -1,5 +1,4 @@
-- theme = current_user.present? ? current_user.theme : "default"
-%html(lang="en" data-theme="#{theme}")
+%html(lang="en" data-theme="#{@theme || "default"}")
   %head
     %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1")

@@ -1,0 +1,44 @@
+@import "variables";
+
+html {
+  --radius                : 0;
+  --c-text                : grey;
+
+  --c-header--text        : hsl(190, 90%, 20%);
+  --c-header--bkg         : white;
+  --c-header--nav         : white;
+  --c-header--nav-hover   : white;
+
+  --c-main--text          : black;
+  --c-main--bkg           : hsl(190, 90%, 80%);
+  --c-main--section       : hsl(190, 90%, 80%);
+  --c-main--nav-on        : hsl(190, 90%, 98%);
+  --c-main--nav-on-hover  : white;
+  --c-main--nav-off       : hsl(190, 90%, 80%);;
+  --c-main--icon          : grey;
+
+  --c-article--text       : black;
+  --c-article--header     : hsl(190, 90%, 90%);
+  --c-article--bkg        : hsl(190, 90%, 95%);
+  --c-article--section    : hsl(190, 95%, 95%);
+  --c-article--detail     : hsl(190, 90%, 90%);
+  --c-article--nav        : hsl(190, 90%, 98%);
+  --c-article--nav-hover  : white;
+  --c-article--icon-wrap  : hsl(190, 85%, 85%);
+  --c-article--icon-hover : white;
+  --c-article--icon       : grey;
+  --c-article--footer     : hsl(190, 90%, 90%);
+  --radius     : 0;
+
+  --c-article-alt--header : hsl(190, 90%, 90%);
+  --c-article-alt--bkg    : hsl(190, 90%, 95%);
+}
+
+
+html.color-theme-in-transition,
+html.color-theme-in-transition *,
+html.color-theme-in-transition *:before,
+html.color-theme-in-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}

@@ -10,65 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410125342) do
+ActiveRecord::Schema.define(version: 2018_10_26_102656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "deeds", force: :cascade do |t|
-    t.string   "title",        default: "", null: false
-    t.string   "focus_title",  default: "", null: false
-    t.integer  "position",     default: 0,  null: false
-    t.integer  "points",       default: 0,  null: false
-    t.integer  "user_id",                   null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.datetime "completed_at",              null: false
-    t.index ["user_id"], name: "index_deeds_on_user_id", using: :btree
+  create_table "deeds", id: :serial, force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.string "focus_title", default: "", null: false
+    t.integer "position", default: 0, null: false
+    t.integer "points", default: 0, null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "completed_at", null: false
+    t.index ["user_id"], name: "index_deeds_on_user_id"
   end
 
-  create_table "foci", force: :cascade do |t|
-    t.string   "title",      default: "", null: false
-    t.integer  "user_id",                 null: false
-    t.integer  "position",   default: 0,  null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.index ["user_id"], name: "index_foci_on_user_id", using: :btree
+  create_table "foci", id: :serial, force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.integer "user_id", null: false
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_foci_on_user_id"
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.string   "title",      default: "",    null: false
-    t.integer  "user_id",                    null: false
-    t.integer  "focus_id",                   null: false
-    t.integer  "points",     default: 0,     null: false
-    t.boolean  "repeatable", default: false, null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.index ["user_id"], name: "index_tasks_on_user_id", using: :btree
+  create_table "tasks", id: :serial, force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.integer "user_id", null: false
+    t.integer "focus_id", null: false
+    t.integer "points", default: 0, null: false
+    t.boolean "repeatable", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "username"
-    t.string   "confirmation_token"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
+    t.string "unconfirmed_email"
+    t.integer "max_foci", default: 1, null: false
+    t.string "theme"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

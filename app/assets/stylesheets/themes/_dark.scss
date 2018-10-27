@@ -1,0 +1,40 @@
+@import "variables";
+
+html[data-theme='dark'] {
+  --radius     : 0;
+  --c-text                : #{ $color-green-5 };
+
+  --c-header--text        : #{ $color-chrome-F };
+  --c-header--bkg         : #{ $color-chrome-0 };
+  --c-header--nav         : #{ $color-chrome-4 };
+  --c-header--nav-hover   : #{ $color-chrome-7 };
+
+  --c-main--text          : #{ $color-chrome-F };
+  --c-main--bkg           : #{ $color-chrome-0 };
+  --c-main--section       : #{ $color-chrome-0 };
+  --c-main--nav-on        : #{ $color-chrome-4 };
+  --c-main--nav-on-hover  : #{ $color-chrome-7 };
+  --c-main--nav-off       : #{ $color-chrome-0 };
+  --c-main--icon          : #{ $color-green-7 };
+
+  --c-article--text       : #{ $color-chrome-F };
+  --c-article--header     : #{ $color-chrome-2 };
+  --c-article--bkg        : #{ $color-chrome-3 };
+  --c-article--section    : #{ $color-chrome-1 };
+  --c-article--detail     : #{ $color-chrome-0 };
+  --c-article--nav        : #{ $color-chrome-2 };
+  --c-article--nav-hover  : #{ $color-chrome-0 };
+  --c-article--icon-wrap  : #{ $color-chrome-0 };
+  --c-article--icon-hover : #{ $color-chrome-0 };
+  --c-article--icon       : #{ $color-green-9 };
+  --c-article--footer     : #{ $color-chrome-1 };
+
+  --c-article-alt--header : #{ $color-chrome-0 };
+  --c-article-alt--bkg    : #{ $color-chrome-0 };
+
+  --c-form--text          : #{ $color-chrome-0 };
+  --c-form--bkg           : #{ $color-chrome-9 };
+  --c-form--footer        : #{ $color-chrome-8 };
+  --c-form--button        : #{ $color-green-5 };
+  --c-form--button-hover  : #{ $color-green-9 };
+}

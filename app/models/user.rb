@@ -8,12 +8,10 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :deeds, dependent: :destroy
 
+  validates_presence_of :max_foci
+
   validates :username,
     presence: true,
     uniqueness: { case_sensitive: false },
     length: { maximum: 30 }
-
-    def theme
-      "dark"
-    end
 end
