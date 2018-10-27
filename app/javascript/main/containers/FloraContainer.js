@@ -4,7 +4,6 @@ import { Query } from 'react-apollo'
 
 import ROOT_QUERY from '../queries/RootQuery'
 import Dashboard from '../components/Dashboard'
-import { SHOW_MORE_OPTIONS } from '../constants/filterTypes'
 
 const FloraContainer = ({ userId }) => (
   <Query query={ ROOT_QUERY } variables={{ userId }}>
@@ -16,7 +15,6 @@ const FloraContainer = ({ userId }) => (
         <Dashboard
           foci={ data.user.foci }
           userId={ userId }
-          optionsFilter={ SHOW_MORE_OPTIONS }
         />
       )
     }}

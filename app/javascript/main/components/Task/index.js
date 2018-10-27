@@ -14,7 +14,9 @@ const Task = ({ task, optionsFilter }) => (
       title={ task.title }
     />
 
-    <TaskPoints points={ task.points } />
+    { optionsFilter === SHOW_MORE_OPTIONS &&
+       <TaskPoints points={ task.points } />
+    }
 
     { optionsFilter === SHOW_MORE_OPTIONS &&
       <DeleteTaskButton id={ task.id } />

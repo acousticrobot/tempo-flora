@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
 import FOCUS_FILTER_QUERY from '../queries/FocusFilter'
-import { SHOW_ALL_FOCI, SHOW_SINGLE_FOCUS } from '../constants/filterTypes'
+import { SHOW_ALL_FOCI, SHOW_SINGLE_FOCUS, SHOW_MORE_OPTIONS, SHOW_STANDARD_OPTIONS } from '../constants/filterTypes'
 
 import Focus from './Focus'
 import AddFocus from './Focus/AddFocus'
@@ -20,7 +20,7 @@ const getVisibleFoci = (foci, focusFilter) => {
   }
 }
 
-const Dashboard = ({ foci, userId, optionsFilter }) => (
+const Dashboard = ({ foci, userId }) => (
   <Query query={ FOCUS_FILTER_QUERY }>
     { ({ data: { focusFilter } }) => (
       <section className='dashboard'>
@@ -32,7 +32,9 @@ const Dashboard = ({ foci, userId, optionsFilter }) => (
               <Focus
                 key={ focus.id }
                 focus={ focus }
-                optionsFilter={ optionsFilter }
+                optionsFilter={
+                  focusFilter.filter === SHOW_SINGLE_FOCUS ? SHOW_MORE_OPTIONS : SHOW_STANDARD_OPTIONS
+                }
               />
             )
           ) }
@@ -45,8 +47,7 @@ const Dashboard = ({ foci, userId, optionsFilter }) => (
 
 Dashboard.propTypes = {
   foci: PropTypes.array.isRequired,
-  userId: PropTypes.number.isRequired,
-  optionsFilter: PropTypes.string.isRequired
+  userId: PropTypes.number.isRequired
 }
 
 export default Dashboard
