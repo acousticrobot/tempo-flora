@@ -29,7 +29,7 @@ class AddFocus extends Component {
   }
 
   render() {
-    const { userId, focusFilter } = this.props
+    const { focusFilter } = this.props
     const { active } = this.state
     if (focusFilter.filter === SHOW_SINGLE_FOCUS) {
       return <div />
@@ -37,7 +37,6 @@ class AddFocus extends Component {
     if (active) {
       return (
         <AddFocusForm
-          userId={ userId }
           closeFocusForm={ this.closeFocusForm }
         />
       )
@@ -47,7 +46,6 @@ class AddFocus extends Component {
 }
 
 AddFocus.propTypes = {
-  userId: PropTypes.number.isRequired,
   focusFilter: PropTypes.object.isRequired
 }
 

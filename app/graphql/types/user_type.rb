@@ -4,7 +4,7 @@ module Types
     field :id, ID, null: false
     field :username, String, null: false
     field :email, String, null: false
-    field :theme, String, null: false
+    field :theme, String, null: true
 
     field :foci, [Types::FocusType], null: true
     field :tasks, [Types::TaskType], null: true

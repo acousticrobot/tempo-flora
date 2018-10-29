@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Mutation } from 'react-apollo'
 import ADD_FOCUS from '../../mutations/AddFocus'
-import ROOT_QUERY from '../../queries/RootQuery'
+import GET_FOCI from '../../queries/GetFoci'
 
-const AddFocusForm = ({ userId, closeFocusForm }) => {
+const AddFocusForm = ({ closeFocusForm }) => {
   let titleInput
 
   const CSS = type => `form--${type} form--${type}_small`
@@ -23,7 +23,13 @@ const AddFocusForm = ({ userId, closeFocusForm }) => {
     <article className='focus-article form form_small'>
       <Mutation
         mutation={ ADD_FOCUS }
-        refetchQueries={ [{ query: ROOT_QUERY, variables: { userId } }] }
+        update={ (cache, { data: { AddFocusMutation: { focus } } }) => {
+          const { foci } = cache.readQuery({ query: GET_FOCI })
+          cache.writeQuery({
+            query: GET_FOCI,
+            data: { foci: foci.concat([focus]) }
+          })
+        } }
       >
         {(addFocus, { loading, error }) => (
           <form onSubmit={ e => handleAddFocus(e, addFocus) }>
@@ -65,7 +71,6 @@ const AddFocusForm = ({ userId, closeFocusForm }) => {
 }
 
 AddFocusForm.propTypes = {
-  userId: PropTypes.number.isRequired,
   closeFocusForm: PropTypes.func.isRequired
 }
 

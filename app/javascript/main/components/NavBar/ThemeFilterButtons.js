@@ -5,7 +5,7 @@ import GET_THEMES_QUERY from '../../queries/Themes'
 
 import NavBarButton from './Button'
 
-const handleClick = (e, theme, client) => {
+const handleClick = (e, theme) => {
   e.preventDefault()
   document.documentElement.classList.add('color-theme-in-transition')
   document.documentElement.setAttribute('data-theme', theme)
@@ -16,13 +16,13 @@ const handleClick = (e, theme, client) => {
 
 const ThemeFilterButtons = () => (
   <Query query={ GET_THEMES_QUERY }>
-    { ({ data: { themes }, client }) => (
+    { ({ data: { themes } }) => (
 
       themes.options.map(option => (
         <NavBarButton
           key={ option }
           isActive
-          onClick={ e => handleClick(e, option, client) }
+          onClick={ e => handleClick(e, option) }
           buttonText={ option }
         />
       ))

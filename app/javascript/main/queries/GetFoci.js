@@ -1,12 +1,7 @@
 import gql from 'graphql-tag'
 
-const ROOT_QUERY = gql`
-  query RootQuery($userId: ID!) {
-    user(id: $userId) {
-      id
-      username
-      theme
-    }
+const GET_FOCI = gql`
+  query GetFoci {
     foci {
       id
       title
@@ -28,4 +23,4 @@ const ROOT_QUERY = gql`
   }
 `
 
-export default ROOT_QUERY
+export default GET_FOCI

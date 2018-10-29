@@ -15,7 +15,7 @@ const Task = ({ task, optionsFilter }) => (
     />
 
     { optionsFilter === SHOW_MORE_OPTIONS &&
-       <TaskPoints points={ task.points } />
+      <TaskPoints points={ task.points } />
     }
 
     { optionsFilter === SHOW_MORE_OPTIONS &&

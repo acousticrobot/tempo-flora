@@ -43,11 +43,6 @@ article.focus-article {
 article.add-focus-article {
   @include foci-container--item(var(--c-article-alt--bkg), var(--c-article-alt--header));
   min-height: 10rem;
-  &:hover {
-    .add-focus-button--icon {
-      background-image: image-url("plus_hover-chrome.svg");
-    }
-  }
   header {
     .icon {
       background-color: var(--c-main--text);
