@@ -14,6 +14,9 @@ gem 'webpacker'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+# used for upgrading graphql
+gem 'schema'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -31,7 +34,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Project Specific Gems:
 gem 'haml'
 gem 'devise', '~> 4.5'
-gem "graphql"
+gem 'graphql'
 gem 'porch'
 
 group :development, :test do

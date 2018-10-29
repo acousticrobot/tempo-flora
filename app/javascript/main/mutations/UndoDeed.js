@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 const UNDO_DEED = gql`
-mutation undoDeed($deedId: ID!) {
-  undoDeed(input: {deedId: $deedId}) {
+mutation UndoDeedMutation($deedId: ID!) {
+  UndoDeedMutation(input: {deedId: $deedId}) {
     focus {
       id
       tasks {
@@ -14,9 +14,9 @@ mutation undoDeed($deedId: ID!) {
       deeds {
         id
         title
-        focus_title
+        focusTitle
         points
-        completed_at
+        completedAt
       }
     }
   }

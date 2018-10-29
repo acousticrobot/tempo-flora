@@ -28,8 +28,8 @@ module TempoFlora
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.autoload_paths << Rails.root.join('app', 'graph')
-    config.autoload_paths << Rails.root.join('app', 'graph', 'types')
-    config.autoload_paths << Rails.root.join('app', 'graph', 'mutations')
+    config.autoload_paths << Rails.root.join('app', 'graphql')
+    config.autoload_paths << Rails.root.join('app', 'graphql', 'types')
+    config.autoload_paths << Rails.root.join('app', 'graphql', 'mutations')
   end
 end

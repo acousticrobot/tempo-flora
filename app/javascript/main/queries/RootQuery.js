@@ -18,9 +18,9 @@ const ROOT_QUERY = gql`
         deeds {
           id
           title
-          focus_title
+          focusTitle
           points
-          completed_at
+          completedAt
         }
       }
     }

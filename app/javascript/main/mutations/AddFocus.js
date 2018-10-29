@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 const ADD_FOCUS = gql`
-mutation addFocus($title: String){
-  addFocus(input: {title: $title}) {
+mutation AddFocusMutation($title: String!){
+  AddFocusMutation(input: {title: $title}) {
     focus {
       id
       title
@@ -16,9 +16,9 @@ mutation addFocus($title: String){
       deeds {
         id
         title
-        focus_title
+        focusTitle
         points
-        completed_at
+        completedAt
       }
     }
   }

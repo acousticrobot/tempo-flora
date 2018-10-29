@@ -3,33 +3,49 @@ class GraphqlController < ApplicationController
 
   before_action :authenticate_user!
 
-  def create
-    query_string = params[:query]
-    query_variables = ensure_hash(params[:variables])
+  def execute
+    variables = ensure_hash(params[:variables])
+    query = params[:query]
+    operation_name = params[:operationName]
+    context = {
+      current_user: current_user
+    }
     result = TempoFloraSchema.execute(
-      query_string,
-      variables: query_variables,
-      context: {
-        current_user: current_user
-      }
+      query,
+      variables: variables,
+      context: context,
+      operation_name: operation_name
     )
-    if result["errors"].nil?
-      render json: result
-    else
-      render json: result, status: 400
-    end
+    render json: result
+  rescue => e
+    raise e unless Rails.env.development?
+    handle_error_in_development e
   end
 
   private
 
-  # This allows for better errors displays in graphiql
-  def ensure_hash(query_variables)
-    if query_variables.blank?
+  # Handle form data, JSON body, or a blank value
+  def ensure_hash(ambiguous_param)
+    case ambiguous_param
+    when String
+      if ambiguous_param.present?
+        ensure_hash(JSON.parse(ambiguous_param))
+      else
+        {}
+      end
+    when Hash, ActionController::Parameters
+      ambiguous_param
+    when nil
       {}
-    elsif query_variables.is_a?(String)
-      JSON.parse(query_variables)
     else
-      query_variables
+      raise ArgumentError, "Unexpected parameter: #{ambiguous_param}"
     end
+  end
+
+  def handle_error_in_development(e)
+    logger.error e.message
+    logger.error e.backtrace.join("\n")
+
+    render json: { error: { message: e.message, backtrace: e.backtrace }, data: {} }, status: 500
   end
 end

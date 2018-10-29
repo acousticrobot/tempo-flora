@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 const DELETE_TASK = gql`
-mutation deleteTask($taskId: ID!) {
-  deleteTask(input: {taskId: $taskId}) {
+mutation DeleteTaskMutation($taskId: ID!) {
+  DeleteTaskMutation(input: {taskId: $taskId}) {
     focus {
       id
       tasks {
