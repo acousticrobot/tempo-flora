@@ -22,11 +22,11 @@ const getVisibleFoci = (foci, focusFilter) => {
   }
 }
 
-const Dashboard = ({ foci }) => (
+const Dashboard = ({ foci, theme }) => (
   <Query query={ FOCUS_FILTER_QUERY }>
     { ({ data: { focusFilter } }) => (
       <section className='dashboard'>
-        <NavBar />
+        <NavBar theme={ theme } />
 
         <section className='foci-container'>
           { getVisibleFoci(foci, focusFilter).map(
@@ -49,7 +49,12 @@ const Dashboard = ({ foci }) => (
 )
 
 Dashboard.propTypes = {
-  foci: PropTypes.array.isRequired
+  foci: PropTypes.array.isRequired,
+  theme: PropTypes.string
+}
+
+Dashboard.defaultProps = {
+  theme: 'DEFAULT'
 }
 
 export default Dashboard

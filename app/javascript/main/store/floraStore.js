@@ -8,13 +8,10 @@ export const initialState = {
     __typename: 'focusFilter',
     filter: SHOW_ALL_FOCI,
     focusId: null
-  },
-  themes: {
-    __typename: 'themes',
-    options: ['default', 'dark', 'earth', 'text-only']
   }
 }
 
+// TODO: research resolvers for client side store:
 export const resolvers = {
   Mutation: {
     taskFilter: (_, { filter }, { cache }) => {

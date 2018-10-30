@@ -25,6 +25,11 @@ const ROOT_QUERY = gql`
         completedAt
       }
     }
+    __type(name: "Themes") {
+      enumValues {
+        name
+      }
+    }
   }
 `
 

@@ -21,6 +21,7 @@ module.exports = {
     "react/forbid-prop-types": 0,
     'jsx-a11y/label-has-associated-control': [2, { labelComponents: ['label'] }],
     "jsx-a11y/label-has-for": 0,
-    "jsx-quotes": ["error", "prefer-single"]
+    "jsx-quotes": ["error", "prefer-single"],
+    "no-underscore-dangle": 0
   }
 };

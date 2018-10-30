@@ -1,33 +1,32 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
 import GET_THEMES_QUERY from '../../queries/Themes'
 
-import NavBarButton from './Button'
+import ThemeFilterButton from './ThemeFilterButton'
 
-const handleClick = (e, theme) => {
-  e.preventDefault()
-  document.documentElement.classList.add('color-theme-in-transition')
-  document.documentElement.setAttribute('data-theme', theme)
-  window.setTimeout(() => {
-    document.documentElement.classList.remove('color-theme-in-transition')
-  }, 1000)
-}
-
-const ThemeFilterButtons = () => (
+const ThemeFilterButtons = ({ userTheme }) => (
   <Query query={ GET_THEMES_QUERY }>
-    { ({ data: { themes } }) => (
+    { ({ data }) => (
 
-      themes.options.map(option => (
-        <NavBarButton
-          key={ option }
-          isActive
-          onClick={ e => handleClick(e, option) }
-          buttonText={ option }
+      data.__type.enumValues.map(theme => (
+        <ThemeFilterButton
+          key={ theme.name }
+          themeName={ theme.name }
+          userTheme={ userTheme }
         />
       ))
     ) }
   </Query>
 )
+
+ThemeFilterButtons.propTypes = {
+  userTheme: PropTypes.string
+}
+
+ThemeFilterButtons.defaultProps = {
+  userTheme: 'DEFAULT'
+}
 
 export default ThemeFilterButtons

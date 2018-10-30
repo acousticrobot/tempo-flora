@@ -5,5 +5,6 @@ module Types
     field :CompleteTaskMutation, mutation: Mutations::CompleteTaskMutation
     field :DeleteTaskMutation, mutation: Mutations::DeleteTaskMutation
     field :UndoDeedMutation, mutation: Mutations::UndoDeedMutation
+    field :ChangeThemeMutation, mutation: Mutations::ChangeThemeMutation
   end
 end
