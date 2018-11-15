@@ -29,12 +29,12 @@ html[data-theme='DARK'] {
   --c-article--icon       : #{ $color-green-9 };
   --c-article--footer     : #{ $color-chrome-1 };
 
-  --c-article-alt--header : #{ $color-chrome-0 };
-  --c-article-alt--bkg    : #{ $color-chrome-0 };
+  --c-article-alt--header : #{ $color-chrome-1 };
+  --c-article-alt--bkg    : #{ $color-chrome-1 };
 
   --c-form--text          : #{ $color-chrome-0 };
   --c-form--bkg           : #{ $color-chrome-9 };
   --c-form--footer        : #{ $color-chrome-8 };
-  --c-form--button        : #{ $color-green-5 };
-  --c-form--button-hover  : #{ $color-green-9 };
+  --c-form--button        : #{ $color-chrome-2 };
+  --c-form--button-hover  : #{ $color-green-5 };
 }

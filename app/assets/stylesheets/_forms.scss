@@ -59,7 +59,7 @@ section.form--section {
 }
 
 .form--label {
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: 0.5rem;
 }
 
 .form--checkbox-label {
@@ -82,11 +82,9 @@ span.form--label_required {
 }
 
 .form--input_small {
-  width: 90%;
   font-size: .75rem;
   height: 1.25rem;
   margin: 5px auto;
-  clear: both;
 }
 
 .form--button {
@@ -100,15 +98,17 @@ span.form--label_required {
   &:hover {
     background-color: var(--c-form--button-hover);
   }
-  color: $color-base-F;
+  color: var(--c-main--text);
   border-radius: .5rem;
 }
 
 .form--button_small {
-  width: 150px;
-  font-size: .75rem;
-  height: 1.25rem;
+  width: 110px;
+  font-size: 1rem;
+  height: 1.5rem;
   margin: .75rem auto;
+  border-radius: .75rem;
+  padding-top: 2px;
 }
 
 .form--hint {
@@ -129,6 +129,52 @@ aside.form--additional {
   border-radius: 0 0 var(--radius) var(--radius);
 }
 
+article.add-focus--form {
+  header {
+    padding-left: .5rem;
+    h1 {
+      display: flex;
+    }
+    button {
+      background-color: var(--c-article--header);
+      border-width: 0;
+    }
+  }
+  min-height: 10rem;
+}
+
+.add-focus--form-title-input {
+    height: 2rem;
+    border-width: 0;
+    margin: -3px 1rem;
+    font-size: 1.25rem;
+    flex: 1;
+    background-color: var(--c-form--bkg);
+}
+
+.add-task--form {
+  padding: .25rem;
+  form {
+    width: 100%;
+    input#repeatable-check {
+        width: 1rem;
+    }
+    input#points-input {
+        width: 2rem;
+    }
+  }
+}
+
+.add-task--form-row {
+  display: flex;
+  input {
+    background-color: var(--c-form--bkg);
+  }
+  .title-input {
+    flex: 1;
+  }
+}
+
 // custom for tablet and desktop
 @media (min-width: $media-mobile){
   article.form {
@@ -144,5 +190,3 @@ aside.form--additional {
     margin-left: 115px;
   }
 }
-
-

@@ -5,12 +5,17 @@ const NavBarButton = ({ isActive, buttonText, onClick }) => {
   const className = isActive ? 'filter-navbar--link_active' : 'filter-navbar--link'
 
   if (!isActive) {
-    return <li className={ className }>{buttonText}</li>
+    return (
+      <li className={ className }>
+        <div className='button'>{buttonText}</div>
+      </li>
+    )
   }
 
   return (
     <li className={ className }>
       <div
+        className='button'
         onClick={ e => (onClick(e)) }
         onKeyPress={ e => (onClick(e)) }
         role='button'

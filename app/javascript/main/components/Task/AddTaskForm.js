@@ -33,7 +33,7 @@ const AddTaskForm = ({ focusId, closeTaskForm }) => {
   }
 
   return (
-    <article className='form form_small'>
+    <div className='add-task--form'>
       <Mutation mutation={ ADD_TASK }>
         {(AddTask, { loading, error }) => (
           <form onSubmit={ e => handleAddTask(e, AddTask) }>
@@ -41,60 +41,60 @@ const AddTaskForm = ({ focusId, closeTaskForm }) => {
             { loading && <p>Loading...</p> }
             { error && <p>Error :( Please try again</p> }
 
-            <label className={ CSS('label') } htmlFor='title-input'>
-              Task Description:
-            </label>
+            <div className='add-task--form-row'>
+              <input
+                id='repeatable-check'
+                className={ CSS('input') }
+                type='checkbox'
+                ref={ node => { repeatableInput = node } }
+              />
 
-            <input
-              id='title-input'
-              className={ CSS('input') }
-              type='text'
-              ref={ node => { titleInput = node } }
-            />
+              <label
+                className={ CSS('label checkbox-label') }
+                htmlFor='repeatable-check'
+              >
+                Repeatable
+              </label>
+              <label className={ CSS('label') } htmlFor='title-input'>
+                Title:
+              </label>
 
-            <label className={ CSS('label') } htmlFor='points-input'>
-              Points:
-            </label>
+              <input
+                id='title-input'
+                className={ CSS('input') }
+                type='text'
+                ref={ node => { titleInput = node } }
+              />
 
-            <input
-              id='points-input'
-              className={ CSS('input') }
-              type='number'
-              pattern='[0-9]*'
-              ref={ node => { pointsInput = node } }
-            />
+              <label className={ CSS('label') } htmlFor='points-input'>
+                Points:
+              </label>
 
-            <input
-              id='repeatable-check'
-              className={ CSS('input') }
-              type='checkbox'
-              ref={ node => { repeatableInput = node } }
-            />
+              <input
+                id='points-input'
+                className={ CSS('input') }
+                type='number'
+                pattern='[0-9]*'
+                ref={ node => { pointsInput = node } }
+              />
+            </div>
 
-            <label
-              className={ CSS('label checkbox-label') }
-              htmlFor='repeatable-check'
-            >
-              Repeatable
-            </label>
-
-            <div className='clear' />
-
-            <button type='submit' className={ CSS('button') }>
-              Add Task
-            </button>
-
-            <button
-              type='submit'
-              className={ CSS('button') }
-              onClick={ closeTaskForm }
-            >
-              Cancel
-            </button>
+            <div className='add-task--form-row'>
+              <button type='submit' className={ CSS('button') }>
+                Add Task
+              </button>
+              <button
+                type='submit'
+                className={ CSS('button') }
+                onClick={ closeTaskForm }
+              >
+                Cancel
+              </button>
+            </div>
           </form>
         )}
       </Mutation>
-    </article>
+    </div>
   )
 }
 

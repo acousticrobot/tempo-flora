@@ -23,6 +23,7 @@ section.foci-container {
     h1 {
       color: var(--c-main--text);
       font-size: 1.35rem;
+      min-height: 1.75rem;
       text-transform: capitalize;
     }
   }
@@ -40,39 +41,13 @@ article.focus-article {
   @include foci-container--item(var(--c-article--bkg), var(--c-article--header));
 }
 
-article.add-focus-article {
+.add-focus-button {
   @include foci-container--item(var(--c-article-alt--bkg), var(--c-article-alt--header));
   min-height: 10rem;
   header {
     .icon {
-      background-color: var(--c-main--text);
+      background-color: var(--c-main--icon);
     }
-  }
-}
-
-.add-focus-button {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.add-focus-button--icon-wrapper {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.add-focus-button--icon {
-  background-size: 2rem 2rem;
-  display: block;
-  margin: 0 auto 1.5rem;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  background-color: var(--c-main--nav-on);
-  &:hover {
-    background-color: var(--c-main--nav-on-hover);
   }
 }
 
@@ -83,40 +58,14 @@ article.focus-article.form.form_small {
 
 .focus-article--button {
   background-color: var(--c-article--nav);
+  color: var(--c-main--text);
   border-radius: 1rem;
+  border-width: 0;
   font-size: .75rem;
   margin: .25rem 0 .25rem .5rem;
   padding: .25rem;
   text-align: center;
   width: 5rem;
-  &:hover {
-    background-color: var(--c-article--nav-hover);
-    .focus-article--button-icon {
-      background-image: image-url("plus_hover.svg");
-    }
-  }
-}
-
-.focus-article--button-icon {
-  background-size: 1rem 1rem;
-  display: block;
-  float: right;
-  height: 1rem;
-  width: 1rem;
-}
-
-.focus-article--button-icon.plus {
-  background-image: image-url("plus.svg");
-  &:hover {
-    background-image: image-url("plus_hover.svg");
-  }
-}
-
-.focus-article--button-icon.minus {
-  background-image: image-url("minus.svg");
-  &:hover {
-    background-image: image-url("minus_hover.svg");
-  }
 }
 
 .focus-items {
@@ -130,7 +79,8 @@ nav.focus-header--nav-icon {
 .focus-article--icon {
   width: 22px;
   height: 22px;
-  margin-right: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--c-article--header);
   .icon {
     background-color: var(--c-main--icon);
   }
