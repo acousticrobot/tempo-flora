@@ -167,11 +167,30 @@ article.add-focus--form {
 
 .add-task--form-row {
   display: flex;
+  flex-wrap: wrap;
   input {
     background-color: var(--c-form--bkg);
   }
-  .title-input {
+  #title-input {
     flex: 1;
+    width: initial;
+  }
+  #repeatable-check {
+    -webkit-appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    background-color: var(--c-main--icon);
+    &:focus, &:checked:focus {
+      background-color: var(--c-main--text);
+    }
+    &:checked {
+      -webkit-mask-image: image-url("repeat.svg");
+      mask-image: image-url("repeat.svg");
+    }
+    &:not(:checked) {
+      -webkit-mask-image: image-url("check_box.svg");
+      mask-image: image-url("check_box.svg");
+    }
   }
 }
 

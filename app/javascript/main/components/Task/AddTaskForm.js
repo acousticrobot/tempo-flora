@@ -43,18 +43,13 @@ const AddTaskForm = ({ focusId, closeTaskForm }) => {
 
             <div className='add-task--form-row'>
               <input
+                aria-label='Repeatable'
                 id='repeatable-check'
                 className={ CSS('input') }
                 type='checkbox'
                 ref={ node => { repeatableInput = node } }
               />
 
-              <label
-                className={ CSS('label checkbox-label') }
-                htmlFor='repeatable-check'
-              >
-                Repeatable
-              </label>
               <label className={ CSS('label') } htmlFor='title-input'>
                 Title:
               </label>
