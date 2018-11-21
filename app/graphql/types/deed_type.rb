@@ -2,6 +2,7 @@ module Types
   class DeedType < Types::BaseObject
 
     field :id, ID, null: false
+    field :user_id, Integer, null: false
     field :title, String, null: false
     field :focus_title, String, null: true
     field :points, Integer, null: false

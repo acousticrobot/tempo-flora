@@ -5,4 +5,5 @@ class Deed < ApplicationRecord
   validates :completed_at, presence: true
 
   scope :order_by_completion, -> { order("completed_at DESC") }
+  scope :since, ->(date) { where('updated_at > ?', date)}
 end
