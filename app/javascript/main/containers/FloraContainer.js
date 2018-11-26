@@ -8,7 +8,7 @@ import Dashboard from '../components/Dashboard'
 const localStartOfDay = () => {
   const date = new Date()
   date.setHours(0, 0, 0, 0)
-  return date.toUTCString()
+  return date.toISOString()
 }
 
 const FloraContainer = ({ userId }) => {
