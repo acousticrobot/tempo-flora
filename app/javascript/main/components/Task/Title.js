@@ -16,19 +16,21 @@ const CSS = (loading, error) => {
 }
 
 
-const handleClick = (e, id, CompleteTask) => {
-  CompleteTask({ variables: { taskId: id } })
+const handleClick = (e, id, CompleteTask, deedsSince) => {
+  CompleteTask(
+    { variables: { taskId: id, deedsSince } }
+  )
   e.target.blur()
 }
 
-const TaskTitle = ({ id, title, repeatable }) => (
+const TaskTitle = ({ id, title, repeatable, deedsSince }) => (
 
   <Mutation mutation={ COMPLETE_TASK }>
     { (CompleteTask, { loading, error }) => (
       <div
         className={ CSS(loading, error) }
-        onClick={ e => handleClick(e, id, CompleteTask) }
-        onKeyPress={ e => handleClick(e, id, CompleteTask) }
+        onClick={ e => handleClick(e, id, CompleteTask, deedsSince) }
+        onKeyPress={ e => handleClick(e, id, CompleteTask, deedsSince) }
         role='button'
         tabIndex='0'
       >
@@ -44,7 +46,8 @@ const TaskTitle = ({ id, title, repeatable }) => (
 TaskTitle.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  repeatable: PropTypes.bool.isRequired
+  repeatable: PropTypes.bool.isRequired,
+  deedsSince: PropTypes.string.isRequired
 }
 
 export default TaskTitle

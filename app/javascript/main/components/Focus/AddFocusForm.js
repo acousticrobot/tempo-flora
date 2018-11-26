@@ -4,7 +4,7 @@ import { Mutation } from 'react-apollo'
 import ADD_FOCUS from '../../mutations/AddFocus'
 import GET_FOCI from '../../queries/GetFoci'
 
-const AddFocusForm = ({ closeFocusForm }) => {
+const AddFocusForm = ({ closeFocusForm, deedsSince }) => {
   let titleInput
 
   const CSS = type => `add-focus--form-${type}`
@@ -24,9 +24,10 @@ const AddFocusForm = ({ closeFocusForm }) => {
       <Mutation
         mutation={ ADD_FOCUS }
         update={ (cache, { data: { AddFocusMutation: { focus } } }) => {
-          const { foci } = cache.readQuery({ query: GET_FOCI })
+          const { foci } = cache.readQuery({ query: GET_FOCI, variables: { deedsSince } })
           cache.writeQuery({
             query: GET_FOCI,
+            variables: { deedsSince },
             data: { foci: foci.concat([focus]) }
           })
         } }
@@ -80,7 +81,8 @@ const AddFocusForm = ({ closeFocusForm }) => {
 }
 
 AddFocusForm.propTypes = {
-  closeFocusForm: PropTypes.func.isRequired
+  closeFocusForm: PropTypes.func.isRequired,
+  deedsSince: PropTypes.string.isRequired
 }
 
 export default AddFocusForm

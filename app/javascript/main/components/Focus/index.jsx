@@ -26,17 +26,17 @@ const getDeeds = (deeds, taskFilter) => {
   }
 }
 
-const Deeds = ({ deeds }) => (
+const Deeds = ({ deeds, deedsSince }) => (
   <Query query={ TASK_FILTER_QUERY }>
     { ({ data: { taskFilter } }) => (
       getDeeds(deeds, taskFilter).map(
-        deed => <Deed key={ deed.id } deed={ deed } />
+        deed => <Deed key={ deed.id } deed={ deed } deedsSince={ deedsSince} />
       )
     ) }
   </Query>
 )
 
-const Focus = ({ focus, optionsFilter }) => (
+const Focus = ({ focus, optionsFilter, deedsSince }) => (
   <article className='focus-article'>
     <header>
       <h1>
@@ -52,10 +52,11 @@ const Focus = ({ focus, optionsFilter }) => (
         <Task
           key={ task.id }
           task={ task }
+          deedsSince={ deedsSince }
           optionsFilter={ optionsFilter }
         />
       ))}
-      <Deeds deeds={ focus.deeds } />
+      <Deeds deeds={ focus.deeds } deedsSince={ deedsSince } />
     </ul>
 
     <PointsAccrued points={ sumAccruedPoints(focus) } />
@@ -74,6 +75,7 @@ Focus.propTypes = {
     tasks: PropTypes.array.isRequired,
     deeds: PropTypes.array.isRequired
   }).isRequired,
+  deedsSince: PropTypes.string.isRequired,
   optionsFilter: PropTypes.string.isRequired
 }
 

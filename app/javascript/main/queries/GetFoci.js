@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 const GET_FOCI = gql`
-  query GetFoci {
+  query GetFoci($deedsSince: String) {
     foci {
       id
       title
@@ -12,7 +12,7 @@ const GET_FOCI = gql`
         points
         repeatable
       }
-      deeds {
+      deeds(since: $deedsSince) {
         id
         title
         focusTitle

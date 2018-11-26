@@ -22,6 +22,7 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': [2, { labelComponents: ['label'] }],
     "jsx-a11y/label-has-for": 0,
     "jsx-quotes": ["error", "prefer-single"],
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "object-curly-newline": ["error", { "consistent": true }]
   }
 };

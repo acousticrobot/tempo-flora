@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 const COMPLETE_TASK = gql`
-mutation CompleteTaskMutation($taskId: ID!) {
+mutation CompleteTaskMutation($taskId: ID!, $deedsSince: String) {
   CompleteTaskMutation(input: {taskId: $taskId}) {
     focus {
       id
@@ -11,7 +11,7 @@ mutation CompleteTaskMutation($taskId: ID!) {
         points
         repeatable
       }
-      deeds {
+      deeds(since: $deedsSince) {
         id
         title
         focusTitle

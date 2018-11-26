@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 const ROOT_QUERY = gql`
-  query RootQuery($userId: ID!) {
+  query RootQuery($userId: ID!, $deedsSince: String) {
     user(id: $userId) {
       id
       username
@@ -17,7 +17,7 @@ const ROOT_QUERY = gql`
         points
         repeatable
       }
-      deeds {
+      deeds(since: $deedsSince) {
         id
         title
         focusTitle

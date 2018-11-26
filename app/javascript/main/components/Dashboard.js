@@ -22,7 +22,7 @@ const getVisibleFoci = (foci, focusFilter) => {
   }
 }
 
-const Dashboard = ({ foci, theme }) => (
+const Dashboard = ({ foci, theme, deedsSince }) => (
   <Query query={ FOCUS_FILTER_QUERY }>
     { ({ data: { focusFilter } }) => (
       <section className='dashboard'>
@@ -34,6 +34,7 @@ const Dashboard = ({ foci, theme }) => (
               <Focus
                 key={ focus.id }
                 focus={ focus }
+                deedsSince={ deedsSince }
                 optionsFilter={
                   focusFilter.filter === SHOW_SINGLE_FOCUS ?
                     SHOW_MORE_OPTIONS : SHOW_STANDARD_OPTIONS
@@ -41,7 +42,7 @@ const Dashboard = ({ foci, theme }) => (
               />
             )
           ) }
-          <AddFocus focusFilter={ focusFilter } />
+          <AddFocus focusFilter={ focusFilter } deedsSince={ deedsSince } />
         </section>
       </section>
     ) }
@@ -50,6 +51,7 @@ const Dashboard = ({ foci, theme }) => (
 
 Dashboard.propTypes = {
   foci: PropTypes.array.isRequired,
+  deedsSince: PropTypes.string.isRequired,
   theme: PropTypes.string
 }
 
