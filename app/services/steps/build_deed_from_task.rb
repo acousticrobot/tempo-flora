@@ -11,6 +11,7 @@ class BuildDeedFromTask
       position:     context.task.focus.position,
       points:       context.task.points,
       user:         context.user,
+      focus:        context.task.focus
     )
   end
 end
