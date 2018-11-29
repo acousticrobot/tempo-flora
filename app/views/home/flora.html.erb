@@ -1,0 +1,45 @@
+<h1>Deeds for the last Week:</h1>
+
+<div class="flora-week">
+
+  <% @deeds_by_date.each do |date, deeds| %>
+    <div class="flora-day">
+
+      <header>
+        <h2>
+          <%= days_ago(date) %>
+        </h2>
+      </header>
+
+      <section class="flora-day--foci">
+        <% deeds_by_focus = deeds.group_by { |deed| deed.focus_id } %>
+
+        <% @foci.each do |focus| %>
+          <div class="flora-focus flora-position-<%= focus.position %>">
+            <% if deeds_by_focus[focus.id].present? %>
+              <% deeds_by_focus[focus.id].each do %>
+                <div class='focus-article--icon'>
+                  <div class='icon icon-plus' ></div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </section>
+
+      <section>
+        <div class="flora-day--deed-list">
+          <ul>
+            <% deeds_by_focus.each do |focus_id, ds| %>
+              <h3><%= ds.first.focus_title %></h3>
+              <% ds.each do |d| %>
+                <li><%= d.title %></li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </section>
+    </div>
+  <% end %>
+</div>
+

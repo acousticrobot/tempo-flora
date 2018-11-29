@@ -28,6 +28,7 @@ end
 def addDeedForFocus(focus,params)
   Deed.create(
     title: params[:title] || "New Deed Done",
+    focus: focus,
     focus_title: focus.title,
     position: focus.position,
     user: focus.user,
@@ -111,8 +112,8 @@ addDeedForFocus(communication_focus,
 )
 
 [8.days.ago, 6.days.ago, 4.days.ago, 3.days.ago, 2.days.ago, 2.days.ago, 1.day.ago, 1.day.ago].each do |time|
-  addDeedForFocus(health_focus,
-    { title: "yoga", completed_at: time }
+  addDeedForFocus(communication_focus,
+    { title: "duolingo Spanish lesson", completed_at: time }
   )
 end
 

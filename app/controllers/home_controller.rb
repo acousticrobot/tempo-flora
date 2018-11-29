@@ -9,4 +9,11 @@ class HomeController < ApplicationController
      theme: current_user.theme
    }
   end
+
+  def flora
+    @foci = current_user.foci
+    @deeds_by_date = current_user.deeds
+      .since(7.days.ago).order_by_completion
+      .group_by { |deed| deed.completed_at.to_date }
+  end
 end

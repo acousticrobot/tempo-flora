@@ -1,0 +1,61 @@
+@import "variables";
+
+.flora-week {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  h1, h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  h3 {
+    font-size: .75rem;
+    color: var(--c-article--text);
+  }
+  li {
+    font-size: .75rem;
+  }
+}
+
+.flora-day {
+  display: flex;
+  flex-direction: column;
+  flex-grow:1;
+  background-color: var(--c-article--bkg);
+  margin: 1px;
+  .flora-day--deed-list {
+    width: 175px;
+    opacity: 0;
+  }
+  &:hover {
+    .flora-day--deed-list {
+      opacity: 1;
+    }
+  }
+}
+
+.flora-day--foci {
+  display: flex;
+}
+
+.flora-focus {
+  min-width: 2rem;
+  min-height: 2rem;
+  flex-grow:1;
+}
+
+.flora-position-0 {
+  background: var(--c-article--header);
+}
+
+.flora-position-1 {
+  background: var(--c-article--detail);
+}
+
+.flora-position-2 {
+  background: var(--c-article--section);
+}
+
+.flora-position-3 {
+  background: var(--c-article--nav);
+}

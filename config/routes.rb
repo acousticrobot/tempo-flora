@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/users/:id/mailer', to: 'users#mailer'
   get '/users/', to: 'users#index'
 
+  get '/flora', to: 'home#flora'
+
   root to: "home#index"
 
   if Rails.env.development?

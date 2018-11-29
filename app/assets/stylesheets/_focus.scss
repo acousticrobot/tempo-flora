@@ -30,7 +30,7 @@ section.foci-container {
   // custom for mobile
   @media (max-width: $media-mobile){
     flex: 1 0 95%;
-    margin: .25rem;
+    margin: .25rem 0;
   }
   @media (min-width: $media-mobile) and (max-width: $media-tablet){
     flex: 1 0 46%;
