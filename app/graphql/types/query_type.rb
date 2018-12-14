@@ -55,5 +55,13 @@ module Types
     def user(id:)
       context[:current_user] if id == context[:current_user].id.to_s
     end
+
+    field :days, [Types::DayType], null: true do
+      description "completed tasks arranged by days"
+      argument :since, String, required: true
+    end
+    def days(since:)
+      Days.new(context[:current_user], since).days
+    end
   end
 end

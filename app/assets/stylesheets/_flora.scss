@@ -11,9 +11,11 @@
   h3 {
     font-size: .75rem;
     color: var(--c-article--text);
+    margin: .125rem 0 0 0;
   }
   li {
     font-size: .75rem;
+    margin-left: .25rem;
   }
 }
 
@@ -24,18 +26,16 @@
   background-color: var(--c-article--bkg);
   margin: 1px;
   .flora-day--deed-list {
-    width: 175px;
-    opacity: 0;
-  }
-  &:hover {
-    .flora-day--deed-list {
-      opacity: 1;
-    }
+    width: 128px;
   }
 }
 
 .flora-day--foci {
   display: flex;
+}
+
+.flora-day--graph {
+  margin: auto;
 }
 
 .flora-focus {

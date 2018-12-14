@@ -29,8 +29,8 @@ const getDeeds = (deeds, taskFilter) => {
 const Deeds = ({ deeds, deedsSince }) => (
   <Query query={ TASK_FILTER_QUERY }>
     { ({ data: { taskFilter } }) => (
-      getDeeds(deeds, taskFilter).map(
-        deed => <Deed key={ deed.id } deed={ deed } deedsSince={ deedsSince} />
+      getDeeds(deeds, taskFilter).map( deed =>
+        <Deed key={ deed.id } deed={ deed } deedsSince={ deedsSince} />
       )
     ) }
   </Query>
