@@ -1,5 +1,7 @@
 import * as d3 from 'd3'
 
+import Chart from '../Charts/Pie'
+
 const Graph = {}
 
 // https://www.smashingmagazine.com/2018/02/react-d3-ecosystem/
@@ -24,8 +26,7 @@ Graph.destroy = function destroy() {
 }
 
 Graph._draw = function _draw(el, props) {
-  const selection = d3.select(el).select('.d3-points')
-  selection.attr('transform', `translate(${props.width / 2}, ${props.height / 2})`).append('circle').attr('r', props.data.size)
+  Chart.draw(el, props)
 }
 
 export default Graph

@@ -21,14 +21,29 @@ class GraphInterface extends React.Component {
   }
 
   getData() {
-    const { day, limits } = this.props
-    const unit = 128
+    const { day, limits, foci } = this.props
+    const unit = 256
     const size = (day.totalPoints / limits.maxPoints) * (unit / 2)
+    const fociData = foci.map(focus => {
+      const deeds = day.deeds.filter(d => d.position === focus.position)
+      let points = 0
+      if (deeds.length) {
+        points = deeds.map(deed => (deed.points)).reduce((a, b) => a + b)
+      }
+      return ({
+        position: focus.position,
+        deeds,
+        points
+      })
+    })
+
     return ({
       width: unit,
       height: unit,
       data: {
-        size
+        size,
+        points: day.totalPoints,
+        foci: fociData
       }
     })
   }
@@ -44,7 +59,8 @@ GraphInterface.propTypes = {
   }).isRequired,
   limits: PropTypes.shape({
     maxPoints: PropTypes.number.isRequired
-  }).isRequired
+  }).isRequired,
+  foci: PropTypes.shape.isRequired
 }
 
 export default GraphInterface
