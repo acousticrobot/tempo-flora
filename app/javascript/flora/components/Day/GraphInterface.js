@@ -32,6 +32,7 @@ class GraphInterface extends React.Component {
       }
       return ({
         position: focus.position,
+        color: focus.color,
         deeds,
         points
       })
@@ -60,7 +61,7 @@ GraphInterface.propTypes = {
   limits: PropTypes.shape({
     maxPoints: PropTypes.number.isRequired
   }).isRequired,
-  foci: PropTypes.shape.isRequired
+  foci: PropTypes.array.isRequired
 }
 
 export default GraphInterface

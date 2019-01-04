@@ -13,7 +13,10 @@ const deedsForFocus = (focus, deeds) => (
 const Focus = ({ focus, deeds }) => {
   if (deeds.length > 0) {
     return (
-      <section className='flora-day--deed-list'>
+      <section
+        className='flora-day--deed-list'
+        style={{ borderLeft: `.75rem solid ${focus.color}` }}
+      >
         <h3>{ focus.title }</h3>
         <ul>
           { deeds.map(deed => (
@@ -48,15 +51,17 @@ const Day = ({ day, foci, limits }) => (
     </header>
 
     <GraphInterface day={ day } foci={ foci } limits={ limits } />
-    {
-      foci.map(focus => (
-        <Focus
-          key={ focus.position }
-          focus={ focus }
-          deeds={ deedsForFocus(focus, day.deeds) }
-        />
-      ))
-    }
+    <div className='flora-day--key'>
+      {
+        foci.map(focus => (
+          <Focus
+            key={ focus.position }
+            focus={ focus }
+            deeds={ deedsForFocus(focus, day.deeds) }
+          />
+        ))
+      }
+    </div>
   </article>
 )
 

@@ -9,10 +9,16 @@ const arcGenerator = size => (
     .cornerRadius(20)
 )
 
-const color = d3.scaleOrdinal()
-  .range(['hsl(82, 85%, 31%)', 'hsl(0, 100%, 67%)', 'hsl(30, 60%, 60%)', 'hsl(25, 50%, 38%)', 'pink', 'yellow'])
+const colorScale = foci => {
+  const colorArray = foci.map(focus => focus.color)
+  return d3.scaleOrdinal()
+    .range(colorArray)
+}
 
 const arcData = (foci, totalPoints) => {
+  if (totalPoints === 0) {
+    return []
+  }
   let lastAngle = 0
   const data = foci.map(focus => {
     const startAngle = lastAngle
@@ -31,8 +37,10 @@ const Pie = {}
 
 Pie.draw = function draw(el, props) {
   const arc = arcGenerator(props.data.size)
+  const color = colorScale(props.data.foci)
   const data = arcData(props.data.foci, props.data.points)
   const selection = d3.select(el).select('.d3-points')
+
   selection
     .attr('transform', `translate(${props.width / 2}, ${props.height / 2})`)
     .selectAll('path')

@@ -7,15 +7,18 @@
   h1, h2 {
     font-size: 1rem;
     text-align: center;
+    color: var(--c-article--alt-text);
   }
   h3 {
     font-size: .75rem;
     color: var(--c-article--text);
     margin: .125rem 0 0 0;
+    padding: 0 0 0 .125rem;
   }
   li {
     font-size: .75rem;
-    margin-left: .25rem;
+    margin-left: .5rem;
+    color: var(--c-article--alt-text);
   }
 }
 
@@ -25,8 +28,11 @@
   flex-grow:1;
   background-color: var(--c-article--bkg);
   margin: 1px;
+  .flora-day--key {
+    width: 256px;
+  }
   .flora-day--deed-list {
-    width: 128px;
+    margin-left: .25rem;
   }
 }
 

@@ -18,6 +18,7 @@ const ROOT_QUERY = gql`
     foci {
       title
       position
+      color
     }
   }
 `

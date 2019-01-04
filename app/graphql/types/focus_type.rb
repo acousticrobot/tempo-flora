@@ -6,6 +6,7 @@ module Types
     field :id, ID, null: false
     field :title, String, null: false
     field :position, Integer, null: false
+    field :color, String, null: false
 
     field :tasks, [Types::TaskType], null: true
     field :deeds, [Types::DeedType], null: true do

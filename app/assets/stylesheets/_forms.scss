@@ -47,7 +47,7 @@ section.form--section {
 #error_explanation {
   margin-bottom: 1rem;
   h2, ul, li {
-    color: $color-red-8;
+    color: $color-red-4;
   }
   h2 {
     font-size: 1.125rem;
@@ -75,7 +75,7 @@ section.form--section {
 }
 
 span.form--label_required {
-  color: $color-red-8;
+  color: $color-red-4;
 }
 
 .form--input,
