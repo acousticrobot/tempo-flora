@@ -14,8 +14,7 @@ const Focus = ({ focus, deeds }) => {
   if (deeds.length > 0) {
     return (
       <section
-        className='flora-day--deed-list'
-        style={{ borderLeft: `.75rem solid ${focus.color}` }}
+        className={`flora-day--deed-list chart--color-${focus.color}`}
       >
         <h3>{ focus.title }</h3>
         <ul>

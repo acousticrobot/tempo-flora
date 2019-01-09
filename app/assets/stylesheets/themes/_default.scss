@@ -38,6 +38,14 @@ html {
   --c-form--footer        : hsl(190, 90%, 95%);
   --c-form--button        : hsl(190, 90%, 80%);
   --c-form--button-hover  : hsl(190, 90%, 70%);
+
+  --c-chart-chrome        : #{ $color-chrome-9 };
+  --c-chart-red           : #{ $color-red-A };
+  --c-chart-orange        : #{ $color-orange-4 };
+  --c-chart-brown         : #{ $color-base-A };
+  --c-chart-green         : #{ $color-green-A };
+  --c-chart-blue          : #{ $color-blue-5 };
+  --c-chart-purple        : #{ $color-purple-4 };
 }
 
 

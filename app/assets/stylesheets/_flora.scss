@@ -50,18 +50,51 @@
   flex-grow:1;
 }
 
-.flora-position-0 {
-  background: var(--c-article--header);
+path.chart--color-RED {
+  fill: var(--c-chart-red);
 }
-
-.flora-position-1 {
-  background: var(--c-article--detail);
+section.chart--color-RED {
+  border-left: .75rem solid var(--c-chart-red);
 }
-
-.flora-position-2 {
-  background: var(--c-article--section);
+path.chart--color-GREY {
+  fill: var(--c-chart-chrome);
 }
-
-.flora-position-3 {
-  background: var(--c-article--nav);
+section.chart--color-GREY {
+  border-left: .75rem solid var(--c-chart-chrome);
+}
+path.chart--color-RED {
+  fill: var(--c-chart-red);
+}
+section.chart--color-RED {
+  border-left: .75rem solid var(--c-chart-red);
+}
+path.chart--color-ORANGE {
+  fill: var(--c-chart-orange);
+}
+section.chart--color-ORANGE {
+  border-left: .75rem solid var(--c-chart-orange);
+}
+path.chart--color-BROWN {
+  fill: var(--c-chart-brown);
+}
+section.chart--color-BROWN {
+  border-left: .75rem solid var(--c-chart-brown);
+}
+path.chart--color-GREEN {
+  fill: var(--c-chart-green);
+}
+section.chart--color-GREEN {
+  border-left: .75rem solid var(--c-chart-green);
+}
+path.chart--color-BLUE {
+  fill: var(--c-chart-blue);
+}
+section.chart--color-BLUE {
+  border-left: .75rem solid var(--c-chart-blue);
+}
+path.chart--color-PURPLE {
+  fill: var(--c-chart-purple);
+}
+section.chart--color-PURPLE {
+  border-left: .75rem solid var(--c-chart-purple);
 }

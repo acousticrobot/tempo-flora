@@ -38,4 +38,12 @@ html[data-theme='EARTH'] {
   --c-form--footer        : #{ $color-chrome-C };
   --c-form--button        : #{ $color-base-5 };
   --c-form--button-hover  : #{ $color-base-7 };
+
+  --c-chart-chrome        : #{ $color-chrome-5 };
+  --c-chart-red           : #{ $color-red-4 };
+  --c-chart-orange        : #{ $color-orange-4 };
+  --c-chart-brown         : #{ $color-base-5 };
+  --c-chart-green         : #{ $color-green-7 };
+  --c-chart-blue          : #{ $color-blue-5 };
+  --c-chart-purple        : #{ $color-purple-4 };
 }

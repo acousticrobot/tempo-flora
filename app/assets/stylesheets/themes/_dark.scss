@@ -37,4 +37,12 @@ html[data-theme='DARK'] {
   --c-form--footer        : #{ $color-chrome-8 };
   --c-form--button        : #{ $color-chrome-2 };
   --c-form--button-hover  : #{ $color-green-5 };
+
+  --c-chart-chrome        : #{ $color-chrome-5 };
+  --c-chart-red           : #{ $color-red-4 };
+  --c-chart-orange        : #{ $color-orange-4 };
+  --c-chart-brown         : #{ $color-base-5 };
+  --c-chart-green         : #{ $color-green-7 };
+  --c-chart-blue          : #{ $color-blue-5 };
+  --c-chart-purple        : #{ $color-purple-4 };
 }

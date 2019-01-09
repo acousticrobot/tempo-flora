@@ -5,7 +5,7 @@ class Focus < ApplicationRecord
 
   scope :order_by_position, -> { order("position ASC") }
 
-  def color
+  def color_hsl
     case position.to_i % 6
     when 0
       "hsl(0, 70%, 50%)"
@@ -21,6 +21,27 @@ class Focus < ApplicationRecord
       "hsl(275, 75%, 50%)"
     else
       "pink"
+    end
+  end
+
+  def color
+    case position.to_i % 6
+    when 0
+      "GREY"
+    when 1
+      "RED"
+    when 2
+      "ORANGE"
+    when 3
+      "BROWN"
+    when 4
+      "GREEN"
+    when 5
+      "BLUE"
+    when 6
+      "PURPLE"
+    else
+      "GREY"
     end
   end
 end
