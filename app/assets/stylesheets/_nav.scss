@@ -42,7 +42,7 @@
   .main-navbar--link_left,
   .main-navbar--profile
   {
-    border-bottom: 2px solid $color-base-F;
+    border-bottom: 2px solid $color-brown-F;
     padding: .5rem 0 .5rem 0;
     width: 100%;
     text-align: center;
@@ -68,6 +68,9 @@
     float: right;
     margin-left: 2px;
     padding: .5rem 2rem .5rem 2rem;
+  }
+  .main-navbar--link_left {
+    margin: 0 2px 0 0;
   }
 
   .main-navbar--link_left,

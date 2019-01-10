@@ -5,8 +5,8 @@ html {
   --c-text                : grey;
 
   --c-header--text        : hsl(190, 90%, 20%);
-  --c-header--bkg         : white;
-  --c-header--nav         : white;
+  --c-header--bkg         : #{ $color-blue-E };
+  --c-header--nav         : #{ $color-blue-E };
   --c-header--nav-hover   : white;
 
   --c-main--text          : black;
@@ -24,7 +24,7 @@ html {
   --c-article--detail     : #{ $color-blue-D };
   --c-article--nav        : #{ $color-blue-F };
   --c-article--nav-hover  : white;
-  --c-article--icon-wrap  : #{ $color-base-F };
+  --c-article--icon-wrap  : #{ $color-brown-F };
   --c-article--icon-hover : white;
   --c-article--icon       : grey;
   --c-article--footer     : #{ $color-blue-E };
@@ -41,8 +41,8 @@ html {
 
   --c-chart-chrome        : #{ $color-chrome-9 };
   --c-chart-red           : #{ $color-red-A };
-  --c-chart-orange        : #{ $color-orange-4 };
-  --c-chart-brown         : #{ $color-base-A };
+  --c-chart-orange        : #{ $color-orange-7 };
+  --c-chart-brown         : #{ $color-brown-A };
   --c-chart-green         : #{ $color-green-A };
   --c-chart-blue          : #{ $color-blue-5 };
   --c-chart-purple        : #{ $color-purple-4 };

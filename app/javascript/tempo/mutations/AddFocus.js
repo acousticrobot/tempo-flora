@@ -7,6 +7,7 @@ mutation AddFocusMutation($title: String!){
       id
       title
       position
+      color
       tasks {
         id
         title

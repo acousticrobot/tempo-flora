@@ -2,20 +2,6 @@ $radius: .25rem;
 
 // Colors
 
-$color-base-0: hsl(25, 50%, 3%);
-$color-base-1: hsl(25, 50%, 10%);
-$color-base-2: hsl(25, 50%, 15%);
-$color-base-4: hsl(25, 50%, 22%);
-$color-base-5: hsl(25, 50%, 31%);
-$color-base-6: hsl(25, 50%, 38%);
-$color-base-7: hsl(25, 50%, 47%);
-$color-base-8: hsl(30, 60%, 60%);
-$color-base-9: hsl(35, 75%, 72%);
-$color-base-A: hsl(35, 100%, 81%);
-$color-base-C: hsl(38, 100%, 89%);
-$color-base-D: hsl(40, 100%, 92%);
-$color-base-F: hsl(48, 100%, 95%);
-
 $color-chrome-0: hsl(0, 0%, 0%);
 $color-chrome-1: hsl(0, 0%, 10%);
 $color-chrome-2: hsl(0, 0%, 15%);
@@ -31,6 +17,36 @@ $color-chrome-C: hsl(0, 0%, 80%);
 $color-chrome-D: hsl(0, 0%, 87%);
 $color-chrome-F: hsl(43, 100%, 99%);
 
+$color-red-0: hsl(0, 70%, 10%);
+$color-red-1: hsl(0, 70%, 15%);
+$color-red-2: hsl(0, 70%, 25%);
+$color-red-3: hsl(0, 70%, 35%);
+$color-red-4: hsl(0, 70%, 50%);
+$color-red-7: hsl(0, 80%, 60%);
+$color-red-A: hsl(0, 100%, 67%);
+$color-red-D: hsl(0, 100%, 94%);
+
+$color-orange-7: hsl(25, 95%, 50%);
+$color-orange-6: hsl(25, 100%, 45%);
+$color-orange-5: hsl(25, 100%, 40%);
+$color-orange-4: hsl(25, 100%, 30%);
+$color-orange-1: hsl(25, 100%, 20%);
+
+$color-brown-0: hsl(25, 50%, 3%);
+$color-brown-1: hsl(25, 50%, 10%);
+$color-brown-2: hsl(25, 50%, 15%);
+$color-brown-3: hsl(25, 50%, 18%);
+$color-brown-4: hsl(25, 50%, 22%);
+$color-brown-5: hsl(25, 50%, 31%);
+$color-brown-6: hsl(25, 50%, 38%);
+$color-brown-7: hsl(25, 50%, 47%);
+$color-brown-8: hsl(30, 60%, 60%);
+$color-brown-9: hsl(35, 75%, 72%);
+$color-brown-A: hsl(35, 100%, 81%);
+$color-brown-C: hsl(38, 100%, 89%);
+$color-brown-D: hsl(40, 100%, 92%);
+$color-brown-F: hsl(48, 100%, 95%);
+
 $color-green-0: hsl(85, 65%, 7%);
 $color-green-2: hsl(82, 66%, 20%);
 $color-green-4: hsl(82, 66%, 27%);
@@ -40,7 +56,11 @@ $color-green-9: hsl(92, 48%, 54%);
 $color-green-A: hsl(82, 59%, 53%);
 $color-green-C: hsl(82, 79%, 67%);
 
-$color-blue-4: hsl(205, 95%, 40%);
+$color-blue-0: hsl(205, 95%, 10%);
+$color-blue-1: hsl(205, 95%, 15%);
+$color-blue-2: hsl(205, 95%, 25%);
+$color-blue-3: hsl(205, 95%, 35%);
+$color-blue-4: hsl(205, 95%, 45%);
 $color-blue-5: hsl(205, 95%, 50%);
 $color-blue-7: hsl(205, 100%, 60%);
 $color-blue-A: hsl(205, 100%, 75%);
@@ -50,16 +70,13 @@ $color-blue-D: hsl(205, 100%, 90%);
 $color-blue-E: hsl(205, 100%, 95%);
 $color-blue-F: hsl(205, 100%, 98%);
 
+$color-purple-0: hsl(275, 100%, 10%);
+$color-purple-1: hsl(275, 100%, 20%);
+$color-purple-2: hsl(275, 100%, 35%);
+$color-purple-3: hsl(275, 100%, 40%);
 $color-purple-4: hsl(275, 75%, 50%);
 $color-purple-7: hsl(275, 75%, 60%);
 $color-purple-A: hsl(275, 85%, 70%);
-
-$color-red-4: hsl(0, 70%, 50%);
-$color-red-7: hsl(0, 80%, 60%);
-$color-red-A: hsl(0, 100%, 67%);
-$color-red-D: hsl(0, 100%, 94%);
-
-$color-orange-4: hsl(25, 95%, 50%);
 
 // Media Query Sizes
 $media-mobile:  640px;

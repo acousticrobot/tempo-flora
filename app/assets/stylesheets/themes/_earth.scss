@@ -2,47 +2,47 @@
 
 html[data-theme='EARTH'] {
   --radius                : .75rem;
-  --c-text                : #{ $color-base-2 };
+  --c-text                : #{ $color-brown-2 };
 
-  --c-header--text        : #{ $color-base-2 };
+  --c-header--text        : #{ $color-brown-2 };
   --c-header--bkg         : #{ $color-chrome-7 };
   --c-header--nav         : #{ $color-chrome-A };
   --c-header--nav-hover   : #{ $color-chrome-C };
 
-  --c-main--text          : #{ $color-base-D };
+  --c-main--text          : #{ $color-brown-D };
   --c-main--bkg           : #{ $color-chrome-4 };
   --c-main--section       : #{ $color-chrome-4 };
   --c-main--nav-on        : #{ $color-chrome-A };
   --c-main--nav-on-hover  : #{ $color-chrome-C };
   --c-main--nav-off       : #{ $color-chrome-7 };
-  --c-main--icon          : #{ $color-base-7 };
+  --c-main--icon          : #{ $color-brown-7 };
 
-  --c-article--text       : #{ $color-base-D };
-  --c-article--alt-text   : #{ $color-base-A };
-  --c-article--header     : #{ $color-base-2 };
-  --c-article--bkg        : #{ $color-base-4 };
-  --c-article--section    : #{ $color-base-5 };
-  --c-article--detail     : #{ $color-base-4 };
-  --c-article--nav        : #{ $color-base-6 };
-  --c-article--nav-hover  : #{ $color-base-4 };
-  --c-article--icon-wrap  : #{ $color-base-8 };
-  --c-article--icon-hover : #{ $color-base-A };
-  --c-article--icon       : #{ $color-base-2 };
-  --c-article--footer     : #{ $color-base-6 };
+  --c-article--text       : #{ $color-brown-D };
+  --c-article--alt-text   : #{ $color-brown-A };
+  --c-article--header     : #{ $color-brown-2 };
+  --c-article--bkg        : #{ $color-brown-4 };
+  --c-article--section    : #{ $color-brown-5 };
+  --c-article--detail     : #{ $color-brown-4 };
+  --c-article--nav        : #{ $color-brown-6 };
+  --c-article--nav-hover  : #{ $color-brown-4 };
+  --c-article--icon-wrap  : #{ $color-brown-8 };
+  --c-article--icon-hover : #{ $color-brown-A };
+  --c-article--icon       : #{ $color-brown-2 };
+  --c-article--footer     : #{ $color-brown-6 };
 
-  --c-article-alt--header : #{ $color-base-2 };
-  --c-article-alt--bkg    : #{ $color-base-4 };
+  --c-article-alt--header : #{ $color-brown-2 };
+  --c-article-alt--bkg    : #{ $color-brown-4 };
 
-  --c-form--text          : #{ $color-base-2 };
-  --c-form--bkg           : #{ $color-base-8 };
+  --c-form--text          : #{ $color-brown-2 };
+  --c-form--bkg           : #{ $color-brown-8 };
   --c-form--footer        : #{ $color-chrome-C };
-  --c-form--button        : #{ $color-base-5 };
-  --c-form--button-hover  : #{ $color-base-7 };
+  --c-form--button        : #{ $color-brown-5 };
+  --c-form--button-hover  : #{ $color-brown-7 };
 
   --c-chart-chrome        : #{ $color-chrome-5 };
   --c-chart-red           : #{ $color-red-4 };
-  --c-chart-orange        : #{ $color-orange-4 };
-  --c-chart-brown         : #{ $color-base-5 };
+  --c-chart-orange        : #{ $color-orange-7 };
+  --c-chart-brown         : #{ $color-brown-5 };
   --c-chart-green         : #{ $color-green-7 };
   --c-chart-blue          : #{ $color-blue-5 };
   --c-chart-purple        : #{ $color-purple-4 };

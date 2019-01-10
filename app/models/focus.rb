@@ -25,7 +25,7 @@ class Focus < ApplicationRecord
   end
 
   def color
-    case position.to_i % 6
+    case position.to_i % 7
     when 0
       "GREY"
     when 1
