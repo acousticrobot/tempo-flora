@@ -11,6 +11,7 @@ const ROOT_QUERY = gql`
       id
       title
       position
+      color
       tasks {
         id
         title

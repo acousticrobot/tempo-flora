@@ -12,32 +12,32 @@ html {
   --c-main--text          : black;
   --c-main--bkg           : white;
   --c-main--section       : white;
-  --c-main--nav-on        : hsl(190, 90%, 80%);
-  --c-main--nav-on-hover  : hsl(190, 90%, 90%);
-  --c-main--nav-off       : hsl(190, 90%, 90%);
+  --c-main--nav-on        : #{ $color-blue-B };
+  --c-main--nav-on-hover  : #{ $color-blue-D };
+  --c-main--nav-off       : #{ $color-blue-D };
   --c-main--icon          : grey;
 
   --c-article--text       : black;
-  --c-article--header     : hsl(190, 90%, 90%);
-  --c-article--bkg        : hsl(190, 90%, 95%);
-  --c-article--section    : hsl(190, 95%, 95%);
-  --c-article--detail     : hsl(190, 90%, 90%);
-  --c-article--nav        : hsl(190, 90%, 98%);
+  --c-article--header     : #{ $color-blue-D };
+  --c-article--bkg        : #{ $color-blue-F };
+  --c-article--section    : white;
+  --c-article--detail     : #{ $color-blue-D };
+  --c-article--nav        : #{ $color-blue-F };
   --c-article--nav-hover  : white;
-  --c-article--icon-wrap  : hsl(190, 85%, 85%);
+  --c-article--icon-wrap  : #{ $color-base-F };
   --c-article--icon-hover : white;
   --c-article--icon       : grey;
-  --c-article--footer     : hsl(190, 90%, 90%);
+  --c-article--footer     : #{ $color-blue-E };
   --radius     : 0;
 
-  --c-article-alt--header : hsl(190, 90%, 95%);
-  --c-article-alt--bkg    : hsl(190, 90%, 98%);
+  --c-article-alt--header : #{ $color-blue-E };
+  --c-article-alt--bkg    : #{ $color-blue-F };
 
   --c-form--text          : grey;
-  --c-form--bkg           : hsl(190, 90%, 95%);
-  --c-form--footer        : hsl(190, 90%, 95%);
-  --c-form--button        : hsl(190, 90%, 80%);
-  --c-form--button-hover  : hsl(190, 90%, 70%);
+  --c-form--bkg           : #{ $color-blue-E };
+  --c-form--footer        : #{ $color-blue-E };
+  --c-form--button        : #{ $color-blue-B };
+  --c-form--button-hover  : #{ $color-blue-A };
 
   --c-chart-chrome        : #{ $color-chrome-9 };
   --c-chart-red           : #{ $color-red-A };
