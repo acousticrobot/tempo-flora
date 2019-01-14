@@ -30,20 +30,18 @@
   padding: 1px;
 }
 
-.task-article--item_explanation {
-  background-color: var(--c-article--nav);
+.task-article--item-description {
   border-radius: 1rem;
   padding: .125rem .25rem .125rem .25rem;
   width: 6rem;
   &:hover {
-    background-color: var(--c-article--nav-hover);
+    background-color: var(--c-article--icon-wrap);
   }
 }
 
 .task-article--icon {
   @extend %icon;
   float: left;
-  background-color: var(--c-article--icon-wrap);
   &:hover {
     background-color: var(--c-article--icon-hover);
   }

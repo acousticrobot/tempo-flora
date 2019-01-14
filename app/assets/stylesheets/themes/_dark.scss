@@ -22,7 +22,6 @@ html[data-theme='DARK'] {
   --c-article--bkg        : #{ $color-chrome-3 };
   --c-article--section    : #{ $color-chrome-1 };
   --c-article--detail     : #{ $color-chrome-0 };
-  --c-article--nav        : #{ $color-chrome-2 };
   --c-article--nav-hover  : #{ $color-chrome-0 };
   --c-article--icon-wrap  : #{ $color-chrome-0 };
   --c-article--icon-hover : #{ $color-chrome-0 };
@@ -48,7 +47,6 @@ html[data-theme='DARK'] {
 
   article.focus-article[data-theme='RED'] {
     --c-article--header     : #{ $color-red-3 };
-    --c-article--nav        : #{ $color-red-2 };
     --c-article--bkg        : #{ $color-red-2 };
     --c-article--section    : #{ $color-red-0 };
     --c-main--icon          : #{ $color-red-7 };
@@ -57,7 +55,6 @@ html[data-theme='DARK'] {
   }
   article.focus-article[data-theme='ORANGE'] {
     --c-article--header     : #{ $color-orange-6 };
-    --c-article--nav        : #{ $color-orange-4 };
     --c-article--bkg        : #{ $color-orange-4 };
     --c-article--section    : #{ $color-orange-1 };
     --c-main--icon          : #{ $color-orange-4 };
@@ -66,14 +63,12 @@ html[data-theme='DARK'] {
   }
   article.focus-article[data-theme='BROWN'] {
     --c-article--header     : #{ $color-brown-2 };
-    --c-article--nav        : #{ $color-brown-3 };
     --c-article--bkg        : #{ $color-brown-4 };
     --c-article--section    : #{ $color-brown-1 };
     --c-article--footer     : #{ $color-brown-1 };
   }
   article.focus-article[data-theme='BLUE'] {
     --c-article--header     : #{ $color-blue-3 };
-    --c-article--nav        : #{ $color-blue-1 };
     --c-article--bkg        : #{ $color-blue-2 };
     --c-article--section    : #{ $color-blue-0 };
     --c-article--footer     : #{ $color-blue-0 };
@@ -86,8 +81,8 @@ html[data-theme='DARK'] {
   }
   article.focus-article[data-theme='PURPLE'] {
     --c-article--header     : #{ $color-purple-2 };
-    --c-article--nav        : #{ $color-purple-1 };
     --c-article--bkg        : #{ $color-purple-1 };
+    --c-main--icon          : #{ $color-purple-1 };
     --c-article--section    : #{ $color-purple-0 };
     --c-article--footer     : #{ $color-purple-0 };
   }

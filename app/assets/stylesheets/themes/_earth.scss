@@ -23,8 +23,6 @@ html[data-theme='EARTH'] {
   --c-article--bkg        : #{ $color-brown-4 };
   --c-article--section    : #{ $color-brown-5 };
   --c-article--detail     : #{ $color-brown-4 };
-  --c-article--nav        : #{ $color-brown-6 };
-  --c-article--nav-hover  : #{ $color-brown-4 };
   --c-article--icon-wrap  : #{ $color-brown-8 };
   --c-article--icon-hover : #{ $color-brown-A };
   --c-article--icon       : #{ $color-brown-2 };
@@ -46,4 +44,48 @@ html[data-theme='EARTH'] {
   --c-chart-green         : #{ $color-green-7 };
   --c-chart-blue          : #{ $color-blue-5 };
   --c-chart-purple        : #{ $color-purple-4 };
+
+  article.focus-article[data-theme='RED'] {
+    --c-article--header     : #{ $color-red-3 };
+    --c-article--bkg        : #{ $color-red-1 };
+    --c-article--section    : #{ $color-red-2 };
+    --c-article--icon-wrap  : #{ $color-red-2 };
+    --c-main--icon          : #{ $color-red-7 };
+    --c-article--icon       : #{ $color-red-7 };
+    --c-article--footer     : #{ $color-red-3 };
+  }
+  article.focus-article[data-theme='ORANGE'] {
+    --c-article--header     : #{ $color-orange-6 };
+    --c-article--bkg        : #{ $color-orange-5 };
+    --c-article--section    : #{ $color-orange-4 };
+    --c-main--icon          : #{ $color-orange-4 };
+    --c-article--icon-wrap  : #{ $color-orange-4 };
+    --c-article--icon       : #{ $color-orange-7 };
+    --c-article--footer     : #{ $color-orange-6 };
+  }
+  article.focus-article[data-theme='BLUE'] {
+    --c-article--header     : #{ $color-blue-3 };
+    --c-article--bkg        : #{ $color-blue-2 };
+    --c-article--section    : #{ $color-blue-0 };
+    --c-main--icon          : #{ $color-blue-1 };
+    --c-article--icon       : #{ $color-blue-4 };
+    --c-article--icon-wrap  : #{ $color-blue-0 };
+    --c-article--footer     : #{ $color-blue-0 };
+  }
+  article.focus-article[data-theme='GREEN'] {
+    --c-article--header     : #{ $color-green-4 };
+    --c-article--bkg        : #{ $color-green-2 };
+    --c-article--section    : #{ $color-green-0 };
+    --c-main--icon          : #{ $color-brown-1 };
+    --c-article--icon       : #{ $color-green-A };
+    --c-article--footer     : #{ $color-green-0 };
+  }
+  article.focus-article[data-theme='PURPLE'] {
+    --c-article--header     : #{ $color-purple-2 };
+    --c-article--bkg        : #{ $color-purple-1 };
+    --c-article--section    : #{ $color-purple-0 };
+    --c-main--icon          : #{ $color-purple-1 };
+    --c-article--icon       : #{ $color-purple-A };
+    --c-article--footer     : #{ $color-purple-0 };
+  }
 }
