@@ -48,7 +48,7 @@ Pie.draw = function draw(el, props) {
     .enter()
     .append('path')
     .attr('d', arc)
-    .attr('class', p => `chart--color-${ color(p.position) }`)
+    .attr('class', p => `chart--color-${color(p.position)}`)
 }
 
 export default Pie

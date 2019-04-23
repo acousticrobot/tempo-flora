@@ -36,7 +36,7 @@ const Deeds = ({ deeds, deedsSince }) => (
   </Query>
 )
 
-const Focus = ({ focus, optionsFilter, deedsSince }) => (
+const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
   <article className='focus-article' data-theme={ focus.color }>
     <header>
       <h1>
@@ -54,6 +54,7 @@ const Focus = ({ focus, optionsFilter, deedsSince }) => (
           task={ task }
           deedsSince={ deedsSince }
           optionsFilter={ optionsFilter }
+          completedAt={ completedAt }
         />
       ))}
       <Deeds deeds={ focus.deeds } deedsSince={ deedsSince } />
@@ -76,7 +77,8 @@ Focus.propTypes = {
     deeds: PropTypes.array.isRequired
   }).isRequired,
   deedsSince: PropTypes.string.isRequired,
-  optionsFilter: PropTypes.string.isRequired
+  optionsFilter: PropTypes.string.isRequired,
+  completedAt: PropTypes.string.isRequired
 }
 
 export default Focus

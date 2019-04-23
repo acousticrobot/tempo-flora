@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
-import FOCUS_FILTER_QUERY from '../queries/FocusFilter'
+import DASHBOARD_QUERY from '../queries/DashboardQuery'
 import {
   SHOW_ALL_FOCI, SHOW_SINGLE_FOCUS, SHOW_MORE_OPTIONS, SHOW_STANDARD_OPTIONS
 } from '../constants/filterTypes'
@@ -23,8 +23,8 @@ const getVisibleFoci = (foci, focusFilter) => {
 }
 
 const Dashboard = ({ foci, theme, deedsSince }) => (
-  <Query query={ FOCUS_FILTER_QUERY }>
-    { ({ data: { focusFilter } }) => (
+  <Query query={ DASHBOARD_QUERY }>
+    { ({ data: { focusFilter, completedAt } }) => (
       <section className='dashboard'>
         <NavBar theme={ theme } />
 
@@ -35,6 +35,7 @@ const Dashboard = ({ foci, theme, deedsSince }) => (
                 key={ focus.id }
                 focus={ focus }
                 deedsSince={ deedsSince }
+                completedAt={ completedAt }
                 optionsFilter={
                   focusFilter.filter === SHOW_SINGLE_FOCUS ?
                     SHOW_MORE_OPTIONS : SHOW_STANDARD_OPTIONS

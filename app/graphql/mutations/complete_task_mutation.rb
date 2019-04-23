@@ -4,19 +4,21 @@ module Mutations
   class CompleteTaskMutation < GraphQL::Schema::RelayClassicMutation
 
     argument :task_id, ID, required: true
+    argument :completed_at, String, required: false
 
     # return fields
     field :focus, Types::FocusType, null: false
     field :user, Types::UserType, null: false
 
-    def resolve(task_id:)
+    def resolve(task_id:, completed_at:)
       task = Task.find(task_id)
       focus = task.focus
       user = context[:current_user]
 
       result = Services::CompleteTask.new(
         task: task,
-        user:  user
+        user:  user,
+        completed_at: completed_at
       ).execute
 
       if result.success?

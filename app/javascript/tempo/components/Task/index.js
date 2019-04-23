@@ -6,13 +6,14 @@ import DeleteTaskButton from './DeleteTaskButton'
 
 import { SHOW_MORE_OPTIONS } from '../../constants/filterTypes'
 
-const Task = ({ task, optionsFilter, deedsSince }) => (
+const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
   <li className='task-article'>
     <TaskTitle
       id={ task.id }
       repeatable={ task.repeatable }
       title={ task.title }
       deedsSince={ deedsSince }
+      completedAt={ completedAt }
     />
 
     { optionsFilter === SHOW_MORE_OPTIONS &&
@@ -28,6 +29,7 @@ const Task = ({ task, optionsFilter, deedsSince }) => (
 
 Task.propTypes = {
   optionsFilter: PropTypes.string.isRequired,
+  completedAt: PropTypes.string.isRequired,
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     points: PropTypes.number.isRequired,

@@ -4,6 +4,7 @@ import { SHOW_MORE_OPTIONS, SHOW_ALL_TASKS, SHOW_ALL_FOCI } from '../constants/f
 export const initialState = {
   optionsFilter: SHOW_MORE_OPTIONS,
   taskFilter: SHOW_ALL_TASKS,
+  completedAt: '',
   focusFilter: {
     __typename: 'focusFilter',
     filter: SHOW_ALL_FOCI,
