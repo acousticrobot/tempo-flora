@@ -20,7 +20,7 @@
 }
 
 .filter-navbar {
-  margin: 1rem 0 .5rem 0;
+  margin: 0 0 .5rem 0;
 }
 
 .filter-navbar--link {
@@ -32,6 +32,14 @@
   color: var(--c-header--text);
   &:hover {
     background-color: var(--c-main--nav-on-hover);
+  }
+}
+
+.filter-navbar--input {
+  input {
+    border-width: 0;
+    padding: 3px 0 4px 0;
+    background-color: var(--c-form--bkg);
   }
 }
 
@@ -58,6 +66,12 @@
     text-align: center;
     width: 50%;
     float: left;
+  }
+
+  .filter-navbar--input {
+    input {
+      width: 100%;
+    }
   }
 }
 

@@ -32,7 +32,7 @@ html {
   --c-article-alt--bkg    : #{ $color-blue-F };
 
   --c-form--text          : grey;
-  --c-form--bkg           : #{ $color-blue-E };
+  --c-form--bkg           : white;
   --c-form--footer        : #{ $color-blue-E };
   --c-form--button        : #{ $color-blue-B };
   --c-form--button-hover  : #{ $color-blue-A };
@@ -46,6 +46,36 @@ html {
   --c-chart-purple        : #{ $color-purple-4 };
 }
 
+article.focus-article[data-theme='RED'] {
+  --c-article--header     : #{ $color-red-D };
+  --c-article--bkg        : #{ $color-red-F };
+  --c-article--footer     : #{ $color-red-E };
+}
+article.focus-article[data-theme='ORANGE'] {
+  --c-article--header     : #{ $color-brown-A };
+  --c-article--bkg        : #{ $color-brown-F };
+  --c-article--footer     : #{ $color-brown-D };
+}
+article.focus-article[data-theme='BROWN'] {
+  --c-article--header     : #{ $color-chrome-C };
+  --c-article--bkg        : #{ $color-chrome-E };
+  --c-article--footer     : #{ $color-chrome-D };
+}
+article.focus-article[data-theme='BLUE'] {
+  --c-article--header     : #{ $color-blue-D };
+  --c-article--bkg        : #{ $color-blue-F };
+  --c-article--footer     : #{ $color-blue-E };
+}
+article.focus-article[data-theme='GREEN'] {
+  --c-article--header     : #{ $color-green-D };
+  --c-article--bkg        : #{ $color-green-F };
+  --c-article--footer     : #{ $color-green-E };
+}
+article.focus-article[data-theme='PURPLE'] {
+  --c-article--header     : #{ $color-purple-D };
+  --c-article--bkg        : #{ $color-purple-F };
+  --c-article--footer     : #{ $color-purple-E };
+}
 
 html.color-theme-in-transition,
 html.color-theme-in-transition *,

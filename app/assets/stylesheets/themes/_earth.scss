@@ -63,6 +63,11 @@ html[data-theme='EARTH'] {
     --c-article--icon       : #{ $color-orange-7 };
     --c-article--footer     : #{ $color-orange-6 };
   }
+  article.focus-article[data-theme='BROWN'] {
+    --c-article--header     : #{ $color-brown-2 };
+    --c-article--bkg        : #{ $color-brown-4 };
+    --c-article--footer     : #{ $color-brown-6 };
+  }
   article.focus-article[data-theme='BLUE'] {
     --c-article--header     : #{ $color-blue-3 };
     --c-article--bkg        : #{ $color-blue-2 };
