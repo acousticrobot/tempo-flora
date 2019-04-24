@@ -1,8 +1,8 @@
-import { SHOW_MORE_OPTIONS, SHOW_ALL_TASKS, SHOW_ALL_FOCI } from '../constants/filterTypes'
+import { SHOW_STANDARD_OPTIONS, SHOW_ALL_TASKS, SHOW_ALL_FOCI } from '../constants/filterTypes'
 
 
 export const initialState = {
-  optionsFilter: SHOW_MORE_OPTIONS,
+  optionsFilter: SHOW_STANDARD_OPTIONS,
   taskFilter: SHOW_ALL_TASKS,
   completedAt: '',
   focusFilter: {

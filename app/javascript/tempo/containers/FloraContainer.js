@@ -21,7 +21,12 @@ const FloraContainer = ({ userId }) => {
         if (error) return <p>Error :(</p>
 
         return (
-          <Dashboard foci={ data.foci } deedsSince={ deedsSince } theme={ data.user.theme } />
+          <Dashboard
+            foci={ data.foci }
+            deedsSince={ deedsSince }
+            theme={ data.user.theme }
+            optionsFilter={ data.optionsFilter }
+          />
         )
       }}
     </Query>

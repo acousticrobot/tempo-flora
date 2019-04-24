@@ -10,7 +10,9 @@ const AddTaskButton = ({ openTaskForm }) => (
     role='button'
     tabIndex='0'
   >
-    Add Task
+    <div className='focus-article--button-text'>
+      Add Task
+    </div>
     <div className='task-article--icon'>
       <div className='icon icon-plus' />
     </div>

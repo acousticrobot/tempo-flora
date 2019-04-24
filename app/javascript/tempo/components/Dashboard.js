@@ -11,6 +11,10 @@ import Focus from './Focus'
 import AddFocus from './Focus/AddFocus'
 import NavBar from './NavBar'
 
+const handleChangeOptions = (optionsState, client) => {
+  client.writeData({ data: { optionsFilter: optionsState } })
+}
+
 const getVisibleFoci = (foci, focusFilter) => {
   switch (focusFilter.filter) {
     case SHOW_ALL_FOCI:
@@ -24,11 +28,16 @@ const getVisibleFoci = (foci, focusFilter) => {
 
 const Dashboard = ({ foci, theme, deedsSince }) => (
   <Query query={ DASHBOARD_QUERY }>
-    { ({ data: { focusFilter, completedAt } }) => (
+    { ({ data: { focusFilter, completedAt, optionsFilter }, client }) => (
       <section className='dashboard'>
-        <NavBar theme={ theme } />
+        <NavBar
+          theme={ theme }
+          optionsFilter={ optionsFilter }
+          onChangeOptions={ optionsState => handleChangeOptions(optionsState, client) }
+        />
 
         <section className='foci-container'>
+
           { getVisibleFoci(foci, focusFilter).map(
             focus => (
               <Focus
@@ -43,7 +52,10 @@ const Dashboard = ({ foci, theme, deedsSince }) => (
               />
             )
           ) }
-          <AddFocus focusFilter={ focusFilter } deedsSince={ deedsSince } />
+
+          { optionsFilter === SHOW_MORE_OPTIONS &&
+            <AddFocus focusFilter={ focusFilter } deedsSince={ deedsSince } />
+          }
         </section>
       </section>
     ) }

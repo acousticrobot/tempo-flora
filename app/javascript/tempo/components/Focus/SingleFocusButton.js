@@ -33,7 +33,7 @@ const handleClick = (e, focusId, focusFilter, client) => {
 const SingleFocusButton = ({ focusId }) => (
   <Query query={ FOCUS_FILTER_QUERY }>
     {({ data: { focusFilter }, client }) => {
-      const type = focusFilter.focusId === focusId ? 'less' : 'more'
+      const type = focusFilter.focusId === focusId ? 'unfocus' : 'focus'
       return (
         <nav className='focus-header--nav-icon'>
           <div

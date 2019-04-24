@@ -67,6 +67,11 @@ article.focus-article.form.form_small {
   width: 5rem;
 }
 
+.focus-article--button-text {
+  float: right;
+  padding-top: 2px;
+}
+
 .focus-items {
   flex-grow: 1;
 }
@@ -76,9 +81,7 @@ nav.focus-header--nav-icon {
 }
 
 .focus-article--icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
+  @extend %icon;
   background-color: var(--c-article--header);
   .icon {
     background-color: var(--c-main--icon);

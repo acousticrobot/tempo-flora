@@ -38,11 +38,19 @@
 }
 
 .icon-more {
-  @include icon-mask("more", var(--c-text), true);
+  @include icon-mask("more", var(--c-text));
 }
 
 .icon-less {
   @include icon-mask("less", var(--c-text));
+}
+
+.icon-focus {
+  @include icon-mask("focus", var(--c-text));
+}
+
+.icon-unfocus {
+  @include icon-mask("unfocus", var(--c-text));
 }
 
 .icon-delete {

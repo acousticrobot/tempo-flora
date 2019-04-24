@@ -20,7 +20,7 @@
 }
 
 .filter-navbar {
-  margin: 0 0 .5rem 0;
+  background-color: var(--c-header--bkg);
 }
 
 .filter-navbar--link {
@@ -42,6 +42,17 @@
     background-color: var(--c-form--bkg);
   }
 }
+
+.filter-navbar--icon {
+  @extend %icon;
+  background-color: var(--c-article--header);
+  .icon {
+    background-color: var(--c-main--icon);
+  }
+  float: right;
+  margin: 5px 10px 5px 0;
+}
+
 
 // custom for mobile
 @media (max-width: $media-mobile){
@@ -72,6 +83,12 @@
     input {
       width: 100%;
     }
+  }
+
+  .filter-navbar--icon {
+    margin: 10px auto;
+    float: none;
+    background-color: var(--c-main--nav-on);
   }
 }
 
