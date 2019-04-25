@@ -1,23 +1,25 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
 import Graph from './Graph'
 
 class GraphInterface extends React.Component {
   componentDidMount() {
-    const el = ReactDOM.findDOMNode(this)
-    Graph.create(el, this.getData())
+    Graph.create(
+      this._rootNode,
+      this.getData()
+    )
   }
 
   componentDidUpdate() {
-    const el = ReactDOM.findDOMNode(this)
-    Graph.upate(el, this.getData())
+    Graph.upate(
+      this._rootNode,
+      this.getData()
+    )
   }
 
   componentWillUnmount() {
-    const el = ReactDOM.findDOMNode(this)
-    Graph.destroy(el)
+    Graph.destroy(this._rootNode)
   }
 
   getData() {
@@ -49,8 +51,12 @@ class GraphInterface extends React.Component {
     })
   }
 
+  _setRef(componentNode) {
+    this._rootNode = componentNode
+  }
+
   render() {
-    return <section className='flora-day--foci' />
+    return <section className='flora-day--foci' ref={ this._setRef.bind(this) } />
   }
 }
 
