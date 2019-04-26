@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import DeedTitle from './Title'
 
 const Deed = ({ deed, deedsSince }) => (
-  <li className='task-article task-article_completed'>
+  <li className='task-article task-article--completed'>
     <DeedTitle
       id={ deed.id }
       title={ deed.title }

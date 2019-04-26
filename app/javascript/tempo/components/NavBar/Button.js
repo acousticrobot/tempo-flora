@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const NavBarButton = ({ isActive, buttonText, onClick }) => {
-  const className = isActive ? 'filter-navbar--link_active' : 'filter-navbar--link'
+  const className = isActive ? 'options-nav--link_active' : 'options-nav--link'
 
   if (!isActive) {
     return (

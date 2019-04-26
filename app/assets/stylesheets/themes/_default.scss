@@ -18,13 +18,13 @@ html {
   --c-main--icon          : grey;
 
   --c-article--text       : black;
+  --c-article--alt-text   : #{ $color-chrome-6 };
   --c-article--header     : #{ $color-blue-D };
   --c-article--bkg        : #{ $color-blue-F };
   --c-article--section    : white;
   --c-article--detail     : #{ $color-blue-D };
   --c-article--icon-wrap  : #{ $color-brown-F };
-  --c-article--icon-hover : white;
-  --c-article--icon       : grey;
+  --c-article--icon       : #{ $color-chrome-7 };
   --c-article--footer     : #{ $color-blue-E };
   --radius     : 0;
 

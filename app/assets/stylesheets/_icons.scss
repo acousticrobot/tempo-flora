@@ -37,6 +37,10 @@
   @include icon-mask("check_box", var(--c-text), true);
 }
 
+.icon-check-box--checked {
+  @include icon-mask("check_box_checked", var(--c-text), true);
+}
+
 .icon-more {
   @include icon-mask("more", var(--c-text));
 }

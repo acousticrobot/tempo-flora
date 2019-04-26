@@ -16,7 +16,7 @@ const handleChange = (e, completedAt, client) => {
 const DayInput = () => (
   <Query query={ GET_COMPLETION_DATE_QUERY }>
     { ({ data: { completedAt }, client }) => (
-      <div className='filter-navbar--input'>
+      <div className='options-nav--input'>
         <label htmlFor='day-input' aria-label='day to assign tasks to' />
         <input
           id='day-input'

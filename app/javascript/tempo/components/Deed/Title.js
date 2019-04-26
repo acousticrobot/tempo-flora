@@ -11,7 +11,7 @@ const CSS = (loading, error) => {
   if (error) {
     return 'task-article--title task-article--title_error'
   }
-  return 'task-article--title task-article--title_completed'
+  return 'task-article--title task-article--title-completed'
 }
 
 const DeedTitle = ({ id, title, deedsSince }) => (
@@ -25,6 +25,9 @@ const DeedTitle = ({ id, title, deedsSince }) => (
         role='button'
         tabIndex='0'
       >
+        <div className='task-article--icon task-article--title-icon'>
+          <div className='icon icon-check-box--checked' />
+        </div>
         { title }
       </div>
     )}

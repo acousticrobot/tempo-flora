@@ -6,14 +6,10 @@ import TASK_FILTER_QUERY from '../../queries/TaskFilter'
 import { SHOW_ALL_TASKS, SHOW_ACTIVE_TASKS } from '../../constants/filterTypes'
 
 import SingleFocusButton from './SingleFocusButton'
-import PointsAccrued from './PointsAccrued'
+import FocusFooter from './FocusFooter'
 import AddTask from '../Task/AddTask'
 import Task from '../Task'
 import Deed from '../Deed'
-
-const sumAccruedPoints = focus => (
-  focus.deeds.reduce((prev, next) => prev + next.points, 0)
-)
 
 const getDeeds = (deeds, taskFilter) => {
   switch (taskFilter) {
@@ -45,8 +41,6 @@ const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
       </h1>
     </header>
 
-    <AddTask focusId={ focus.id } />
-
     <ul className='focus-items'>
       { focus.tasks.map(task => (
         <Task
@@ -60,7 +54,7 @@ const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
       <Deeds deeds={ focus.deeds } deedsSince={ deedsSince } />
     </ul>
 
-    <PointsAccrued points={ sumAccruedPoints(focus) } />
+    <FocusFooter focusId={ focus.id } />
   </article>
 )
 

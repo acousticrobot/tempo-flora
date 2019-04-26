@@ -12,24 +12,32 @@ import { SHOW_MORE_OPTIONS, SHOW_STANDARD_OPTIONS } from '../../constants/filter
 const NavBar = ({ theme, optionsFilter, onChangeOptions }) => {
   if (optionsFilter === SHOW_MORE_OPTIONS) {
     return (
-      <nav className='filter-navbar'>
-        <OptionsFilterButton
-          icon='delete'
-          onClick={ () => (onChangeOptions(SHOW_STANDARD_OPTIONS)) }
-        />
-        <ul>
-          <TaskFilterButton />
-          <FocusFilterButton />
-          <DayInput />
-          <ThemeFilterButtons userTheme={ theme } />
-        </ul>
+      <nav className='options-nav'>
+        <section>
+          <OptionsFilterButton
+            icon='delete'
+            onClick={ () => (onChangeOptions(SHOW_STANDARD_OPTIONS)) }
+          />
+          <header>Options:</header>
+          <ul>
+            <TaskFilterButton />
+            <FocusFilterButton />
+            <DayInput />
+          </ul>
+        </section>
+        <section>
+          <header>Themes:</header>
+          <ul>
+            <ThemeFilterButtons userTheme={ theme } />
+          </ul>
+        </section>
         <div className='clear' />
       </nav>
     )
   }
 
   return (
-    <nav className='filter-navbar'>
+    <nav className='options-nav'>
       <OptionsFilterButton
         icon='more'
         onClick={ () => (onChangeOptions(SHOW_MORE_OPTIONS)) }

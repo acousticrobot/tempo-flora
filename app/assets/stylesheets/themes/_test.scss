@@ -16,16 +16,49 @@ html[data-theme='TEST'] {
   --c-main--icon          : grey;
 
   --c-article--text       : black;
-  --c-article--header     : white;
+  --c-article--header     : #DDDDDD;
   --c-article--bkg        : white;
   --c-article--section    : white;
   --c-article--detail     : white;
   --c-article--icon-wrap  : white;
-  --c-article--icon-hover : white;
   --c-article--icon       : grey;
   --c-article--footer     : white;
   --radius     : 0;
 
   --c-article-alt--header : white;
   --c-article-alt--bkg    : white;
+
+  --c-form--button        : #DDDDDD;
+  --c-form--bkg           : #EEEEEE;
+
+  article.focus-article[data-theme='RED'] {
+    --c-article--header     : #DDDDDD;
+    --c-article--bkg        : white;
+    --c-article--footer     : white;
+  }
+  article.focus-article[data-theme='ORANGE'] {
+    --c-article--header     : #DDDDDD;
+    --c-article--bkg        : white;
+    --c-article--footer     : white;
+  }
+  article.focus-article[data-theme='BROWN'] {
+    --c-article--header     : #DDDDDD;
+    --c-article--bkg        : white;
+    --c-article--footer     : white;
+  }
+  article.focus-article[data-theme='BLUE'] {
+    --c-article--header     : #DDDDDD;
+    --c-article--bkg        : white;
+    --c-article--footer     : white;
+  }
+  article.focus-article[data-theme='GREEN'] {
+    --c-article--header     : #DDDDDD;
+    --c-article--bkg        : white;
+    --c-article--footer     : white;
+  }
+  article.focus-article[data-theme='PURPLE'] {
+    --c-article--header     : #DDDDDD;
+    --c-article--bkg        : white;
+    --c-article--footer     : white;
+  }
 }

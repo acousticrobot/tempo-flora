@@ -1,14 +1,14 @@
 @import "variables";
 
-.main-navbar,
-.main-navbar--profile
+.main-nav,
+.main-nav--profile
 {
   background-color: var(--c-header--bkg);
   color: var(--c-text);
 }
 
-.main-navbar--link,
-.main-navbar--link_left
+.main-nav--link,
+.main-nav--link_left
 {
   background-color: var(--c-header--nav);
   a {
@@ -19,15 +19,21 @@
   }
 }
 
-.filter-navbar {
+.options-nav {
   background-color: var(--c-header--bkg);
+  section {
+    clear: both;
+  }
+  header {
+    padding: .25rem;
+  }
 }
 
-.filter-navbar--link {
+.options-nav--link {
   background-color: var(--c-main--nav-off);
 }
 
-.filter-navbar--link_active {
+.options-nav--link_active {
   background-color: var(--c-main--nav-on);
   color: var(--c-header--text);
   &:hover {
@@ -35,7 +41,7 @@
   }
 }
 
-.filter-navbar--input {
+.options-nav--input {
   input {
     border-width: 0;
     padding: 3px 0 4px 0;
@@ -43,7 +49,7 @@
   }
 }
 
-.filter-navbar--icon {
+.options-nav--icon {
   @extend %icon;
   background-color: var(--c-article--header);
   .icon {
@@ -57,9 +63,9 @@
 // custom for mobile
 @media (max-width: $media-mobile){
 
-  .main-navbar--link,
-  .main-navbar--link_left,
-  .main-navbar--profile
+  .main-nav--link,
+  .main-nav--link_left,
+  .main-nav--profile
   {
     border-bottom: 2px solid $color-brown-F;
     padding: .5rem 0 .5rem 0;
@@ -67,9 +73,13 @@
     text-align: center;
   }
 
-  .filter-navbar--input,
-  .filter-navbar--link,
-  .filter-navbar--link_active
+  .options-nav {
+    margin: .5rem 0;
+  }
+
+  .options-nav--input,
+  .options-nav--link,
+  .options-nav--link_active
   {
     .button {
       padding: .5rem 0 .5rem 0;
@@ -79,14 +89,14 @@
     float: left;
   }
 
-  .filter-navbar--input {
+  .options-nav--input {
     input {
       width: 100%;
     }
   }
 
-  .filter-navbar--icon {
-    margin: 10px auto;
+  .options-nav--icon {
+    margin: 0 auto;
     float: none;
     background-color: var(--c-main--nav-on);
   }
@@ -94,27 +104,27 @@
 
 // custom for tablet and desktop
 @media (min-width: $media-mobile){
-  .main-navbar--link_left,
-  .main-navbar--link
+  .main-nav--link_left,
+  .main-nav--link
   {
     float: right;
     margin-left: 2px;
     padding: .5rem 2rem .5rem 2rem;
   }
-  .main-navbar--link_left {
+  .main-nav--link_left {
     margin: 0 2px 0 0;
   }
 
-  .main-navbar--link_left,
-  .main-navbar--profile
+  .main-nav--link_left,
+  .main-nav--profile
   {
     float: left;
     padding: .5rem 2rem .5rem 2rem;
   }
 
-  .filter-navbar--input,
-  .filter-navbar--link,
-  .filter-navbar--link_active
+  .options-nav--input,
+  .options-nav--link,
+  .options-nav--link_active
   {
     float: left;
     margin: .25rem;

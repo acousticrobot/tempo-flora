@@ -18,24 +18,23 @@ html[data-theme='EARTH'] {
   --c-main--icon          : #{ $color-brown-7 };
 
   --c-article--text       : #{ $color-brown-D };
-  --c-article--alt-text   : #{ $color-brown-A };
+  --c-article--alt-text   : #{ $color-brown-9 };
   --c-article--header     : #{ $color-brown-2 };
   --c-article--bkg        : #{ $color-brown-4 };
   --c-article--section    : #{ $color-brown-5 };
-  --c-article--detail     : #{ $color-brown-4 };
+  --c-article--detail     : #{ $color-brown-6 };
   --c-article--icon-wrap  : #{ $color-brown-8 };
-  --c-article--icon-hover : #{ $color-brown-A };
-  --c-article--icon       : #{ $color-brown-2 };
+  --c-article--icon       : #{ $color-brown-1 };
   --c-article--footer     : #{ $color-brown-6 };
 
   --c-article-alt--header : #{ $color-brown-2 };
   --c-article-alt--bkg    : #{ $color-brown-4 };
 
   --c-form--text          : #{ $color-brown-2 };
-  --c-form--bkg           : #{ $color-brown-8 };
+  --c-form--bkg           : #{ $color-brown-D };
   --c-form--footer        : #{ $color-chrome-C };
-  --c-form--button        : #{ $color-brown-5 };
-  --c-form--button-hover  : #{ $color-brown-7 };
+  --c-form--button        : #{ $color-blue-3 };
+  --c-form--button-hover  : #{ $color-blue-7 };
 
   --c-chart-chrome        : #{ $color-chrome-5 };
   --c-chart-red           : #{ $color-red-4 };
@@ -75,7 +74,7 @@ html[data-theme='EARTH'] {
     --c-main--icon          : #{ $color-blue-1 };
     --c-article--icon       : #{ $color-blue-4 };
     --c-article--icon-wrap  : #{ $color-blue-0 };
-    --c-article--footer     : #{ $color-blue-0 };
+    --c-article--footer     : #{ $color-blue-3 };
   }
   article.focus-article[data-theme='GREEN'] {
     --c-article--header     : #{ $color-green-4 };
@@ -83,7 +82,7 @@ html[data-theme='EARTH'] {
     --c-article--section    : #{ $color-green-0 };
     --c-main--icon          : #{ $color-brown-1 };
     --c-article--icon       : #{ $color-green-A };
-    --c-article--footer     : #{ $color-green-0 };
+    --c-article--footer     : #{ $color-green-4 };
   }
   article.focus-article[data-theme='PURPLE'] {
     --c-article--header     : #{ $color-purple-2 };

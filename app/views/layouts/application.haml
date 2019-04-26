@@ -12,18 +12,18 @@
 
 
   %body
-    %nav.main-navbar
+    %nav.main-nav
       %ul
-        %li.main-navbar--link_left= link_to "Tempo", root_path
-        %li.main-navbar--link_left= link_to "Flora", flora_path
+        %li.main-nav--link_left= link_to "Tempo", root_path
+        %li.main-nav--link_left= link_to "Flora", flora_path
 
         - if user_signed_in?
-          %li.main-navbar--profile= "Logged in as #{current_user.username}"
-          %li.main-navbar--link= link_to "Logout", destroy_user_session_path, method: :delete
-          %li.main-navbar--link= link_to 'Edit profile', edit_user_registration_path
+          %li.main-nav--profile= "Logged in as #{current_user.username}"
+          %li.main-nav--link= link_to "Logout", destroy_user_session_path, method: :delete
+          %li.main-nav--link= link_to 'Edit profile', edit_user_registration_path
         - else
-          %li.main-navbar--link= link_to "Sign up", new_user_registration_path
-          %li.main-navbar--link= link_to "Login", new_user_session_path
+          %li.main-nav--link= link_to "Sign up", new_user_registration_path
+          %li.main-nav--link= link_to "Login", new_user_session_path
         .clear
 
     %section.notifications
