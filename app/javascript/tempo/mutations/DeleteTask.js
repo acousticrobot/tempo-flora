@@ -10,6 +10,7 @@ mutation DeleteTaskMutation($taskId: ID!) {
         title
         points
         repeatable
+        position
       }
     }
   }

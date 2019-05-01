@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
+import { Droppable } from 'react-beautiful-dnd';
 
 import TASK_FILTER_QUERY from '../../queries/TaskFilter'
 import { SHOW_ALL_TASKS, SHOW_ACTIVE_TASKS } from '../../constants/filterTypes'
@@ -41,18 +42,27 @@ const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
       </h1>
     </header>
 
-    <ul className='focus-items'>
-      { focus.tasks.map(task => (
-        <Task
-          key={ task.id }
-          task={ task }
-          deedsSince={ deedsSince }
-          optionsFilter={ optionsFilter }
-          completedAt={ completedAt }
-        />
-      ))}
-      <Deeds deeds={ focus.deeds } deedsSince={ deedsSince } />
-    </ul>
+    <Droppable droppableId={ focus.id }>
+      { provided => (
+        <ul
+          className='focus-items'
+          ref={ provided.innerRef }
+          { ...provided.droppableProps }
+        >
+          { focus.tasks.map(task => (
+            <Task
+              key={ task.id }
+              task={ task }
+              deedsSince={ deedsSince }
+              optionsFilter={ optionsFilter }
+              completedAt={ completedAt }
+            />
+          ))}
+          { provided.placeholder }
+          <Deeds deeds={ focus.deeds } deedsSince={ deedsSince } />
+        </ul>
+      )}
+      </Droppable>
 
     <FocusFooter focusId={ focus.id } />
   </article>

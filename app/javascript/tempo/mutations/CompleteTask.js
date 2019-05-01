@@ -10,6 +10,7 @@ mutation CompleteTaskMutation($taskId: ID!, $deedsSince: String, $completedAt: S
         title
         points
         repeatable
+        position
       }
       deeds(since: $deedsSince) {
         id

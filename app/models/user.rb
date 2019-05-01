@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  #  :lockable, :timeoutable and :omniauthable
-  devise :confirmable, :database_authenticatable, :registerable,
+  #  :lockable, :timeoutable and :omniauthable, :confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :foci, dependent: :destroy
@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :deeds, dependent: :destroy
 
   validates_presence_of :max_foci
+
+  attr_reader :password, :password_confirmation
 
   validates :username,
     presence: true,

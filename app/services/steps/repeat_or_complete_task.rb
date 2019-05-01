@@ -5,9 +5,9 @@ class RepeatOrCompleteTask
   def call(context)
 
     if context.task.repeatable
-      # nothing for now
-      # could update time or position
+      context.task.move_to_bottom
     else
+      context.task.remove_from_list
       context.task.destroy
     end
   end

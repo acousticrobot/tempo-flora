@@ -10,6 +10,7 @@ mutation UndoDeedMutation($deedId: ID!, $deedsSince: String) {
         title
         points
         repeatable
+        position
       }
       deeds(since: $deedsSince) {
         id

@@ -9,6 +9,9 @@ module Types
     field :color, String, null: false
 
     field :tasks, [Types::TaskType], null: true
+    def tasks
+      object.tasks.order_by_position
+    end
     field :deeds, [Types::DeedType], null: true do
       argument :since, String, default_value: "yesterday midnight", required: false,
       prepare: ->(since, ctx) {

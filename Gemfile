@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.5'
 
 gem 'rails', '~> 5.2.1'
 
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails', '~> 2.1', '>= 2.1.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'turbolinks', '~> 5'
@@ -24,6 +24,7 @@ gem 'devise', '~> 4.5'
 gem 'graphql'
 gem 'porch'
 gem 'chronic', '~> 0.10.2'
+gem 'acts_as_list', '~> 0.9.19'
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -44,7 +45,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'rails-controller-testing'
-  gem 'factory_girl_rails', '~> 4.5'
+  gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
 end

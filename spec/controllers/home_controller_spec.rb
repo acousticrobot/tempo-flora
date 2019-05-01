@@ -11,7 +11,7 @@ describe HomeController do
     it "assigns a message" do
       get :index
       expect(assigns(:server_props)).to eq(
-        { theme: nil, userId: user.id, userName: user.username }
+        { theme: "DEFAULT", userId: user.id, userName: user.username }
       )
     end
   end

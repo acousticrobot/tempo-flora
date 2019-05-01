@@ -17,6 +17,7 @@ const ROOT_QUERY = gql`
         title
         points
         repeatable
+        position
       }
       deeds(since: $deedsSince) {
         id

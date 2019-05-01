@@ -3,27 +3,11 @@ import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
 import DASHBOARD_QUERY from '../queries/DashboardQuery'
-import {
-  SHOW_ALL_FOCI, SHOW_SINGLE_FOCUS, SHOW_MORE_OPTIONS, SHOW_STANDARD_OPTIONS
-} from '../constants/filterTypes'
-
-import Focus from './Focus'
-import AddFocus from './Focus/AddFocus'
+import FociContainer from './Focus/Foci'
 import NavBar from './NavBar'
 
 const handleChangeOptions = (optionsState, client) => {
   client.writeData({ data: { optionsFilter: optionsState } })
-}
-
-const getVisibleFoci = (foci, focusFilter) => {
-  switch (focusFilter.filter) {
-    case SHOW_ALL_FOCI:
-      return foci
-    case SHOW_SINGLE_FOCUS:
-      return foci.filter(f => f.id === focusFilter.focusId)
-    default:
-      return foci
-  }
 }
 
 const Dashboard = ({ foci, theme, deedsSince }) => (
@@ -36,27 +20,13 @@ const Dashboard = ({ foci, theme, deedsSince }) => (
           onChangeOptions={ optionsState => handleChangeOptions(optionsState, client) }
         />
 
-        <section className='foci-container'>
-
-          { getVisibleFoci(foci, focusFilter).map(
-            focus => (
-              <Focus
-                key={ focus.id }
-                focus={ focus }
-                deedsSince={ deedsSince }
-                completedAt={ completedAt }
-                optionsFilter={
-                  focusFilter.filter === SHOW_SINGLE_FOCUS ?
-                    SHOW_MORE_OPTIONS : SHOW_STANDARD_OPTIONS
-                }
-              />
-            )
-          ) }
-
-          { optionsFilter === SHOW_MORE_OPTIONS &&
-            <AddFocus focusFilter={ focusFilter } deedsSince={ deedsSince } />
-          }
-        </section>
+        <FociContainer
+          foci={ foci }
+          deedsSince={ deedsSince }
+          focusFilter={ focusFilter }
+          optionsFilter={ optionsFilter }
+          completedAt={ completedAt }
+        />
       </section>
     ) }
   </Query>

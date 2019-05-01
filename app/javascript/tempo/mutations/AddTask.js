@@ -10,6 +10,7 @@ mutation AddTaskMutation($focusId: ID!, $title: String, $points: Int, $repeatabl
         title
         points
         repeatable
+        position
       }
     }
   }

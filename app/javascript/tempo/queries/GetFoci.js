@@ -11,6 +11,7 @@ const GET_FOCI = gql`
         title
         points
         repeatable
+        position
       }
       deeds(since: $deedsSince) {
         id

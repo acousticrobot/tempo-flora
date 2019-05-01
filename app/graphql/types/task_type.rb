@@ -7,5 +7,6 @@ module Types
     field :points, Integer, null: false
     field :task_id, Integer, null: false
     field :repeatable, Boolean, null: false
+    field :position, Integer, null: true
   end
 end
