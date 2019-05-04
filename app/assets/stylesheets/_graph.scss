@@ -1,9 +1,6 @@
 @import "variables";
 
-.flora-week {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.graph {
   h1, h2 {
     font-size: 1rem;
     text-align: center;
@@ -20,27 +17,19 @@
     margin-left: .5rem;
     color: var(--c-article--alt-text);
   }
-}
-
-.flora-day {
-  display: flex;
-  flex-direction: column;
-  flex-grow:1;
-  background-color: var(--c-article--bkg);
-  margin: 1px;
-  .flora-day--key {
+  .graph--key {
     width: 256px;
   }
-  .flora-day--deed-list {
+  .graph--deed-list {
     margin-left: .25rem;
   }
 }
 
-.flora-day--foci {
+.graph--chart {
   display: flex;
 }
 
-.flora-day--graph {
+.graph--svg {
   margin: auto;
 }
 

@@ -1,0 +1,56 @@
+@import "variables";
+
+article.calendar {
+  width: 100%;
+}
+
+section.calendar--row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &.-weekday {
+
+  }
+}
+
+.calendar--cell {
+  display: flex;
+  flex: 0 0 14%;
+  flex-direction: column;
+  flex-grow: 1;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: var(--c-article--bkg);
+  margin: 1px;
+  &.-month {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  &.-weekday {
+    background-color: var(--c-article--header);
+    padding: .75rem 0;
+    text-align: center;
+  }
+}
+
+// custom for mobile
+@media (max-width: $media-mobile){
+  section.calendar--row {
+    display: block;
+    &.-weekday {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $media-mobile) and (max-width: $media-tablet){
+  section.calendar--row {
+    &.-weekday {
+      display: none;
+    }
+  }
+  .calendar--cell {
+    flex: 1 0 28%;
+  }
+}
+

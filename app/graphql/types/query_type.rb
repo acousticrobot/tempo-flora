@@ -59,9 +59,10 @@ module Types
     field :days, [Types::DayType], null: true do
       description "completed tasks arranged by days"
       argument :since, String, required: true
+      argument :to, String, required: false
     end
-    def days(since:)
-      Days.new(context[:current_user], since).days
+    def days(since:, to: nil)
+      Days.new(context[:current_user], since, to).days
     end
   end
 end

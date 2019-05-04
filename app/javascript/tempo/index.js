@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
-import FloraApp from './containers/FloraApp'
+import TempoApp from './containers/TempoApp'
 
-const serverProps = JSON.parse(document.querySelector('#flora').dataset.serverProps)
-const flora = document.querySelector('#flora')
+const serverProps = JSON.parse(document.querySelector('#tempo').dataset.serverProps)
+const tempo = document.querySelector('#tempo')
 
-render(<FloraApp userId={ serverProps.userId } />, flora)
+render(<TempoApp userId={ serverProps.userId } />, tempo)

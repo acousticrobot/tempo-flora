@@ -11,7 +11,7 @@ const localStartOfDay = () => {
   return date.toISOString()
 }
 
-const FloraContainer = ({ userId }) => {
+const TempoContainer = ({ userId }) => {
   const deedsSince = localStartOfDay()
 
   return (
@@ -33,8 +33,8 @@ const FloraContainer = ({ userId }) => {
   )
 }
 
-FloraContainer.propTypes = {
+TempoContainer.propTypes = {
   userId: PropTypes.number.isRequired
 }
 
-export default FloraContainer
+export default TempoContainer

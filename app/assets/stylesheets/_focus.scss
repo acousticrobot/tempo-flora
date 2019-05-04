@@ -27,7 +27,6 @@ section.foci-container {
       text-transform: capitalize;
     }
   }
-  // custom for mobile
   @media (max-width: $media-mobile){
     flex: 1 0 95%;
     margin: .25rem 0;

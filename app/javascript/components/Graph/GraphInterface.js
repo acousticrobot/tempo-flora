@@ -12,7 +12,7 @@ class GraphInterface extends React.Component {
   }
 
   componentDidUpdate() {
-    Graph.upate(
+    Graph.update(
       this._rootNode,
       this.getData()
     )
@@ -23,9 +23,9 @@ class GraphInterface extends React.Component {
   }
 
   getData() {
-    const { day, limits, foci } = this.props
-    const unit = 256
-    const size = (day.totalPoints / limits.maxPoints) * (unit / 2)
+    const { day, maxPoints, foci } = this.props
+    const unit = 200
+    const size = (day.totalPoints / maxPoints) * (unit / 2)
     const fociData = foci.map(focus => {
       const deeds = day.deeds.filter(d => d.position === focus.position)
       let points = 0
@@ -56,7 +56,7 @@ class GraphInterface extends React.Component {
   }
 
   render() {
-    return <section className='flora-day--foci' ref={ this._setRef.bind(this) } />
+    return <section className='graph--chart' ref={ this._setRef.bind(this) } />
   }
 }
 
@@ -64,9 +64,7 @@ GraphInterface.propTypes = {
   day: PropTypes.shape({
     startOfDay: PropTypes.string.isRequired
   }).isRequired,
-  limits: PropTypes.shape({
-    maxPoints: PropTypes.number.isRequired
-  }).isRequired,
+  maxPoints: PropTypes.number.isRequired,
   foci: PropTypes.array.isRequired
 }
 

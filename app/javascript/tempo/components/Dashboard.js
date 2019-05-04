@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
 import DASHBOARD_QUERY from '../queries/DashboardQuery'
+
 import FociContainer from './Focus/Foci'
 import NavBar from './NavBar'
 

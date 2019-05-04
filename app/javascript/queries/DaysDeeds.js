@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
-const ROOT_QUERY = gql`
-  query DaysSince($since: String!){
-    days(since: $since) {
+const DAYS_DEEDS = gql`
+  query DaysSince($since: String!, $to: String){
+    days(since: $since, to: $to) {
       startOfDay
       endOfDay
       deeds {
@@ -23,4 +23,4 @@ const ROOT_QUERY = gql`
   }
 `
 
-export default ROOT_QUERY
+export default DAYS_DEEDS

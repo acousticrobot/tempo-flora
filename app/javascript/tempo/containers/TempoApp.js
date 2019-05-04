@@ -7,8 +7,8 @@ import { ApolloProvider } from 'react-apollo'
 import { ApolloLink } from 'apollo-link'
 import { withClientState } from 'apollo-link-state'
 
-import { initialState } from '../store/floraStore'
-import FloraContainer from './FloraContainer'
+import { initialState } from '../store/tempoStore'
+import TempoContainer from './TempoContainer'
 
 // get authentication token
 const csrfElement = document.querySelector('meta[name="csrf-token"]')
@@ -34,14 +34,14 @@ const client = new ApolloClient({
   link
 })
 
-const FloraApp = ({ userId }) => (
+const TempoApp = ({ userId }) => (
   <ApolloProvider client={ client }>
-    <FloraContainer userId={ userId } />
+    <TempoContainer userId={ userId } />
   </ApolloProvider>
 )
 
-FloraApp.propTypes = {
+TempoApp.propTypes = {
   userId: PropTypes.number.isRequired
 }
 
-export default FloraApp
+export default TempoApp

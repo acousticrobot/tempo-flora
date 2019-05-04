@@ -9,7 +9,7 @@ const Graph = {}
 
 Graph.create = function create(el, props) {
   const svg = d3.select(el).append('svg')
-    .attr('class', 'flora-day--graph')
+    .attr('class', 'graph--svg')
     .attr('width', props.width)
     .attr('height', props.height)
 
@@ -17,7 +17,7 @@ Graph.create = function create(el, props) {
   this.update(el, props)
 }
 
-Graph.update = function upate(el, props) {
+Graph.update = function update(el, props) {
   this._draw(el, props)
 }
 
