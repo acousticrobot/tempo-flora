@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
-
+import { localStartOfDay } from '../../lib/Time'
 import DAYS_DEEDS from '../../queries/DaysDeeds'
 
 import Weeks from './Weeks'
@@ -44,8 +44,8 @@ const assembleWeeksFromDays = (targetDates, days) => {
 
 
 const Month = ({ targetDates }) => {
-  const since = targetDates.startDate.toDateString()
-  const to = targetDates.endDate.toDateString()
+  const since = localStartOfDay(targetDates.startDate)
+  const to = localStartOfDay(targetDates.endDate)
 
   return (
     <Query query={ DAYS_DEEDS } variables={{ since, to }}>

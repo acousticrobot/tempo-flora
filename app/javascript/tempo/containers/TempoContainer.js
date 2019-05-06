@@ -2,17 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
+import { localStartOfDay } from '../../lib/Time'
 import ROOT_QUERY from '../queries/RootQuery'
 import Dashboard from '../components/Dashboard'
 
-const localStartOfDay = () => {
-  const date = new Date()
-  date.setHours(0, 0, 0, 0)
-  return date.toISOString()
-}
-
 const TempoContainer = ({ userId }) => {
-  const deedsSince = localStartOfDay()
+  const deedsSince = localStartOfDay(new Date())
 
   return (
     <Query query={ ROOT_QUERY } variables={{ userId, deedsSince }}>

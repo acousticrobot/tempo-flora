@@ -23,9 +23,12 @@ class Days
     @days = []
 
     since = Chronic.parse(since)
-    start_of_day = (since || Date.today) - 24.hours
+    start_of_day = since || Date.today
     end_of_day = start_of_day + 24.hours
-    to = Chronic.parse(to) || Time.now
+
+    # assumes "to" could be start of the day,
+    # include all hours of the day,
+    to = (Chronic.parse(to) || Time.now) + 24.hours
 
     while end_of_day <= to do
       day = Day.new(user, start_of_day, end_of_day)
