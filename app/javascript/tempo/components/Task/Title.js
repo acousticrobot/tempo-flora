@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Mutation } from 'react-apollo'
 
+import { localStartOfDay } from '../../../lib/Time'
 import TaskTypeIcon from './TaskTypeIcon'
 import COMPLETE_TASK from '../../mutations/CompleteTask'
 
@@ -17,8 +18,10 @@ const CSS = (loading, error) => {
 
 
 const handleClick = (e, id, CompleteTask, deedsSince, completedAt) => {
+  const date = completedAt ? new Date(completedAt) : new Date()
+  const start = localStartOfDay(date)
   CompleteTask(
-    { variables: { taskId: id, deedsSince, completedAt } }
+    { variables: { taskId: id, deedsSince, completedAt, localStartOfDay: start } }
   )
   e.target.blur()
 }
