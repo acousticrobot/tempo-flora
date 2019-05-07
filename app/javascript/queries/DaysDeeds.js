@@ -12,6 +12,7 @@ const DAYS_DEEDS = gql`
         points
         position
         completedAt
+        consecutiveDays
       }
       totalPoints
     }

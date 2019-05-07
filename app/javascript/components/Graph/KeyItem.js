@@ -12,6 +12,9 @@ const Focus = ({ focus, deeds }) => {
           { deeds.map(deed => (
             <li key={ deed.id }>
               { deed.title }
+              { deed.consecutiveDays > 1 &&
+                ` (${deed.consecutiveDays})`
+              }
             </li>
           ))}
         </ul>

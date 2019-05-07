@@ -8,6 +8,7 @@ module Types
     field :focus_title, String, null: true
     field :points, Integer, null: false
     field :position, Integer, null: false
+    field :consecutive_days, Integer, null: false
     field :completed_at, GraphQL::Types::ISO8601DateTime, null: false
   end
 end
