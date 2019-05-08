@@ -13,7 +13,7 @@ mutation AddFocusMutation($title: String!){
         title
         points
         repeatable
-        postion
+        position
       }
       deeds {
         id
