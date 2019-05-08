@@ -26,11 +26,16 @@ const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
           completedAt={ completedAt }
         />
 
+
+        { optionsFilter === SHOW_MORE_OPTIONS &&
+          <div className='task-article--icon'>
+            <div className='icon icon-gripper' />
+          </div>
+        }
+
         { optionsFilter === SHOW_MORE_OPTIONS &&
           <TaskPoints points={ task.points } />
         }
-
-        <TaskPosition position={ task.position } />
 
         { optionsFilter === SHOW_MORE_OPTIONS &&
           <DeleteTaskButton id={ task.id } />

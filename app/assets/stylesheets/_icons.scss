@@ -21,14 +21,6 @@
   }
 }
 
-.icon-plus {
-  @include icon-mask("plus", var(--c-text));
-}
-
-.icon-minus {
-  @include icon-mask("minus", var(--c-text));
-}
-
 .icon-repeat {
   @include icon-mask("repeat", var(--c-text), true);
 }
@@ -41,22 +33,34 @@
   @include icon-mask("check_box_checked", var(--c-text), true);
 }
 
-.icon-more {
-  @include icon-mask("more", var(--c-text));
-}
-
-.icon-less {
-  @include icon-mask("less", var(--c-text));
+.icon-delete {
+  @include icon-mask("delete", var(--c-text));
 }
 
 .icon-focus {
   @include icon-mask("focus", var(--c-text));
 }
 
-.icon-unfocus {
-  @include icon-mask("unfocus", var(--c-text));
+.icon-gripper {
+  @include icon-mask("gripper", var(--c-text));
 }
 
-.icon-delete {
-  @include icon-mask("delete", var(--c-text));
+.icon-less {
+  @include icon-mask("less", var(--c-text));
+}
+
+.icon-minus {
+  @include icon-mask("minus", var(--c-text));
+}
+
+.icon-more {
+  @include icon-mask("more", var(--c-text));
+}
+
+.icon-plus {
+  @include icon-mask("plus", var(--c-text));
+}
+
+.icon-unfocus {
+  @include icon-mask("unfocus", var(--c-text));
 }
