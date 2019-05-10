@@ -9,7 +9,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.1'
 gem 'uglifier', '>= 1.3.0'
-gem 'webpacker'
+gem 'webpacker', '~> 4.0', '>= 4.0.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
