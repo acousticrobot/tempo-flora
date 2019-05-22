@@ -44,6 +44,11 @@
   .icon {
     background-color: var(--c-article--icon);
   }
+  &.secondary-icon {
+    .icon {
+      background-color: var(--c-article--header);
+    }
+  }
 }
 
 .task-article--title-icon {

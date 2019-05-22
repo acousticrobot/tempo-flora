@@ -26,12 +26,7 @@ const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
           completedAt={ completedAt }
         />
 
-
-        { optionsFilter === SHOW_MORE_OPTIONS &&
-          <div className='task-article--icon'>
-            <div className='icon icon-gripper' />
-          </div>
-        }
+        <TaskPosition />
 
         { optionsFilter === SHOW_MORE_OPTIONS &&
           <TaskPoints points={ task.points } />
