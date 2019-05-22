@@ -5,6 +5,7 @@ import { MockedProvider } from 'react-apollo/test-utils'
 
 import UNDO_DEED from '../../mutations/UndoDeed'
 import Deed from './index'
+import DeedTitle from './Title'
 
 const mocks = [
   {
@@ -40,13 +41,25 @@ const mockDeed = {
   title: 'Test Deed Index'
 }
 
-
-describe('Tests with Enzyme', () => {
-  it('renders without crashing', () => {
-    mount(
+describe('Deed Component', () => {
+  it('renders Deed as a list item', () => {
+    const component = mount(
       <MockedProvider mocks={ mocks } addTypename={ false }>
         <Deed deed={ mockDeed } deedsSince='deedsSince' />
       </MockedProvider>
     )
+    expect(component.find('li.task-article').length).toEqual(1)
+  })
+})
+
+describe('Deed Integration', () => {
+  it('renders the DeedTitle', () => {
+    const component = mount(
+      <MockedProvider mocks={ mocks } addTypename={ false }>
+        <Deed deed={ mockDeed } deedsSince='deedsSince' />
+      </MockedProvider>
+    )
+    expect(component.find(DeedTitle).length).toEqual(1)
+    expect(component.find('div.task-article--title').text()).toEqual('Test Deed Index')
   })
 })
