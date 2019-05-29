@@ -32,12 +32,12 @@ const TaskTitle = ({ id, title, repeatable, deedsSince, completedAt }) => (
     { (CompleteTask, { loading, error }) => (
       <div
         className={ CSS(loading, error) }
-        onClick={ e => handleClick(e, id, CompleteTask, deedsSince, completedAt) }
         onKeyPress={ e => handleClick(e, id, CompleteTask, deedsSince) }
         role='button'
         tabIndex='0'
       >
         <TaskTypeIcon
+          onClick={ e => handleClick(e, id, CompleteTask, deedsSince, completedAt) }
           repeatable={ repeatable }
         />
         { title }

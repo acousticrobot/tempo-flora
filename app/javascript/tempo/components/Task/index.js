@@ -4,7 +4,6 @@ import { Draggable } from 'react-beautiful-dnd'
 
 import TaskTitle from './Title'
 import TaskPoints from './Points'
-import TaskPosition from './Position'
 import DeleteTaskButton from './DeleteTaskButton'
 
 import { SHOW_MORE_OPTIONS } from '../../constants/filterTypes'
@@ -16,7 +15,6 @@ const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
         className='task-article'
         ref={ provided.innerRef }
         { ...provided.draggableProps }
-        { ...provided.dragHandleProps }
       >
         <TaskTitle
           id={ task.id }
@@ -26,7 +24,11 @@ const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
           completedAt={ completedAt }
         />
 
-        <TaskPosition />
+        <div className='task-article--icon secondary-icon'
+          { ...provided.dragHandleProps }
+        >
+          <div className='icon icon-gripper' />
+        </div>
 
         { optionsFilter === SHOW_MORE_OPTIONS &&
           <TaskPoints points={ task.points } />
