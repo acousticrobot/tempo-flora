@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
 import { localStartOfDay } from '../../lib/Time'
-import TASKBOARD_QUERY from '../queries/TaskboardQuery'
-import Taskboard from '../components/Taskboard'
+import TASKBOARD_QUERY from '../../queries/TaskboardQuery'
+import Taskboard from './Taskboard'
 
 const TempoContainer = ({ userId }) => {
   const deedsSince = localStartOfDay(new Date())

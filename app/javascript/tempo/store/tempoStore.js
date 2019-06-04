@@ -1,4 +1,4 @@
-import { SHOW_STANDARD_OPTIONS, SHOW_ALL_TASKS, SHOW_ALL_FOCI } from '../constants/filterTypes'
+import { SHOW_STANDARD_OPTIONS, SHOW_ALL_TASKS, SHOW_ALL_FOCI } from '../../constants/filterTypes'
 
 
 export const initialState = {

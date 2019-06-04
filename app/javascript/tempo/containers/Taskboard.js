@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
-import TASKBOARD_CLIENT_QUERY from '../queries/TaskboardClientQuery'
+import TASKBOARD_CLIENT_QUERY from '../../queries/TaskboardClientQuery'
 
-import FociContainer from './Focus/Foci'
-import NavBar from './NavBar'
+import FociContainer from '../../components/Focus/Foci'
+import NavBar from '../../components/NavBar'
 
 const handleChangeOptions = (optionsState, client) => {
   client.writeData({ data: { optionsFilter: optionsState } })

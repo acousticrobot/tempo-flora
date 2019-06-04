@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Mutation } from 'react-apollo'
 
-import { localStartOfDay } from '../../../lib/Time'
+import { localStartOfDay } from '../../lib/Time'
 import TaskTypeIcon from './TaskTypeIcon'
 import COMPLETE_TASK from '../../mutations/CompleteTask'
 
