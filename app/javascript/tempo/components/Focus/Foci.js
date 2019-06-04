@@ -47,7 +47,7 @@ const Foci = ({ foci, deedsSince, focusFilter, optionsFilter, completedAt }) => 
   <Mutation mutation={ MOVE_TASK }>
     { moveTask => (
       <DragDropContext onDragEnd={ e => onDragEnd(e, moveTask) }>
-        <section className='foci-container'>
+        <section className='taskboard-items'>
           { getVisibleFoci(foci, focusFilter).map(
             focus => (
               <Focus

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 import DeedTitle from './Title'
 
 const Deed = ({ deed, deedsSince }) => (
-  <li className='task-article task-article--completed'>
-    <DeedTitle
-      id={ deed.id }
-      title={ deed.title }
-      deedsSince={ deedsSince }
-    />
+  <li className='focus-item'>
+    <article className='task -completed'>
+      <DeedTitle
+        id={ deed.id }
+        title={ deed.title }
+        deedsSince={ deedsSince }
+      />
+    </article>
     <div className='clear' />
   </li>
 )

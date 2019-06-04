@@ -34,7 +34,7 @@ const Deeds = ({ deeds, deedsSince }) => (
 )
 
 const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
-  <article className='focus-article' data-theme={ focus.color }>
+  <article className='focus' data-theme={ focus.color }>
     <header>
       <h1>
         { focus.title }

@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
-const DASHBOARD_QUERY = gql`
-  query getDashboard{
+const TASKBOARD_QUERY = gql`
+  query getTaskboard{
     optionsFilter @client
     completedAt @client
     focusFilter @client {
@@ -11,4 +11,4 @@ const DASHBOARD_QUERY = gql`
   }
 `
 
-export default DASHBOARD_QUERY
+export default TASKBOARD_QUERY

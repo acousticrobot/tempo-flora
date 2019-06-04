@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const TaskPoints = ({ points }) => (
-  <div className='task-article--item'>
+  <div className='task--item'>
     { points }
   </div>
 )

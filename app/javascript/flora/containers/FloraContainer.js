@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Dashboard from './Dashboard'
+import Calendar from '../../components/Calendar'
 
 const FloraContainer = () => (
-  <Dashboard />
+  <Calendar />
 )
 
 export default FloraContainer

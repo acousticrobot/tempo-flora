@@ -48,7 +48,7 @@ describe('Deed Component', () => {
         <Deed deed={ mockDeed } deedsSince='deedsSince' />
       </MockedProvider>
     )
-    expect(component.find('li.task-article').length).toEqual(1)
+    expect(component.find('li.task').length).toEqual(1)
   })
 })
 
@@ -60,6 +60,6 @@ describe('Deed Integration', () => {
       </MockedProvider>
     )
     expect(component.find(DeedTitle).length).toEqual(1)
-    expect(component.find('div.task-article--title').text()).toEqual('Test Deed Index')
+    expect(component.find('div.task--title').text()).toEqual('Test Deed Index')
   })
 })

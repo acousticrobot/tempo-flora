@@ -1,12 +1,5 @@
 @import "variables";
 
-@mixin icon-image($name) {
-  background-image: image-url($name + ".svg");
-  &:hover {
-    background-image: image-url($name + "_hover.svg");
-  }
-}
-
 @mixin icon-mask($name, $default-color, $hover: false) {
   width: 100%;
   height: 100%;
@@ -19,6 +12,10 @@
       mask-image: image-url($name + "_hover.svg");
     }
   }
+}
+
+.icon-wrapper {
+  @extend %icon;
 }
 
 .icon-repeat {
@@ -49,6 +46,10 @@
   @include icon-mask("less", var(--c-text));
 }
 
+.icon-left-arrow {
+  @include icon-mask("left_arrow", var(--c-text));
+}
+
 .icon-minus {
   @include icon-mask("minus", var(--c-text));
 }
@@ -59,6 +60,10 @@
 
 .icon-plus {
   @include icon-mask("plus", var(--c-text));
+}
+
+.icon-right-arrow {
+  @include icon-mask("right_arrow", var(--c-text));
 }
 
 .icon-unfocus {

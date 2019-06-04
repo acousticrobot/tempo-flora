@@ -14,13 +14,13 @@ const DeleteTaskButton = ({ id }) => (
   <Mutation mutation={ DELETE_TASK }>
     { deleteTask => (
       <div
-        className='task-article--item'
+        className='task--item'
         onClick={ e => handleClick(e, id, deleteTask) }
         onKeyPress={ e => handleClick(e, id, deleteTask) }
         role='button'
         tabIndex='0'
       >
-        <div className='task-article--icon'>
+        <div className='task--icon'>
           <div className='icon icon-delete' />
         </div>
       </div>

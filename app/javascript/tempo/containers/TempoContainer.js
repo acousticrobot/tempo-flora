@@ -4,7 +4,7 @@ import { Query } from 'react-apollo'
 
 import { localStartOfDay } from '../../lib/Time'
 import ROOT_QUERY from '../queries/RootQuery'
-import Dashboard from '../components/Dashboard'
+import Taskboard from '../components/Taskboard'
 
 const TempoContainer = ({ userId }) => {
   const deedsSince = localStartOfDay(new Date())
@@ -16,7 +16,7 @@ const TempoContainer = ({ userId }) => {
         if (error) return <p>Error :(</p>
 
         return (
-          <Dashboard
+          <Taskboard
             foci={ data.foci }
             deedsSince={ deedsSince }
             theme={ data.user.theme }

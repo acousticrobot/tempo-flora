@@ -6,7 +6,7 @@ const TaskTypeIcon = ({ repeatable, onClick }) => {
 
   return (
     <div
-      className='task-article--icon task-article--title-icon'
+      className='task--icon task--title-icon'
       onClick={ e => (onClick(e)) }
       onKeyPress={ e => (onClick(e)) }
       role='button'

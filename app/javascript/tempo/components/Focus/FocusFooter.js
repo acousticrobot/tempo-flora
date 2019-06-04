@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import AddTask from '../Task/AddTask'
 
 const FocusFooter = ({ focusId }) => (
-  <footer className='focus-item--footer'>
+  <footer>
     <AddTask focusId={ focusId } />
   </footer>
 )

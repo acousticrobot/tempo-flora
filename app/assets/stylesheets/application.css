@@ -12,6 +12,7 @@
  *
  *= require_tree ./themes
  *= require _base
+ *= require _taskboard
  *= require _icons
  *= require _focus
  *= require _forms

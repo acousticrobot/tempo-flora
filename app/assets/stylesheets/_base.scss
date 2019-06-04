@@ -99,10 +99,6 @@ code {
   font-size: 1.25rem;
 }
 
-section.dashboard {
-  background-color: var(--c-main--section);
-}
-
 // custom for mobile
 @media (max-width: $media-mobile){
   section.dashboard {

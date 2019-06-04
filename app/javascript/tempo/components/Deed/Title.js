@@ -6,12 +6,12 @@ import UNDO_DEED from '../../mutations/UndoDeed'
 
 const CSS = (loading, error) => {
   if (loading) {
-    return 'task-article--title'
+    return 'task--title'
   }
   if (error) {
-    return 'task-article--title task-article--title_error'
+    return 'task--title -error'
   }
-  return 'task-article--title task-article--title-completed'
+  return 'task--title -completed'
 }
 
 const DeedTitle = ({ id, title, deedsSince }) => (
@@ -25,7 +25,7 @@ const DeedTitle = ({ id, title, deedsSince }) => (
         role='button'
         tabIndex='0'
       >
-        <div className='task-article--icon task-article--title-icon'>
+        <div className='task--icon task--title-icon'>
           <div className='icon icon-check-box--checked' />
         </div>
         { title }

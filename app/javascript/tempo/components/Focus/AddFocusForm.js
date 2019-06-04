@@ -20,7 +20,7 @@ const AddFocusForm = ({ closeFocusForm, deedsSince }) => {
   }
 
   return (
-    <article className='focus-article add-focus--form'>
+    <article className='focus add-focus--form'>
       <Mutation
         mutation={ ADD_FOCUS }
         update={ (cache, { data: { AddFocusMutation: { focus } } }) => {
@@ -55,7 +55,7 @@ const AddFocusForm = ({ closeFocusForm, deedsSince }) => {
 
                 <button type='submit'>
                   <nav className='focus-header--nav-icon'>
-                    <div className='focus-article--icon'>
+                    <div className='focus--icon'>
                       <div className='icon icon-plus' />
                     </div>
                   </nav>
@@ -69,7 +69,7 @@ const AddFocusForm = ({ closeFocusForm, deedsSince }) => {
               onClick={ () => { closeFocusForm() } }
             >
               Cancel
-              <div className='task-article--icon'>
+              <div className='task--icon'>
                 <div className='icon icon-minus' />
               </div>
             </button>

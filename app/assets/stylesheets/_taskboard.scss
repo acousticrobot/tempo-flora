@@ -1,0 +1,10 @@
+article.taskboard {
+  background-color: var(--c-main--bkg);
+}
+
+section.taskboard-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 
 import Day from './Day'
 
+const CSS = day => (day.date ? 'calendar--cell -day' : 'calendar--cell -day -empty')
+
 const Week = ({ foci, week, maxPoints }) => (
   <section className='calendar--row -week'>
     {
       week.map(day => (
         <div
-          className='calendar--cell -day'
+          className={ CSS(day) }
           key={ day.uid }
         >
           { day.day && (

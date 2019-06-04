@@ -37,7 +37,7 @@ const SingleFocusButton = ({ focusId }) => (
       return (
         <nav className='focus-header--nav-icon'>
           <div
-            className='focus-article--icon'
+            className='focus--icon'
             onClick={ e => (handleClick(e, focusId, focusFilter, client)) }
             onKeyPress={ e => (handleClick(e, focusId, focusFilter, client)) }
             role='button'

@@ -31,6 +31,11 @@ section.calendar--row {
     padding: .75rem 0;
     text-align: center;
   }
+  &.-icon {
+    .icon-wrapper {
+      margin: auto;
+    }
+  }
 }
 
 // custom for mobile
@@ -38,6 +43,14 @@ section.calendar--row {
   section.calendar--row {
     display: block;
     &.-weekday {
+      display: none;
+    }
+    &.-month {
+      display: flex;
+    }
+  }
+  .calendar--cell {
+    &.-day.-empty {
       display: none;
     }
   }
@@ -51,6 +64,9 @@ section.calendar--row {
   }
   .calendar--cell {
     flex: 1 0 28%;
+    &.-day.-empty {
+      display: none;
+    }
   }
 }
 

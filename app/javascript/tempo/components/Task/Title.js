@@ -8,12 +8,12 @@ import COMPLETE_TASK from '../../mutations/CompleteTask'
 
 const CSS = (loading, error) => {
   if (loading) {
-    return 'task-article--title task-article--title-completed'
+    return 'task--title -loading'
   }
   if (error) {
-    return 'task-article--title task-article--title_error'
+    return 'task--title -error'
   }
-  return 'task-article--title'
+  return 'task--title'
 }
 
 

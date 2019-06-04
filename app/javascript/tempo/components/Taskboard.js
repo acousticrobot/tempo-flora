@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
-import DASHBOARD_QUERY from '../queries/DashboardQuery'
+import TASKBOARD_QUERY from '../queries/TaskboardQuery'
 
 import FociContainer from './Focus/Foci'
 import NavBar from './NavBar'
@@ -11,10 +11,10 @@ const handleChangeOptions = (optionsState, client) => {
   client.writeData({ data: { optionsFilter: optionsState } })
 }
 
-const Dashboard = ({ foci, theme, deedsSince }) => (
-  <Query query={ DASHBOARD_QUERY }>
+const Taskboard = ({ foci, theme, deedsSince }) => (
+  <Query query={ TASKBOARD_QUERY }>
     { ({ data: { focusFilter, completedAt, optionsFilter }, client }) => (
-      <section className='dashboard'>
+      <article className='taskboard'>
         <NavBar
           theme={ theme }
           optionsFilter={ optionsFilter }
@@ -28,19 +28,19 @@ const Dashboard = ({ foci, theme, deedsSince }) => (
           optionsFilter={ optionsFilter }
           completedAt={ completedAt }
         />
-      </section>
+      </article>
     ) }
   </Query>
 )
 
-Dashboard.propTypes = {
+Taskboard.propTypes = {
   foci: PropTypes.array.isRequired,
   deedsSince: PropTypes.string.isRequired,
   theme: PropTypes.string
 }
 
-Dashboard.defaultProps = {
+Taskboard.defaultProps = {
   theme: 'DEFAULT'
 }
 
-export default Dashboard
+export default Taskboard

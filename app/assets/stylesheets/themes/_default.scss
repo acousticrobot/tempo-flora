@@ -11,7 +11,6 @@ html {
 
   --c-main--text          : black;
   --c-main--bkg           : white;
-  --c-main--section       : white;
   --c-main--nav-on        : #{ $color-blue-B };
   --c-main--nav-on-hover  : #{ $color-blue-D };
   --c-main--nav-off       : #{ $color-blue-D };
@@ -46,32 +45,32 @@ html {
   --c-chart-purple        : #{ $color-purple-4 };
 }
 
-article.focus-article[data-theme='RED'] {
+article.focus[data-theme='RED'] {
   --c-article--header     : #{ $color-red-D };
   --c-article--bkg        : #{ $color-red-F };
   --c-article--footer     : #{ $color-red-E };
 }
-article.focus-article[data-theme='ORANGE'] {
+article.focus[data-theme='ORANGE'] {
   --c-article--header     : #{ $color-brown-A };
   --c-article--bkg        : #{ $color-brown-F };
   --c-article--footer     : #{ $color-brown-D };
 }
-article.focus-article[data-theme='BROWN'] {
+article.focus[data-theme='BROWN'] {
   --c-article--header     : #{ $color-chrome-C };
   --c-article--bkg        : #{ $color-chrome-E };
   --c-article--footer     : #{ $color-chrome-D };
 }
-article.focus-article[data-theme='BLUE'] {
+article.focus[data-theme='BLUE'] {
   --c-article--header     : #{ $color-blue-D };
   --c-article--bkg        : #{ $color-blue-F };
   --c-article--footer     : #{ $color-blue-E };
 }
-article.focus-article[data-theme='GREEN'] {
+article.focus[data-theme='GREEN'] {
   --c-article--header     : #{ $color-green-D };
   --c-article--bkg        : #{ $color-green-F };
   --c-article--footer     : #{ $color-green-E };
 }
-article.focus-article[data-theme='PURPLE'] {
+article.focus[data-theme='PURPLE'] {
   --c-article--header     : #{ $color-purple-D };
   --c-article--bkg        : #{ $color-purple-F };
   --c-article--footer     : #{ $color-purple-E };

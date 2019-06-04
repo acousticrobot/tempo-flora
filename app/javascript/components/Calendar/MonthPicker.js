@@ -41,24 +41,30 @@ const previous = day => {
 
 const MonthPicker = ({ currentDay, onChangeDay }) => (
   <section className='calendar--row -month'>
-    <div
-      onClick={ () => onChangeDay((previous(currentDay))) }
-      onKeyPress={ () => onChangeDay((previous(currentDay))) }
-      role='button'
-      tabIndex='0'
-    >
-      { '<<<= Previous'}
+    <div className='calendar--cell -icon'>
+      <div
+        className='icon-wrapper'
+        onClick={ () => onChangeDay((previous(currentDay))) }
+        onKeyPress={ () => onChangeDay((previous(currentDay))) }
+        role='button'
+        tabIndex='0'
+      >
+        <div className='icon icon-left-arrow' />
+      </div>
     </div>
     <div className='calendar--cell -month'>
       { getMonth(currentDay) }
     </div>
-    <div
-      onClick={ () => onChangeDay((next(currentDay))) }
-      onKeyPress={ () => onChangeDay((next(currentDay))) }
-      role='button'
-      tabIndex='0'
-    >
-      { 'Next =>>>'}
+    <div className='calendar--cell -icon'>
+      <div
+        className='icon-wrapper'
+        onClick={ () => onChangeDay((next(currentDay))) }
+        onKeyPress={ () => onChangeDay((next(currentDay))) }
+        role='button'
+        tabIndex='0'
+      >
+        <div className='icon icon-right-arrow' />
+      </div>
     </div>
   </section>
 )

@@ -12,32 +12,34 @@ const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
   <Draggable draggableId={ task.id } index={ task.position }>
     { provided => (
       <li
-        className='task-article'
+        className='focus-item'
         ref={ provided.innerRef }
         { ...provided.draggableProps }
       >
-        <TaskTitle
-          id={ task.id }
-          repeatable={ task.repeatable }
-          title={ task.title }
-          deedsSince={ deedsSince }
-          completedAt={ completedAt }
-        />
+        <article className='task'>
+          <TaskTitle
+            id={ task.id }
+            repeatable={ task.repeatable }
+            title={ task.title }
+            deedsSince={ deedsSince }
+            completedAt={ completedAt }
+          />
 
-        <div className='task-article--icon secondary-icon'
-          { ...provided.dragHandleProps }
-        >
-          <div className='icon icon-gripper' />
-        </div>
+          <div
+            className='task--icon secondary-icon'
+            { ...provided.dragHandleProps }
+          >
+            <div className='icon icon-gripper' />
+          </div>
 
-        { optionsFilter === SHOW_MORE_OPTIONS &&
-          <TaskPoints points={ task.points } />
-        }
+          { optionsFilter === SHOW_MORE_OPTIONS &&
+            <TaskPoints points={ task.points } />
+          }
 
-        { optionsFilter === SHOW_MORE_OPTIONS &&
-          <DeleteTaskButton id={ task.id } />
-        }
-
+          { optionsFilter === SHOW_MORE_OPTIONS &&
+            <DeleteTaskButton id={ task.id } />
+          }
+        </article>
       </li>
     )}
   </Draggable>
