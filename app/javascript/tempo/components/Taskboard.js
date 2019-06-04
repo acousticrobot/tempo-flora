@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
-import TASKBOARD_QUERY from '../queries/TaskboardQuery'
+import TASKBOARD_CLIENT_QUERY from '../queries/TaskboardClientQuery'
 
 import FociContainer from './Focus/Foci'
 import NavBar from './NavBar'
@@ -12,7 +12,7 @@ const handleChangeOptions = (optionsState, client) => {
 }
 
 const Taskboard = ({ foci, theme, deedsSince }) => (
-  <Query query={ TASKBOARD_QUERY }>
+  <Query query={ TASKBOARD_CLIENT_QUERY }>
     { ({ data: { focusFilter, completedAt, optionsFilter }, client }) => (
       <article className='taskboard'>
         <NavBar
