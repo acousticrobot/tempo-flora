@@ -7,8 +7,8 @@ import { ApolloProvider } from 'react-apollo'
 import { ApolloLink } from 'apollo-link'
 import { withClientState } from 'apollo-link-state'
 
-import { initialState } from '../store/tempoStore'
-import TempoContainer from './TempoContainer'
+import { initialState } from './store/tempoStore'
+import TempoContainer from './containers/TempoContainer'
 
 // get authentication token
 const csrfElement = document.querySelector('meta[name="csrf-token"]')
