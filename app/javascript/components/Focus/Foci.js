@@ -8,7 +8,7 @@ import {
   SHOW_ALL_FOCI, SHOW_SINGLE_FOCUS, SHOW_MORE_OPTIONS, SHOW_STANDARD_OPTIONS
 } from '../../constants/filterTypes'
 
-import Focus from './index'
+import Focus from './Focus'
 import AddFocus from './AddFocus'
 
 const getVisibleFoci = (foci, focusFilter) => {

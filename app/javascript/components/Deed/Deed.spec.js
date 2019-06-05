@@ -4,7 +4,7 @@ import { mount } from 'enzyme'
 import { MockedProvider } from 'react-apollo/test-utils'
 
 import UNDO_DEED from '../../mutations/UndoDeed'
-import Deed from './index'
+import Deed from './Deed'
 import DeedTitle from './Title'
 
 const mocks = [
@@ -48,7 +48,7 @@ describe('Deed Component', () => {
         <Deed deed={ mockDeed } deedsSince='deedsSince' />
       </MockedProvider>
     )
-    expect(component.find('li.task').length).toEqual(1)
+    expect(component.find('li.focus-item').length).toEqual(1)
   })
 })
 

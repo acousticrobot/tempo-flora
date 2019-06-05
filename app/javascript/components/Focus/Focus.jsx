@@ -1,37 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Query } from 'react-apollo'
 import { Droppable } from 'react-beautiful-dnd';
-
-import TASK_FILTER_QUERY from '../../queries/TaskFilter'
-import { SHOW_ALL_TASKS, SHOW_ACTIVE_TASKS } from '../../constants/filterTypes'
 
 import SingleFocusButton from './SingleFocusButton'
 import FocusFooter from './FocusFooter'
 import AddTask from '../Task/AddTask'
 import Task from '../Task'
-import Deed from '../Deed'
-
-const getDeeds = (deeds, taskFilter) => {
-  switch (taskFilter) {
-    case SHOW_ALL_TASKS:
-      return deeds
-    case SHOW_ACTIVE_TASKS:
-      return []
-    default:
-      return []
-  }
-}
-
-const Deeds = ({ deeds, deedsSince }) => (
-  <Query query={ TASK_FILTER_QUERY }>
-    { ({ data: { taskFilter } }) => (
-      getDeeds(deeds, taskFilter).map( deed =>
-        <Deed key={ deed.id } deed={ deed } deedsSince={ deedsSince} />
-      )
-    ) }
-  </Query>
-)
+import Deeds from '../Deed/Deeds'
 
 const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
   <article className='focus' data-theme={ focus.color }>
@@ -67,10 +42,6 @@ const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
     <FocusFooter focusId={ focus.id } />
   </article>
 )
-
-Deeds.propTypes = {
-  deeds: PropTypes.array.isRequired
-}
 
 Focus.propTypes = {
   focus: PropTypes.shape({
