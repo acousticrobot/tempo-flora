@@ -4,7 +4,7 @@ import { Query } from 'react-apollo'
 
 import TASKBOARD_CLIENT_QUERY from '../../queries/TaskboardClientQuery'
 
-import FociContainer from '../../components/Focus/Foci'
+import Foci from '../../components/Focus/Foci'
 import NavBar from '../../components/NavBar'
 
 const handleChangeOptions = (optionsState, client) => {
@@ -21,7 +21,7 @@ const Taskboard = ({ foci, theme, deedsSince }) => (
           onChangeOptions={ optionsState => handleChangeOptions(optionsState, client) }
         />
 
-        <FociContainer
+        <Foci
           foci={ foci }
           deedsSince={ deedsSince }
           focusFilter={ focusFilter }

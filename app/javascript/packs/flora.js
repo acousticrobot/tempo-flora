@@ -1,2 +1,7 @@
-// eslint-disable-next-line import/no-unresolved
-import 'flora'
+import React from 'react'
+import { render } from 'react-dom'
+import FloraApp from '../FloraApp'
+
+const flora = document.querySelector('#flora')
+
+render(<FloraApp />, flora)
