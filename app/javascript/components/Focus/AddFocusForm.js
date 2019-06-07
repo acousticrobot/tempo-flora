@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Mutation } from 'react-apollo'
+
+import { CSSAggregate } from '../../lib/CSS'
 import ADD_FOCUS from '../../mutations/AddFocus'
 import GET_FOCI from '../../queries/GetFoci'
 
+const CSS = (...types) => (CSSAggregate('add-focus--form', ...types))
+
 const AddFocusForm = ({ closeFocusForm, deedsSince }) => {
   let titleInput
-
-  const CSS = type => `add-focus--form-${type}`
 
   const handleAddFocus = (e, addFocus) => {
     e.preventDefault()
@@ -40,7 +42,6 @@ const AddFocusForm = ({ closeFocusForm, deedsSince }) => {
             <header>
               <h1>
                 <label
-                  className={ CSS('label add-focus-form-header') }
                   htmlFor='title-input'
                 >
                   Title:
@@ -86,3 +87,6 @@ AddFocusForm.propTypes = {
 }
 
 export default AddFocusForm
+
+// for testing:
+export { CSS }

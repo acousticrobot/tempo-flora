@@ -2,17 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Mutation } from 'react-apollo'
 
+import { CSSWithResponse } from '../../lib/CSS'
+
 import UNDO_DEED from '../../mutations/UndoDeed'
 
-const CSS = (loading, error) => {
-  if (loading) {
-    return 'task--title'
-  }
-  if (error) {
-    return 'task--title -error'
-  }
-  return 'task--title -completed'
-}
+const CSS = (loading, error) => (
+  CSSWithResponse('task--title', loading, error, '-completed')
+)
 
 const DeedTitle = ({ id, title, deedsSince }) => (
 
@@ -41,3 +37,6 @@ DeedTitle.propTypes = {
 }
 
 export default DeedTitle
+
+// for testing:
+export { CSS }

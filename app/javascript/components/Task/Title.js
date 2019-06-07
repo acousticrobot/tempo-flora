@@ -3,19 +3,14 @@ import PropTypes from 'prop-types'
 import { Mutation } from 'react-apollo'
 
 import { localStartOfDay } from '../../lib/Time'
+import { CSSWithResponse } from '../../lib/CSS'
+
 import TaskTypeIcon from './TaskTypeIcon'
 import COMPLETE_TASK from '../../mutations/CompleteTask'
 
-const CSS = (loading, error) => {
-  if (loading) {
-    return 'task--title -loading'
-  }
-  if (error) {
-    return 'task--title -error'
-  }
-  return 'task--title'
-}
-
+const CSS = (loading, error) => (
+  CSSWithResponse('task--title', loading, error)
+)
 
 const handleClick = (e, id, CompleteTask, deedsSince, completedAt) => {
   const date = completedAt ? new Date(completedAt) : new Date()
@@ -55,3 +50,5 @@ TaskTitle.propTypes = {
 }
 
 export default TaskTitle
+
+export { CSS }

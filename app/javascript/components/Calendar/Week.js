@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 import Day from './Day'
 
-const CSS = day => (day.date ? 'calendar--cell -day' : 'calendar--cell -day -empty')
+const CSS = day => (classNames('calendar--cell -day', { '-empty': !day.date }))
 
 const Week = ({ foci, week, maxPoints }) => (
   <section className='calendar--row -week'>

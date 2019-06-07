@@ -3,12 +3,12 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { MockedProvider } from 'react-apollo/test-utils'
 
-import DeedTitle, { CSS } from './Title'
+import TaskTitle, { CSS } from './Title'
 
 describe('CSS', () => {
-  it('returns "task--title -completed" by default', () => {
+  it('returns "task--title" by default', () => {
     const css = CSS()
-    expect(css).toEqual('task--title -completed')
+    expect(css).toEqual('task--title')
   })
 
   it('returns "task--title -error" when error', () => {
@@ -22,11 +22,11 @@ describe('CSS', () => {
   })
 })
 
-describe('Tests with Enzyme', () => {
+describe('TaskTitle', () => {
   it('renders without crashing', () => {
     mount(
       <MockedProvider>
-        <DeedTitle id='id' title='title' deedsSince='deedsSince' />
+        <TaskTitle id='id' title='title' repeatable={ false } deedsSince='deedsSince' completedAt='completedAt' />
       </MockedProvider>
     )
   })
