@@ -6,7 +6,7 @@ module.exports = {
   },
   'env': {
     'browser': true,
-    "jest": true
+    'jest': true
   },
   'rules': {
     'arrow-parens': ['error', 'as-needed'],
