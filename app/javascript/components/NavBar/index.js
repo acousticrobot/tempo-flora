@@ -5,7 +5,6 @@ import TaskFilterButton from './TaskFilterButton'
 import FocusFilterButton from './FocusFilterButton'
 import ThemeFilterButtons from './ThemeFilterButtons'
 import OptionsFilterButton from './OptionsFilterButton'
-import DayInput from './DayInput'
 
 import { SHOW_MORE_OPTIONS, SHOW_STANDARD_OPTIONS } from '../../constants/filterTypes'
 
@@ -22,7 +21,6 @@ const NavBar = ({ theme, optionsFilter, onChangeOptions }) => {
           <ul>
             <TaskFilterButton />
             <FocusFilterButton />
-            <DayInput />
           </ul>
         </section>
         <section>

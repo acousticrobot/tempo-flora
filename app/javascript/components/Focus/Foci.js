@@ -47,26 +47,24 @@ const Foci = ({ foci, deedsSince, focusFilter, optionsFilter, completedAt }) => 
   <Mutation mutation={ MOVE_TASK }>
     { moveTask => (
       <DragDropContext onDragEnd={ e => onDragEnd(e, moveTask) }>
-        <section className='taskboard-items'>
-          { getVisibleFoci(foci, focusFilter).map(
-            focus => (
-              <Focus
-                key={ focus.id }
-                focus={ focus }
-                deedsSince={ deedsSince }
-                completedAt={ completedAt }
-                optionsFilter={
-                  focusFilter.filter === SHOW_SINGLE_FOCUS ?
-                    SHOW_MORE_OPTIONS : SHOW_STANDARD_OPTIONS
-                }
-              />
-            )
-          ) }
+        { getVisibleFoci(foci, focusFilter).map(
+          focus => (
+            <Focus
+              key={ focus.id }
+              focus={ focus }
+              deedsSince={ deedsSince }
+              completedAt={ completedAt }
+              optionsFilter={
+                focusFilter.filter === SHOW_SINGLE_FOCUS ?
+                  SHOW_MORE_OPTIONS : SHOW_STANDARD_OPTIONS
+              }
+            />
+          )
+        ) }
 
-          { optionsFilter === SHOW_MORE_OPTIONS &&
-            <AddFocus focusFilter={ focusFilter } deedsSince={ deedsSince } />
-          }
-        </section>
+        { optionsFilter === SHOW_MORE_OPTIONS &&
+          <AddFocus focusFilter={ focusFilter } deedsSince={ deedsSince } />
+        }
       </DragDropContext>
     )}
   </Mutation>

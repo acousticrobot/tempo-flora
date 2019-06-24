@@ -1,49 +1,9 @@
 @import "variables";
 
-@mixin focus-mixin($bg-color, $header-color) {
-  flex: 1 0 31%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin: .1rem;
-  color: var(--c-main--text);
-  background-color: $bg-color;
-  header {
-    padding: .85rem .5rem .55rem 1.75rem;
-    background-color: $header-color;
-    h1 {
-      color: var(--c-main--text);
-      font-size: 1.35rem;
-      min-height: 1.75rem;
-      text-transform: capitalize;
-    }
-  }
-  @media (max-width: $media-mobile){
-    flex: 1 0 95%;
-    margin: .25rem 0;
-  }
-  @media (min-width: $media-mobile) and (max-width: $media-tablet){
-    flex: 1 0 46%;
-  }
-}
-
 article.focus {
-  @include focus-mixin(var(--c-article--bkg), var(--c-article--header));
   footer {
     background-color: var(--c-article--footer);
     padding: .25rem 0 1rem 0;
-  }
-}
-
-.add-focus-button {
-  @include focus-mixin(var(--c-article-alt--bkg), var(--c-article-alt--header));
-  min-height: 10rem;
-  header {
-    .icon {
-      background-color: var(--c-main--icon);
-    }
   }
 }
 

@@ -9,7 +9,7 @@ import Task from '../Task'
 import Deeds from '../Deed/Deeds'
 
 const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
-  <article className='focus' data-theme={ focus.color }>
+  <article className='taskboard-item focus' data-theme={ focus.color }>
     <header>
       <h1>
         { focus.title }

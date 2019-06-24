@@ -1,6 +1,5 @@
 import { SHOW_STANDARD_OPTIONS, SHOW_ALL_TASKS, SHOW_ALL_FOCI } from '../../constants/filterTypes'
 
-
 export const initialState = {
   optionsFilter: SHOW_STANDARD_OPTIONS,
   taskFilter: SHOW_ALL_TASKS,

@@ -22,7 +22,7 @@ const AddFocusForm = ({ closeFocusForm, deedsSince }) => {
   }
 
   return (
-    <article className='focus add-focus--form'>
+    <article className='taskboard-item add-focus--form'>
       <Mutation
         mutation={ ADD_FOCUS }
         update={ (cache, { data: { AddFocusMutation: { focus } } }) => {
