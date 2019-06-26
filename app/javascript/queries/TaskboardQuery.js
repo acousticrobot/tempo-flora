@@ -1,7 +1,9 @@
 import gql from 'graphql-tag'
 
 const TASKBOARD_QUERY = gql`
-  query TaskboardQuery($userId: ID!, $deedsSince: String) {
+  query TaskboardQuery($userId: ID!, $deedsSince: String, $deedsTo: String) {
+    targetDate @client @export(as: "deedsSince")
+    targetEndDate @client @export(as: "deedsTo")
     user(id: $userId) {
       id
       username
@@ -19,7 +21,7 @@ const TASKBOARD_QUERY = gql`
         repeatable
         position
       }
-      deeds(since: $deedsSince) {
+      deeds(since: $deedsSince, to: $deedsTo) {
         id
         title
         focusTitle
@@ -31,6 +33,12 @@ const TASKBOARD_QUERY = gql`
       enumValues {
         name
       }
+    }
+    optionsFilter @client
+    targetDate @client
+    focusFilter @client {
+      filter
+      focusId
     }
   }
 `

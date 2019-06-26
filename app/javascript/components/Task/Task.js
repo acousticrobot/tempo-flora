@@ -8,7 +8,7 @@ import DeleteTaskButton from './DeleteTaskButton'
 
 import { SHOW_MORE_OPTIONS } from '../../constants/filterTypes'
 
-const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
+const Task = ({ task, optionsFilter, targetDate }) => (
   <Draggable draggableId={ task.id } index={ task.position }>
     { provided => (
       <li
@@ -21,8 +21,8 @@ const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
             id={ task.id }
             repeatable={ task.repeatable }
             title={ task.title }
-            deedsSince={ deedsSince }
-            completedAt={ completedAt }
+            targetDate={ targetDate }
+            optionsFilter={ optionsFilter }
           />
 
           <div
@@ -47,14 +47,13 @@ const Task = ({ task, optionsFilter, deedsSince, completedAt }) => (
 
 Task.propTypes = {
   optionsFilter: PropTypes.string.isRequired,
-  completedAt: PropTypes.string.isRequired,
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     points: PropTypes.number.isRequired,
     repeatable: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired
   }).isRequired,
-  deedsSince: PropTypes.string.isRequired
+  targetDate: PropTypes.string.isRequired
 }
 
 export default Task

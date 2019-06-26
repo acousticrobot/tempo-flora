@@ -136,7 +136,7 @@ aside.form--additional {
   border-radius: 0 0 var(--radius) var(--radius);
 }
 
-article.add-focus--form {
+article.taskboard-item.-form {
   header {
     padding-left: .5rem;
     h1 {
@@ -146,17 +146,16 @@ article.add-focus--form {
       background-color: var(--c-article--header);
       border-width: 0;
     }
+    input {
+      height: 2rem;
+      border-width: 0;
+      margin: -3px 1rem;
+      font-size: 1.25rem;
+      flex: 1;
+      background-color: var(--c-form--bkg);
+    }
   }
   min-height: 10rem;
-}
-
-.add-focus--form-title-input {
-    height: 2rem;
-    border-width: 0;
-    margin: -3px 1rem;
-    font-size: 1.25rem;
-    flex: 1;
-    background-color: var(--c-form--bkg);
 }
 
 .add-task--form {

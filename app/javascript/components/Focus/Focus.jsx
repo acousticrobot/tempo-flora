@@ -5,10 +5,10 @@ import { Droppable } from 'react-beautiful-dnd';
 import SingleFocusButton from './SingleFocusButton'
 import FocusFooter from './FocusFooter'
 import AddTask from '../Task/AddTask'
-import Task from '../Task'
+import Task from '../Task/Task'
 import Deeds from '../Deed/Deeds'
 
-const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
+const Focus = ({ focus, optionsFilter, targetDate }) => (
   <article className='taskboard-item focus' data-theme={ focus.color }>
     <header>
       <h1>
@@ -28,13 +28,12 @@ const Focus = ({ focus, optionsFilter, deedsSince, completedAt }) => (
             <Task
               key={ task.id }
               task={ task }
-              deedsSince={ deedsSince }
+              targetDate={ targetDate }
               optionsFilter={ optionsFilter }
-              completedAt={ completedAt }
             />
           ))}
           { provided.placeholder }
-          <Deeds deeds={ focus.deeds } deedsSince={ deedsSince } />
+          <Deeds deeds={ focus.deeds } deedsSince={ targetDate } />
         </ul>
       )}
       </Droppable>
@@ -51,9 +50,8 @@ Focus.propTypes = {
     tasks: PropTypes.array.isRequired,
     deeds: PropTypes.array.isRequired
   }).isRequired,
-  deedsSince: PropTypes.string.isRequired,
-  optionsFilter: PropTypes.string.isRequired,
-  completedAt: PropTypes.string.isRequired
+  targetDate: PropTypes.string.isRequired,
+  optionsFilter: PropTypes.string.isRequired
 }
 
 export default Focus

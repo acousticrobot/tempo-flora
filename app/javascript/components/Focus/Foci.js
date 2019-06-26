@@ -43,7 +43,7 @@ const onDragEnd = (e, moveTask) => {
   })
 }
 
-const Foci = ({ foci, deedsSince, focusFilter, optionsFilter, completedAt }) => (
+const Foci = ({ foci, targetDate, focusFilter, optionsFilter }) => (
   <Mutation mutation={ MOVE_TASK }>
     { moveTask => (
       <DragDropContext onDragEnd={ e => onDragEnd(e, moveTask) }>
@@ -52,8 +52,7 @@ const Foci = ({ foci, deedsSince, focusFilter, optionsFilter, completedAt }) => 
             <Focus
               key={ focus.id }
               focus={ focus }
-              deedsSince={ deedsSince }
-              completedAt={ completedAt }
+              targetDate={ targetDate }
               optionsFilter={
                 focusFilter.filter === SHOW_SINGLE_FOCUS ?
                   SHOW_MORE_OPTIONS : SHOW_STANDARD_OPTIONS
@@ -63,7 +62,7 @@ const Foci = ({ foci, deedsSince, focusFilter, optionsFilter, completedAt }) => 
         ) }
 
         { optionsFilter === SHOW_MORE_OPTIONS &&
-          <AddFocus focusFilter={ focusFilter } deedsSince={ deedsSince } />
+          <AddFocus focusFilter={ focusFilter } deedsSince={ targetDate } />
         }
       </DragDropContext>
     )}
@@ -72,10 +71,9 @@ const Foci = ({ foci, deedsSince, focusFilter, optionsFilter, completedAt }) => 
 
 Foci.propTypes = {
   foci: PropTypes.array.isRequired,
-  deedsSince: PropTypes.string.isRequired,
+  targetDate: PropTypes.string.isRequired,
   focusFilter: PropTypes.object.isRequired,
-  optionsFilter: PropTypes.string.isRequired,
-  completedAt: PropTypes.string.isRequired
+  optionsFilter: PropTypes.string.isRequired
 }
 
 export default Foci

@@ -26,7 +26,7 @@ describe('TaskTitle', () => {
   it('renders without crashing', () => {
     mount(
       <MockedProvider>
-        <TaskTitle id='id' title='title' repeatable={ false } deedsSince='deedsSince' completedAt='completedAt' />
+        <TaskTitle id='id' title='title' repeatable={ false } targetDate='string' optionsFilter='string' />
       </MockedProvider>
     )
   })

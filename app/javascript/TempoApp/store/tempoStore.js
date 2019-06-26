@@ -1,9 +1,14 @@
 import { SHOW_STANDARD_OPTIONS, SHOW_ALL_TASKS, SHOW_ALL_FOCI } from '../../constants/filterTypes'
+import { localStartOfDay, localEndOfDay } from '../../lib/Time'
+
+const targetDate = localStartOfDay(new Date())
+const targetEndDate = localEndOfDay(new Date())
 
 export const initialState = {
   optionsFilter: SHOW_STANDARD_OPTIONS,
   taskFilter: SHOW_ALL_TASKS,
-  completedAt: '',
+  targetDate,
+  targetEndDate,
   focusFilter: {
     __typename: 'focusFilter',
     filter: SHOW_ALL_FOCI,
