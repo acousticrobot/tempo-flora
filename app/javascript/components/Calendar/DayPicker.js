@@ -23,7 +23,7 @@ const allDeeds = (foci) => {
 }
 
 const allPoints = (deeds) => (
-  deeds.map(deed => deed.points).reduce((a,b) => a + b)
+  deeds.map(deed => deed.points).reduce((a,b) => a + b, 0)
 )
 
 class DayPicker extends React.Component {
