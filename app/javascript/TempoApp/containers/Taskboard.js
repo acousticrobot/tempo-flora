@@ -17,7 +17,9 @@ const Taskboard = ({ foci, theme, optionsFilter, onChangeOptions, focusFilter, t
     <section className='taskboard-items'>
 
       { optionsFilter === SHOW_MORE_OPTIONS &&
-        <DayPicker />
+        <DayPicker
+          foci={ foci }
+        />
       }
 
       <Foci

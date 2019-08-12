@@ -4,6 +4,7 @@ import { Query } from 'react-apollo'
 import { localStartOfDay, localEndOfDay } from '../../lib/Time'
 import GET_TARGET_DATE_QUERY from '../../queries/GetTargetDate'
 
+import GraphInterface from '../Graph/GraphInterface'
 
 const SubmitButton = () => (
   <button type='submit'>
@@ -13,6 +14,16 @@ const SubmitButton = () => (
       </div>
     </nav>
   </button>
+)
+
+const allDeeds = (foci) => {
+  let deeds = []
+  foci.forEach( focus => deeds = deeds.concat(focus.deeds))
+  return deeds
+}
+
+const allPoints = (deeds) => (
+  deeds.map(deed => deed.points).reduce((a,b) => a + b)
 )
 
 class DayPicker extends React.Component {
@@ -50,6 +61,9 @@ class DayPicker extends React.Component {
 
   render() {
     const { date, hasChanged } = this.state
+    const { foci } = this.props
+    const deeds = allDeeds(foci)
+    const points = allPoints(deeds)
 
     return (
       <Query
@@ -79,6 +93,16 @@ class DayPicker extends React.Component {
                 </h1>
               </header>
             </form>
+
+            <article className='graph'>
+              <GraphInterface
+                deeds={ deeds }
+                foci={ foci }
+                totalPoints={ points }
+                maxPoints={ points }
+              />
+            </article>
+
           </article>
         ) }
       </Query>

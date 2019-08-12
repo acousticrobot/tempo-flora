@@ -7,7 +7,12 @@ import GraphKey from '../Graph/Key'
 const Day = ({ day, date, foci, maxPoints }) => (
   <article className='graph'>
     { date && date.getDate() }
-    <GraphInterface day={ day } foci={ foci } maxPoints={ maxPoints } />
+    <GraphInterface
+      deeds={ day.deeds }
+      foci={ foci }
+      totalPoints={ day.totalPoints }
+      maxPoints={ maxPoints }
+    />
     <GraphKey day={ day } foci={ foci } />
   </article>
 )
