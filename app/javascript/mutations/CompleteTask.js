@@ -20,6 +20,7 @@ mutation CompleteTaskMutation($taskId: ID!, $deedsSince: String, $deedsTo: Strin
         focusTitle
         points
         completedAt
+        position
       }
     }
   }
