@@ -26,6 +26,7 @@ const TASKBOARD_QUERY = gql`
         title
         focusTitle
         points
+        position
         completedAt
       }
     }

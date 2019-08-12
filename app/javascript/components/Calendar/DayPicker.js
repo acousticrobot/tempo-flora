@@ -1,9 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
 import { localStartOfDay, localEndOfDay } from '../../lib/Time'
 import GET_TARGET_DATE_QUERY from '../../queries/GetTargetDate'
 
+import GraphInterface from '../Graph/GraphInterface'
 
 const SubmitButton = () => (
   <button type='submit'>
@@ -13,6 +15,10 @@ const SubmitButton = () => (
       </div>
     </nav>
   </button>
+)
+
+const allPoints = deeds => (
+  deeds.map(deed => deed.points).reduce((a, b) => a + b, 0)
 )
 
 class DayPicker extends React.Component {
@@ -50,6 +56,9 @@ class DayPicker extends React.Component {
 
   render() {
     const { date, hasChanged } = this.state
+    const { foci } = this.props
+    const deeds = foci.flatMap(f => f.deeds)
+    const points = allPoints(deeds)
 
     return (
       <Query
@@ -79,11 +88,25 @@ class DayPicker extends React.Component {
                 </h1>
               </header>
             </form>
+
+            <article className='graph'>
+              <GraphInterface
+                deeds={ deeds }
+                foci={ foci }
+                totalPoints={ points }
+                maxPoints={ points }
+              />
+            </article>
+
           </article>
         ) }
       </Query>
     )
   }
+}
+
+DayPicker.propTypes = {
+  foci: PropTypes.array.isRequired
 }
 
 export default DayPicker

@@ -19,6 +19,7 @@ const GET_FOCI = gql`
         focusTitle
         points
         completedAt
+        position
       }
     }
   }

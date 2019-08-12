@@ -18,6 +18,7 @@ mutation UndoDeedMutation($deedId: ID!, $deedsTo: String, $deedsSince: String) {
         focusTitle
         points
         completedAt
+        position
       }
     }
   }

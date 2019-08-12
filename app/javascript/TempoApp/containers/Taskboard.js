@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { SHOW_MORE_OPTIONS } from '../../constants/filterTypes'
-
 import Foci from '../../components/Focus/Foci'
 import NavBar from '../../components/NavBar'
 import DayPicker from '../../components/Calendar/DayPicker'
@@ -16,9 +14,7 @@ const Taskboard = ({ foci, theme, optionsFilter, onChangeOptions, focusFilter, t
     />
     <section className='taskboard-items'>
 
-      { optionsFilter === SHOW_MORE_OPTIONS &&
-        <DayPicker />
-      }
+      <DayPicker foci={ foci } />
 
       <Foci
         foci={ foci }

@@ -21,6 +21,7 @@ mutation AddFocusMutation($title: String!){
         focusTitle
         points
         completedAt
+        position
       }
     }
   }
