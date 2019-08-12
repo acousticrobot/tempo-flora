@@ -31,6 +31,9 @@ article.task {
   .task--icon {
     background-color: var(--c-article--icon-wrap);
   }
+  &.-completed {
+    color: var(--c-article--alt-text);
+  }
 }
 
 .task--icon {

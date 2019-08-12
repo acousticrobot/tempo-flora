@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import DeedTitle from './Title'
+import DeedPoints from './Points'
 
 const Deed = ({ deed, deedsSince }) => (
   <li className='focus-item'>
@@ -10,6 +12,12 @@ const Deed = ({ deed, deedsSince }) => (
         title={ deed.title }
         deedsSince={ deedsSince }
       />
+
+      <DeedPoints
+        id={ deed.id }
+        points={ deed.points }
+      />
+
     </article>
     <div className='clear' />
   </li>

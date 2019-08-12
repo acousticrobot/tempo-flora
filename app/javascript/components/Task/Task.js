@@ -8,42 +8,48 @@ import DeleteTaskButton from './DeleteTaskButton'
 
 import { SHOW_MORE_OPTIONS } from '../../constants/filterTypes'
 
-const Task = ({ task, optionsFilter, targetDate }) => (
-  <Draggable draggableId={ task.id } index={ task.position }>
-    { provided => (
-      <li
-        className='focus-item'
-        ref={ provided.innerRef }
-        { ...provided.draggableProps }
-      >
-        <article className='task'>
-          <TaskTitle
-            id={ task.id }
-            repeatable={ task.repeatable }
-            title={ task.title }
-            targetDate={ targetDate }
-            optionsFilter={ optionsFilter }
-          />
+const Task = ({ task, deeds, optionsFilter, targetDate }) => {
+  if (deeds.filter(deed => deed.title === task.title).length) {
+    return <React.Fragment />
+  }
 
-          <div
-            className='task--icon secondary-icon'
-            { ...provided.dragHandleProps }
-          >
-            <div className='icon icon-gripper' />
-          </div>
+  return (
+    <Draggable draggableId={ task.id } index={ task.position }>
+      { provided => (
+        <li
+          className='focus-item'
+          ref={ provided.innerRef }
+          { ...provided.draggableProps }
+        >
+          <article className='task'>
+            <TaskTitle
+              id={ task.id }
+              repeatable={ task.repeatable }
+              title={ task.title }
+              targetDate={ targetDate }
+              optionsFilter={ optionsFilter }
+            />
 
-          { optionsFilter === SHOW_MORE_OPTIONS &&
-            <TaskPoints points={ task.points } />
-          }
+            <div
+              className='task--icon secondary-icon'
+              { ...provided.dragHandleProps }
+            >
+              <div className='icon icon-gripper' />
+            </div>
 
-          { optionsFilter === SHOW_MORE_OPTIONS &&
-            <DeleteTaskButton id={ task.id } />
-          }
-        </article>
-      </li>
-    )}
-  </Draggable>
-)
+            { optionsFilter === SHOW_MORE_OPTIONS &&
+              <TaskPoints points={ task.points } />
+            }
+
+            { optionsFilter === SHOW_MORE_OPTIONS &&
+              <DeleteTaskButton id={ task.id } />
+            }
+          </article>
+        </li>
+      )}
+    </Draggable>
+  )
+}
 
 Task.propTypes = {
   optionsFilter: PropTypes.string.isRequired,
@@ -53,6 +59,7 @@ Task.propTypes = {
     repeatable: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired
   }).isRequired,
+  deeds: PropTypes.array.isRequired,
   targetDate: PropTypes.string.isRequired
 }
 

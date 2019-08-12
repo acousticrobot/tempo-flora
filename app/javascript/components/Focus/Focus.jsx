@@ -28,6 +28,7 @@ const Focus = ({ focus, optionsFilter, targetDate }) => (
             <Task
               key={ task.id }
               task={ task }
+              deeds={ focus.deeds }
               targetDate={ targetDate }
               optionsFilter={ optionsFilter }
             />
