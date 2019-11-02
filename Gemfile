@@ -20,7 +20,7 @@ gem 'schema'
 
 # Project Specific Gems:
 gem 'haml'
-gem 'devise', '~> 4.5'
+gem 'devise', '~> 4.7'
 gem 'graphql'
 gem 'porch'
 gem 'chronic', '~> 0.10.2'
