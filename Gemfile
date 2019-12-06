@@ -6,7 +6,7 @@ ruby '2.5.5'
 gem 'rails', '~> 5.2', '>= 5.2.3'
 
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3', '>= 4.3.1'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 4.0', '>= 4.0.2'
@@ -20,7 +20,7 @@ gem 'schema'
 
 # Project Specific Gems:
 gem 'haml'
-gem 'devise', '~> 4.5'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'graphql'
 gem 'porch'
 gem 'chronic', '~> 0.10.2'
