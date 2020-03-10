@@ -22,16 +22,18 @@ const assembleWeeksFromDays = (targetDates, days) => {
 
     for (let dow = 0; dow < 7; dow++) {
       if (w === 0 && dow < firstDayOfWeek) {
+        // pad the beginning of the calendar with blank days
         week.push({ date: null, uid: dayUID(w, dow) })
       } else if ((date > endDate) && (dow === 6)) {
+        // add the last week last blank day and quit
         week.push({ date: null, uid: dayUID(w, dow) })
         break
       } else if (date > endDate) {
+        // pad the end of the calendar with blank days
         week.push({ date: null, uid: dayUID(w, dow) })
       } else {
         const day = days.find(
-          d => date >= (new Date(d.startOfDay)) &&
-               date <= (new Date(d.endOfDay))
+          d => date.getDate() === (new Date(d.startOfDay)).getDate()
         )
         week.push({ day, date: new Date(date), uid: dayUID(w, dow) })
         date.setDate(date.getDate() + 1)
