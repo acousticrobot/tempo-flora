@@ -32,7 +32,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  gem 'better_errors', '~> 2.9'
   gem 'binding_of_caller'
   # query interface for graphql
   gem "graphiql-rails"
